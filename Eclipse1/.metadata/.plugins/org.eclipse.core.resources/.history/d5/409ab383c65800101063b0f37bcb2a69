@@ -1,0 +1,45 @@
+package com.stepDefi;
+
+import org.openqa.selenium.WebDriver;
+
+import com.pages.CityPageFactory;
+import com.pages.SejalPageFactory;
+import com.setup.BaseSteps;
+
+import io.cucumber.java.en.Given;
+import io.cucumber.java.en.Then;
+import io.cucumber.java.en.When;
+
+public class SejalCode {
+	
+	WebDriver driver;
+	SejalPageFactory sejal;
+	@Given("user launches the MagicBricks website")
+	public void user_launches_the_magic_bricks_website() {
+		driver = BaseSteps.getDriver();
+		driver.get(BaseSteps.getBaseUrl());
+		sejal = new SejalPageFactory(driver);
+	}
+
+	@When("user hovers on Rent and clicks on Owner Properties under Popular Choices")
+	public void user_hovers_on_rent_and_clicks_on_owner_properties_under_popular_choices() {
+		sejal.clickOwnerProperties();   
+		sejal.switchToNewestWindow();
+	}
+
+	@When("user clicks on first property photo")
+	public void user_clicks_on_first_property_photo() {
+
+	sejal.clickPropertyPhoto();
+	sejal.switchToNewestWindow();
+	}
+
+	@Then("user scrolls down the photo view page")
+	public void user_scrolls_down_the_photo_view_page() throws InterruptedException {
+	sejal.scrollDown();
+	
+	}
+
+
+
+}

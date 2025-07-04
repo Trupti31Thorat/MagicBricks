@@ -1,0 +1,135 @@
+package com.pages;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
+
+public class HomeLoansPageFactory extends BasePage{
+  //  private WebDriver driver;
+
+    // Constructor
+    public HomeLoansPageFactory(WebDriver driver) {
+       // this.driver = driver;
+       // PageFactory.initElements(driver, this);
+    	super(driver);
+    }
+
+    // WebElements
+    @FindBy(xpath = "(//a[text()=\"Home Loans\"])[1]")
+    public WebElement homeLoansMenu;
+    
+    @FindBy(xpath = "(//a[text()=\"Home Loans\"])[2]")
+   // @FindBy(css = "a[href*='https://www.magicbricks.com/homeloan/home?inc=desktop_homeloan_menu_linkage']")
+    public WebElement homeLoansbtn;
+
+    @FindBy(id = "loanAmount")
+    public WebElement loanAmountInput;
+    
+    @FindBy(id = "mobileNumber")
+    public WebElement mobileNumberInput;
+    
+    @FindBy(id = "PropertyCity")
+    public WebElement propertyCityInput;
+    
+    @FindBy(xpath = "//*[@id=\"loan-section\"]/div[2]/div[1]/div[4]/div[2]/div[1]/label")
+    public WebElement propertyFinalizedYes;
+    
+    @FindBy(xpath = "//input[@value='No']") // Optional: 'No' option
+    public WebElement propertyFinalizedNo;
+    
+    @FindBy(xpath = "//*[@id=\"propertySection\"]/div/div[2]/div[2]/label")
+    public WebElement tokenAmountNo;
+    
+    @FindBy(id = "generate-otp")
+    public WebElement checkEligibilityButton;
+    
+    
+    // Methods
+
+public void clickHomeLoansbtn() {
+//          if (homeLoansbtn != null) {
+//                 homeLoansbtn.click();
+//        } else {
+//        	
+//          throw new RuntimeException("Home Loans link is not initialized.");
+	
+	waitUntilWebElementIsVisible(homeLoansMenu);
+	
+	Actions actions = new Actions(driver);
+	actions.moveToElement(homeLoansMenu).perform();
+	waitUntilWebElementIsVisible(homeLoansbtn);
+	
+	homeLoansbtn.click();
+ }
+
+
+
+    public String getPageTitle() {
+        return driver.getTitle();
+    }
+    
+    public void switchToLatestWindow()
+    {
+    	String currentWindow = driver.getWindowHandle();
+    	for(String windowHandle: driver.getWindowHandles())
+
+    {
+    		if(!windowHandle.equals(currentWindow))
+    		{
+    			driver.switchTo().window(windowHandle);
+    				break;
+    		}
+    }
+    	
+    }
+    public void enterLoanAmount(String amount) {
+    	
+        waitUntilWebElementIsVisible(loanAmountInput);
+        loanAmountInput.clear();
+        loanAmountInput.sendKeys(amount);
+    }
+
+    public void enterMobileNumber(String mobile) {
+        waitUntilWebElementIsVisible(mobileNumberInput);
+        mobileNumberInput.clear();
+        mobileNumberInput.sendKeys(mobile);
+    }
+    
+    public void enterPropertyCity(String property) {
+        waitUntilWebElementIsVisible(propertyCityInput);
+        propertyCityInput.clear();
+        propertyCityInput.sendKeys(property);
+    }
+
+    public void selectPropertyFinalized(String option) {
+        waitUntilWebElementIsVisible(propertyFinalizedYes);
+        if (option.equalsIgnoreCase("Yes")) {
+            if (!propertyFinalizedYes.isSelected()) {
+                propertyFinalizedYes.click();
+            }
+        } else {
+            waitUntilWebElementIsVisible(propertyFinalizedNo);
+            if (!propertyFinalizedNo.isSelected()) {
+                propertyFinalizedNo.click();
+            }
+        }
+        }
+        
+     public void selectTokenAmount(String token)
+      {
+    	  waitUntilWebElementIsVisible(tokenAmountNo);
+    	  tokenAmountNo.click();
+      }
+    
+
+    public void clickCheckEligibility() {
+        waitUntilWebElementIsVisible(checkEligibilityButton);
+        waitUntilElementIsClickable(checkEligibilityButton);
+        checkEligibilityButton.click();
+    }
+}
+
+
+

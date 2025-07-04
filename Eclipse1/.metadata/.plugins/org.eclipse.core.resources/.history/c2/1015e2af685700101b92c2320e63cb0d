@@ -1,0 +1,20 @@
+Feature: Login Functionality
+
+@log1
+Scenario: validate login with valid data
+Given User is on LoginPage
+When user enters sheetno & rowno
+|sheetno |rowno |
+|0       |1     |
+|0       |2     |
+And click on login
+Then should validate to home page
+
+#@log2
+#Scenario: validate login with valid data
+#Given User is on LoginPage
+#When user enters username & password using datatable
+#|username|standard_user|
+#|password|secret_sauce|
+#And click on login
+#Then should validate to home page

@@ -1,0 +1,18 @@
+@login
+Feature: Login Functionality of Swag Lab Application
+  		 I want to validate different sets of data
+
+  Background: 
+    Given user is login page
+
+  @valid
+  Scenario: Validate Login with the valid data
+    When user enters valid username & password
+    And click on Login
+    Then It should navigate to home page
+
+  @invalid
+  Scenario: validate login with invalid data
+    When user enters invalid username & password
+    And click on login button
+    Then It should give me error message

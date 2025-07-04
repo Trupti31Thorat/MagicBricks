@@ -1,0 +1,42 @@
+
+package com.pages;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
+
+
+public class HomeLoansPageFactory {
+
+    WebDriver driver;
+
+    // =============== LOCATORS ===============
+
+  
+    @FindBy(linkText = "Home Loans")
+    WebElement homeLoansNavLink;
+
+ 
+    @FindBy(xpath = "(//a[contains(text(),'Home Loans')])[1]")
+    WebElement homeLoansHeading;
+
+    // =============== CONSTRUCTOR ===============
+
+    public HomeLoansPageFactory(WebDriver driver) {
+        this.driver = driver;
+        PageFactory.initElements(driver, this);
+    }
+
+    // =============== ACTIONS ===============
+
+    public void clickHomeLoansLink() {
+        homeLoansHeading.click();
+    }
+
+    // Optional: If you want to verify page content
+  /*  public boolean isHomeLoansHeadingDisplayed() {
+        return homeLoansHeading.isDisplayed();  */
+    }
+
+}

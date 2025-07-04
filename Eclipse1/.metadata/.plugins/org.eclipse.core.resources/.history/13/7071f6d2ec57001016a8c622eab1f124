@@ -1,0 +1,53 @@
+package com.pages;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
+
+public class HomeLoansPageFactory extends BasePage{
+  //  private WebDriver driver;
+
+    // Constructor
+    public HomeLoansPageFactory(WebDriver driver) {
+       // this.driver = driver;
+       // PageFactory.initElements(driver, this);
+    	super(driver);
+    }
+
+    // WebElements
+    @FindBy(xpath = "(//a[text()=\"Home Loans\"])[1]")
+    public WebElement homeLoansMenu;
+    
+    @FindBy(xpath = "(//a[text()=\"Home Loans\"])[2]")
+   // @FindBy(css = "a[href*='https://www.magicbricks.com/homeloan/home?inc=desktop_homeloan_menu_linkage']")
+    public WebElement homeLoansbtn;
+
+    // Methods
+
+public void clickHomeLoansbtn() {
+//          if (homeLoansbtn != null) {
+//                 homeLoansbtn.click();
+//        } else {
+//        	
+//          throw new RuntimeException("Home Loans link is not initialized.");
+	
+	waitUntilWebElementIsVisible(homeLoansMenu);
+	
+	Actions actions = new Actions(driver);
+	actions.moveToElement(homeLoansMenu).perform();
+	waitUntilWebElementIsVisible(homeLoansbtn);
+	
+	homeLoansbtn.click();
+ }
+
+}
+
+    public String getPageTitle() {
+        return driver.getTitle();
+    }
+}
+
+
+

@@ -1,0 +1,19 @@
+Feature: search functionality for RedBus application
+
+Scenario: validate search functionality with data
+Given user is on Red bus homepage
+When user enters source city in from
+And selects the dest city in to
+And selects the journey date from calendar
+And click the search functionality
+Then should navigate to the search options given
+
+Scenario: validate search functionality for same cities
+Given User is on RedBus Homepage
+When user selects from city "Mumbai"
+And select To city "Mumbai"
+And select the journey date
+Then It shouldnt allow to proceed further
+
+
+

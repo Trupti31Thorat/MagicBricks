@@ -1,0 +1,73 @@
+package com.pages;
+
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.FindBy;
+
+public class SejalPageFactory extends BasePage {
+
+	
+//  private WebDriver driver;
+
+    // Constructor
+    public SejalPageFactory(WebDriver driver) {
+       // this.driver = driver;
+       // PageFactory.initElements(driver, this);
+    	super(driver);
+    }
+    
+    
+    // WebElements
+    @FindBy(id = "rentheading")
+    public WebElement rentTag;
+    
+    @FindBy(css = "a[onclick*='openRentUrlInNewTab'][href='javascript:void(0);']")
+   // @FindBy(css = "a[href*='https://www.magicbricks.com/homeloan/home?inc=desktop_homeloan_menu_linkage']")
+    public WebElement OwnerProperties;
+    
+    @FindBy(xpath = "//img[@src='https://img.staticmb.com/mbphoto/property/cropped_images/2024/Dec/07/Photo_h300_w450/76392859_9_PropertyImage369-6091984673031_300_450.jpg' and @alt='3BHK Penthouse for Rent in Bella Vista Empress at Wakad']\r\n"
+    		)
+    public WebElement PropertyPhoto;
+    
+    
+    public void clickOwnerProperties() {
+
+    	waitUntilWebElementIsVisible(rentTag);
+
+    	Actions actions = new Actions(driver);
+    	actions.moveToElement(rentTag).perform();
+    	waitUntilWebElementIsVisible(rentTag);
+
+    	OwnerProperties.click();
+    	}
+
+    
+    
+
+public void switchToNewestWindow()
+{
+	for(String handle:
+		driver.getWindowHandles())
+	{
+		driver.switchTo().window(handle);
+	}
+}
+   
+
+
+public void clickPropertyPhoto() {
+	
+    waitUntilWebElementIsVisible(PropertyPhoto);
+    waitUntilElementIsClickable(PropertyPhoto);
+   PropertyPhoto.click();
+}
+
+public void scrollDown() throws InterruptedException {
+	Thread.sleep(2000);
+       JavascriptExecutor js = (JavascriptExecutor) driver;
+      js.executeScript("window.scrollBy(0,500)"); // Adjust the scroll value as needed
+}
+
+}
