@@ -7,6 +7,13 @@ import io.cucumber.junit.*;
 @CucumberOptions(
    features = "C:\\Users\\SHANKARE\\eclipse-workspace\\MagicBricksRent\\src\\test\\resource\\Features\\Rent.feature",
    glue = {"com.stepDefination", "com.setup"},
+   //tags="@ownerPhoto",
+   //tags="@contactOwnerPositive",
+  // tags="@contactOwnerNegative",
+	//tags="@sortHighToLow",
+ // tags="@furnishedHomesBHK",
+   //tags="@findAgent",
+   tags="@exploreLocalities",
    plugin = {"pretty", "html:target/cucumber-html", "json:target/cucumber.json"},
    monochrome = true
 )

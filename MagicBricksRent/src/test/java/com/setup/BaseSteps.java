@@ -4,6 +4,7 @@ import java.time.Duration;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.edge.EdgeDriver;
 
 import io.cucumber.java.After;
 import io.cucumber.java.Before;
@@ -40,6 +41,9 @@ public class BaseSteps {
             System.out.println(" Launching browser without config file...");
             WebDriverManager.chromedriver().setup();
             driver = new ChromeDriver();
+//            WebDriverManager.edgedriver().setup();
+//            driver = new EdgeDriver();
+            
             driver.manage().window().maximize();
             driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
         }

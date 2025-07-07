@@ -53,7 +53,13 @@ public class BasePage {
     }
 
     public void waitUntilElementIsClickable(WebElement element) {
-        wait = new WebDriverWait(driver, Duration.ofSeconds(20));
+        wait = new WebDriverWait(driver, Duration.ofSeconds(30));
         wait.until(ExpectedConditions.elementToBeClickable(element));
     }
+    
+    public WebElement waitUntilElementIsClickable(By locator) {
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        return wait.until(ExpectedConditions.elementToBeClickable(locator));
+    }
+    
 }
