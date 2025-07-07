@@ -1,0 +1,58 @@
+package com.stepDefinition;
+
+import com.pages.InvestmentHotspotPage;
+import com.parameters.ExcelReader;
+import com.setup.BaseSteps;
+import io.cucumber.java.en.Then;
+import io.cucumber.java.en.When;
+import org.junit.Assert;
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.support.PageFactory;
+
+import java.util.Map;
+
+public class InvestmentHotspotSteps extends BaseSteps {
+
+    InvestmentHotspotPage hotspotPage;
+
+    @When("the user clicks on {string}")
+    public void the_user_clicks_on(String option) {
+        if (option.equalsIgnoreCase("Investment Hotspot")) {
+            hotspotPage = new InvestmentHotspotPage(driver);
+            PageFactory.initElements(driver, hotspotPage); // for @FindBy support
+            hotspotPage.clickInvestmentHotspot(); // No need to hover, done in Background
+        }
+    }
+
+    @When("the user scrolls down to the request callback form")
+    public void the_user_scrolls_down_to_the_request_callback_form() throws InterruptedException {
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        Thread.sleep(3000);
+        js.executeScript("window.scrollBy(0, 2800)");
+    }
+
+    @When("the user fills the form with valid data from Excel")
+    public void the_user_fills_the_form_with_valid_data_from_excel() {
+        hotspotPage = new InvestmentHotspotPage(driver);
+        PageFactory.initElements(driver, hotspotPage);
+
+        ExcelReader reader = new ExcelReader();
+        Map<String, String> data = reader.getRowData("InvestmentHotspot", "TC_01");
+        System.out.println("Excel Map :"+data);
+
+        String name = data.get("Name");
+        String email = data.get("Email");
+        String phone = data.get("Phone");
+
+        hotspotPage.fillForm(name, email, phone);
+        hotspotPage.submitForm();
+    }
+
+    @Then("the callback request should be submitted successfully")
+    public void the_callback_request_should_be_submitted_successfully() {
+        hotspotPage = new InvestmentHotspotPage(driver);
+        PageFactory.initElements(driver, hotspotPage);
+
+        Assert.assertTrue("Success message not displayed!", hotspotPage.isSuccessMessageDisplayed());
+    }
+}

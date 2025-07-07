@@ -1,0 +1,57 @@
+package com.stepDefinition;
+
+import java.awt.AWTException;
+
+
+import com.pages.HomePage;
+import com.pages.ReadyToMovePage;
+import com.setup.BaseSteps;
+
+import io.cucumber.java.en.Then;
+import io.cucumber.java.en.When;
+
+public class ReadyToMoveFilterStep {
+//	
+//	HomePage homePage;
+//    ReadyToMovePage readyToMovePage ;
+//	
+//	@When("the user click on {string}")
+//    //@When("the user clicks  Ready To Move ")
+//	public void the_user_click_on(String string) {
+//		homePage = new HomePage(BaseSteps.driver);
+//        homePage.hoverOnBuyMenu();
+//        homePage.clickReadyToMove();
+//        
+////        readyToMovePage.switchToNewTab();
+////        ReadyToMovePage page = new ReadyToMovePage(BaseSteps.driver);
+////        page.switchToNewTab();
+////        
+//       readyToMovePage = new ReadyToMovePage(BaseSteps.driver);
+//       readyToMovePage.switchToNewTab();
+//        
+//	    
+//	}
+//	@When("the user applies budget filter")
+//	public void the_user_applies_budget_filter() {
+//		readyToMovePage = new ReadyToMovePage(BaseSteps.driver);
+//        readyToMovePage.applyBudgetFilter();
+//	   
+//	}
+//	@When("the user selects a Sort By option")
+//	public void the_user_selects_a_sort_by_option() throws InterruptedException, AWTException {
+//		readyToMovePage = new ReadyToMovePage(BaseSteps.driver);
+//		Thread.sleep(3000);
+//        readyToMovePage.applySortUsingRobot();
+//	    
+//	}
+//	@Then("the filtered and sorted results should be displayed")
+//	public void the_filtered_and_sorted_results_should_be_displayed() {
+//		boolean isResultVisible = readyToMovePage.isFilteredAndSortedResultsVisible();
+//        if (!isResultVisible) {
+//            throw new AssertionError("Filtered or sorted results were not found on the page.");
+//        }
+//	    
+//	}
+
+
+}

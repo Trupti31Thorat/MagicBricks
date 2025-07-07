@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?><testrun name="TestRunnerJunit" project="Magicbricks" tests="6" started="6" failures="1" errors="2" ignored="0">
+  <testsuite name="com.runner.TestRunnerJunit" time="59.958">
+    <testsuite name="MagicBricks Buy Module Testing" time="59.958">
+      <testcase name="Verify Ready To Move listing page is accessible" classname="MagicBricks Buy Module Testing" time="8.999"/>
+      <testcase name="Apply budget filter and sort option on Ready To Move page" classname="MagicBricks Buy Module Testing" time="15.852"/>
+      <testcase name="Submit Investment Hotspot form with valid details" classname="MagicBricks Buy Module Testing" time="6.056">
+        <error>io.cucumber.junit.UndefinedStepException: The step 'the user clicks on "Investment Hotspot"' is undefined.
+You can implement this step using the snippet(s) below:
+
+@When("the user clicks on {string}")
+public void the_user_clicks_on(String string) {
+    // Write code here that turns the phrase above into concrete actions
+    throw new io.cucumber.java.PendingException();
+}
+&#13;
+&#13;
+</error>
+      </testcase>
+      <testcase name="Submit Investment Hotspot form with invalid details" classname="MagicBricks Buy Module Testing" time="6.991">
+        <error>io.cucumber.junit.UndefinedStepException: The step 'the user clicks on the "Investment Hotspot"' is undefined.
+You can implement this step using the snippet(s) below:
+
+@When("the user clicks on the {string}")
+public void the_user_clicks_on_the(String string) {
+    // Write code here that turns the phrase above into concrete actions
+    throw new io.cucumber.java.PendingException();
+}
+&#13;
+&#13;
+</error>
+      </testcase>
+      <testcase name="Select tax slab and city in Buy vs Rent and scroll to graph" classname="MagicBricks Buy Module Testing" time="9.968"/>
+      <testcase name="User navigates to Tips and Guides, searches for a locality, and views results" classname="MagicBricks Buy Module Testing" time="12.092">
+        <failure>java.lang.AssertionError: User is not on the locality results page. &#13;
+	at org.junit.Assert.fail(Assert.java:89)&#13;
+	at org.junit.Assert.assertTrue(Assert.java:42)&#13;
+	at com.StepDefinitions.BuyModuleSteps.the_user_should_be_redirected_to_the_locality_results_page(BuyModuleSteps.java:189)&#13;
+	at ✽.the user should be redirected to the locality results page(file:///C:/Windows/System32/config/systemprofile/SprintWorkspace/Magicbricks/src/test/resources/Features/BuyModule.feature:50)&#13;
+&#13;
+</failure>
+      </testcase>
+    </testsuite>
+  </testsuite>
+</testrun>

@@ -1,0 +1,44 @@
+package com.pages;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+
+public class HomePage extends BasePage {
+
+    // Constructor
+    public HomePage(WebDriver driver) {
+        super(driver);
+    }
+
+    // BUY menu (for hover)
+    @FindBy(xpath = "//a[@id=\"buyheading\"]")
+    private WebElement buyMenu;
+
+    // Ready To Move option (under Buy dropdown)
+    @FindBy(xpath = "//a[text()=\"Ready to Move\"]")
+    private WebElement readyToMoveOption;
+
+    // Hover on Buy
+    public void hoverOnBuyMenu() {
+        waitUntilVisible(buyMenu);
+        hover(buyMenu);
+    }
+
+    // Click Ready to Move
+    public void clickReadyToMove() {
+        waitUntilClickable(readyToMoveOption);
+        readyToMoveOption.click();
+    }
+
+    // (Optional) Get current page title for assertion
+//    public String getPageTitle() {
+//        return driver.getTitle();
+//    }
+
+    //  Get current URL for assertion
+    public String getCurrentUrl() {
+        return driver.getCurrentUrl();
+    }
+
+}

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?><testrun name="TestRunnerJunit" project="Magicbricks" tests="1" started="1" failures="0" errors="1" ignored="0">
+  <testsuite name="com.runner.TestRunnerJunit" time="10.666">
+    <testsuite name="MagicBricks Buy Module Testing" time="10.666">
+      <testcase name="Apply budget filter and sort option on Ready To Move page" classname="MagicBricks Buy Module Testing" time="10.666">
+        <error>io.cucumber.junit.UndefinedStepException: The step 'the user clicks on the property listing using Robot' and 1 other step(s) are undefined.
+You can implement these steps using the snippet(s) below:
+
+@Then("the user clicks on the property listing using Robot")
+public void the_user_clicks_on_the_property_listing_using_robot() {
+    // Write code here that turns the phrase above into concrete actions
+    throw new io.cucumber.java.PendingException();
+}
+@Then("the selected property should be displayed on a new page")
+public void the_selected_property_should_be_displayed_on_a_new_page() {
+    // Write code here that turns the phrase above into concrete actions
+    throw new io.cucumber.java.PendingException();
+}
+&#13;
+&#13;
+</error>
+      </testcase>
+    </testsuite>
+  </testsuite>
+</testrun>

@@ -1,0 +1,64 @@
+package com.pages;
+
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+
+public class BuyVsRentPage extends BasePage {
+
+    public BuyVsRentPage(WebDriver driver) {
+        super(driver);
+    }
+
+    @FindBy(xpath = "//a[text()='Buy vs Rent']")
+    WebElement buyVsRentLink;
+
+   
+    @FindBy(xpath = "//span[text()='Tax']")
+    WebElement taxButton;
+    
+    @FindBy(xpath="//input[@id=\"taxSlab10\"]")
+    WebElement taxRadioButton;
+
+    @FindBy(id="nonMetroCity")
+    WebElement cityType;
+
+    @FindBy(xpath ="//div[@id=\"savingsChart\"]") 
+    WebElement trendGraph;
+
+    public void clickBuyVsRent() {
+        waitUntilVisible(buyVsRentLink);
+        buyVsRentLink.click();
+    }
+    
+    public void clickTaxButton() throws InterruptedException {
+    	waitUntilVisible(taxButton);
+    	taxButton.click();
+    	//Thread.sleep(2000);
+    	//waitUntilVisible(taxRadioButton);	
+    }
+
+    public void selectTaxSlab() {
+    	
+       // waitUntilVisible(taxRadioButton);
+        taxRadioButton.click();
+        //jfjff
+    }
+
+    public void selectCityType() {
+       // waitUntilVisible(cityType);
+        cityType.click();
+    }
+
+    public void scrollToTrendGraph() {
+    	scrollToElement(trendGraph);
+    	JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("window.scrollBy(0, -200)");
+    }
+
+    public boolean isTrendGraphDisplayed() {
+        waitUntilVisible(trendGraph);
+        return trendGraph.isDisplayed();
+    }
+}

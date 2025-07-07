@@ -1,0 +1,56 @@
+package com.stepDefinition;
+
+import java.time.Duration;
+
+
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+import com.pages.HomePage;
+import com.parameters.ConfigReader;
+import com.setup.BaseSteps;
+import io.cucumber.java.en.*;
+
+public class ReadyToMoveSteps {
+
+    HomePage home;
+
+    @Given("the user launches the Magicbricks website")
+    public void the_user_launches_the_magicbricks_website() throws InterruptedException {
+        String browser = ConfigReader.getProperty("browser"); // browser = chrome/edge
+        BaseSteps.driver = BaseSteps.setupDriver(browser);   // initialize driver
+        home = new HomePage(BaseSteps.driver);               // initialize page object
+    }
+
+    @Given("the user hoves over the Buy module")
+    public void the_user_hoves_over_the_buy_module() {
+        home.hoverOnBuyMenu();  // hover action
+    }
+
+    @When("the user clicks on {string} option")
+    public void the_user_clicks_on_option(String option) {
+        if (option.equalsIgnoreCase("Ready To Move")) {
+            home.clickReadyToMove();  // click "Ready To Move"
+        }
+    }
+
+//   @Then("the user should be navigated to the Ready to Move page with property listings")
+//    public void the_user_should_be_navigated_to_the_ready_to_move_page_with_property_listings() {
+//    	String title = BaseSteps.driver.getTitle();
+//    	if (!title.toLowerCase().contains("ready to move")) {
+//    	    throw new AssertionError("Unexpected title: " + title);
+//    	
+//        }
+//   }
+   @Then("the user should be navigated to the Ready to Move page with property listings")
+    public void the_user_should_be_navigated_to_the_ready_to_move_page_with_property_listings() {
+        //  Wait until the URL contains a known part
+        WebDriverWait wait = new WebDriverWait(BaseSteps.driver, Duration.ofSeconds(10));
+        boolean isCorrectPage = wait.until(driver ->
+           driver.getCurrentUrl().toLowerCase().contains("ready-to-move")
+       );
+     if (!isCorrectPage) {
+           throw new AssertionError("Navigation failed! Current URL: " + BaseSteps.driver.getCurrentUrl());
+       }
+    
+    }
+}

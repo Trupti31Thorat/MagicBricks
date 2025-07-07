@@ -1,0 +1,36 @@
+package com.parameters;
+
+import java.io.FileInputStream;
+
+import java.io.IOException;
+import java.util.Properties;
+
+public class ConfigReader {
+	
+	private static Properties prop;
+	
+	//Function to read key and values from PropertiesFile and load them.
+	
+	public static void initProperties() {
+		prop = new Properties();
+		try {
+			FileInputStream input = new FileInputStream("src/test/resources/PropertiesFile/profile.properties");
+			prop.load(input);
+		}
+		catch (IOException e){
+			System.out.println("Failed To Load profile.properties");
+			e.printStackTrace();	
+		}
+		//return prop;
+	}
+	
+	
+	
+	public static String getProperty(String key) {
+		if(prop==null) {
+			initProperties();
+		}
+		return prop.getProperty(key);
+	}
+
+}

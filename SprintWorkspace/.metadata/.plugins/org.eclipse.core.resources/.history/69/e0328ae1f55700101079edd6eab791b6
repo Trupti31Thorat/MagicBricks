@@ -1,0 +1,29 @@
+package com.stepDefinition;
+
+import io.cucumber.java.en.Then;
+import io.cucumber.java.en.When;
+
+public class ReadyToMoveFilterStep {
+	
+	@When("the user clicks on {string}")
+	public void the_user_clicks_on(String string) {
+		homePage = new HomePage(BaseSteps.driver);
+        homePage.hoverOnBuyMenu();
+        homePage.clickReadyToMove();
+	    
+	}
+	@When("the user applies budget filter")
+	public void the_user_applies_budget_filter() {
+	   
+	}
+	@When("the user selects a Sort By option")
+	public void the_user_selects_a_sort_by_option() {
+	    
+	}
+	@Then("the filtered and sorted results should be displayed")
+	public void the_filtered_and_sorted_results_should_be_displayed() {
+	    
+	}
+
+
+}

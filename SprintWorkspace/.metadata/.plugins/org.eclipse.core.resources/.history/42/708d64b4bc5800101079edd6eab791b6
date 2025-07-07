@@ -1,0 +1,80 @@
+package com.stepDefinition;
+
+import com.pages.InvestmentHotspotPage;
+import com.parameters.ExcelReader;
+import com.setup.BaseSteps;
+import org.junit.Assert;
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+import java.time.Duration;
+import java.util.Map;
+
+import io.cucumber.java.en.Then;
+import io.cucumber.java.en.When;
+
+public class InvestmentHotspotStepsInvalid extends BaseSteps {
+
+	// WebDriver driver;
+
+//	InvestmentHotspotPage hotspotPage;
+//
+//	@When("the user clicks on the {string}")
+//	public void the_user_clicks_on(String option) {
+//		if (option.equalsIgnoreCase("Investment Hotspot")) {
+//			hotspotPage = new InvestmentHotspotPage(driver);
+//			PageFactory.initElements(driver, hotspotPage); // for @FindBy support
+//			hotspotPage.clickInvestmentHotspot(); // No need to hover, done in Background
+//		}
+//	}
+//
+//	@When("the user scrolls down to the request callback form")
+//	public void the_user_scrolls_down_to_the_request_callback_form() {
+//		hotspotPage = new InvestmentHotspotPage(driver);
+//
+//		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+//		wait.until(ExpectedConditions.visibilityOf(hotspotPage.nameInput));
+//
+//		hotspotPage.scrollToElement(hotspotPage.nameInput);
+//
+//		JavascriptExecutor js = (JavascriptExecutor) driver;
+//		js.executeScript("window.scrollBy(0, -200)");
+//
+//	}
+
+	@When("the user fills the form with invalid details from sheet {int} and row {int}")
+	public void the_user_fills_the_form_with_invalid_details_from_sheet_and_row(Integer int1, Integer int2) {
+		hotspotPage = new InvestmentHotspotPage(driver);
+	    PageFactory.initElements(driver, hotspotPage);
+
+	    ExcelReader reader = new ExcelReader();
+	    Map<String, String> data = reader.getRowData(int1.intValue(), int2.intValue());
+
+	    String name = data.get("Name");
+	    String email = data.get("Email");
+	    String phone = data.get("Phone");
+
+	    System.out.println("Invalid Test Data → Name: " + name + ", Email: " + email + ", Phone: " + phone);
+
+	    hotspotPage.fillForm(name, email, phone);
+	    hotspotPage.submitForm();
+
+	}
+
+	@Then("an appropriate error message should be displayed")
+	public void an_appropriate_error_message_should_be_displayed() {
+		
+		hotspotPage = new InvestmentHotspotPage(driver);
+        //PageFactory.initElements(driver, hotspotPage);
+
+        Assert.assertTrue("Expected error message is not displayed!", hotspotPage.isErrorMessageDisplayed());
+        //tearDown();
+
+	}
+	
+	
+
+}

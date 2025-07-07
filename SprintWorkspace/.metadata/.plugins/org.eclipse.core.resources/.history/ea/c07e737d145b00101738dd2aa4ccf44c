@@ -1,0 +1,108 @@
+package com.pages;
+
+import java.awt.AWTException;
+import java.awt.Robot;
+
+import java.awt.event.InputEvent;
+import java.time.Duration;
+import java.util.List;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.FindBys;
+import org.openqa.selenium.support.ui.Select;
+
+public class ReadyToMovePage extends BasePage {
+
+    public ReadyToMovePage(WebDriver driver) {
+        super(driver);
+    }
+
+    
+    @FindBy(xpath="//div[@class='title-ellipsis' and text()='Budget']")
+    WebElement budgetButton;
+
+    
+    @FindBy(xpath = "(//select[contains(@class, 'filter-budget_select')])[1]")
+    WebElement minBudgetDropdown;
+
+    @FindBy(xpath = "(//select[contains(@class, 'filter-budget_select')])[2]")
+    WebElement maxBudgetDropdown;
+
+
+    
+    @FindBy(xpath = "//div[contains(@class,'topBudget')]//div[text()='Done' and contains(@class,'cta-done')]") 
+    WebElement doneButton;
+    
+    @FindBy(css="div[class=\"mb-srp__tabs__sortby--title\"]")
+    WebElement sortDropdown;
+    
+    
+    @FindBy(css = "div[class*='m-srp-card__container']") // or use actual result card class
+    List<WebElement> resultCards;
+
+    
+
+    //  Method: Apply budget filter (₹30 Lac - ₹60 Lac)
+    public void applyBudgetFilter() {
+		//waitUntilVisible(budgetButton);
+		//switchToNewTab();
+//		budgetButton.click();
+//
+//		// waitUntilVisible(minBudgetDropdown);
+//		Select minSelect = new Select(minBudgetDropdown);
+//		minSelect.selectByVisibleText("₹ 30 Lac");
+//
+//		// waitUntilVisible(maxBudgetDropdown);
+//		Select maxSelect = new Select(maxBudgetDropdown);
+//		maxSelect.selectByVisibleText("₹ 60 Lac");
+//
+//		waitUntilVisible(doneButton);
+//		doneButton.click();
+    }
+    
+    
+ //  This method clicks Sort By using Robot class
+    public void applySortUsingRobot() throws InterruptedException, AWTException {
+        // Wait for page to load
+        //driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(30));
+
+        // Wait until Sort dropdown is visible (better than Thread.sleep)
+    	
+        
+        //waitUntilVisible(sortDropdown);
+    	//switchToNewTab();
+    	//Thread.sleep(3000);
+
+        
+            Robot robot = new Robot();
+            
+            
+
+            // Click on Sort dropdown (approx. coordinates)
+            
+           
+            robot.mouseMove(900, 310);
+            //Thread.sleep(2000);
+            robot.mousePress(InputEvent.BUTTON1_DOWN_MASK);
+            robot.mouseRelease(InputEvent.BUTTON1_DOWN_MASK);
+
+            
+            robot.mouseMove(900, 350); // scroll to desired option
+            robot.mousePress(InputEvent.BUTTON1_DOWN_MASK);
+            robot.mouseRelease(InputEvent.BUTTON1_DOWN_MASK);
+
+       
+    }
+    
+    public boolean isFilteredAndSortedResultsVisible() {
+    	//return true;
+        return resultCards.size() > 0;  //  Check if at least one result is displayed
+    }
+    
+    
+    
+    
+}

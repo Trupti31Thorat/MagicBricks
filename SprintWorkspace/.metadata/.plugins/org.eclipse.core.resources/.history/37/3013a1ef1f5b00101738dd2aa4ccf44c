@@ -1,0 +1,45 @@
+package com.stepDefinition;
+
+import com.pages.BuyVsRentPage;
+import com.setup.BaseSteps;
+
+import io.cucumber.java.en.Then;
+import io.cucumber.java.en.When;
+
+import org.openqa.selenium.WebDriver;
+import java.util.Set;
+
+public class BuyVsRentSteps extends BaseSteps{
+
+    WebDriver driver = BaseSteps.driver;
+    BuyVsRentPage buyVsRentPage = new BuyVsRentPage(driver);
+
+    @When("the user clicks on the link {string}")
+    public void the_user_clicks_on_the_link(String linkName) {
+        if (linkName.equalsIgnoreCase("Buy vs Rent")) {
+            buyVsRentPage.clickBuyVsRent();
+
+            // 🔄 Switch to new tab/window
+            String parent = driver.getWindowHandle();
+            for (String win : driver.getWindowHandles()) {
+                if (!win.equals(parent)) {
+                    driver.switchTo().window(win);
+                    break;
+                }
+            }
+        }
+    }
+
+    @When("the user selects a tax slab and city type")
+    public void the_user_selects_a_tax_slab_and_city_type() throws InterruptedException {
+        buyVsRentPage.clickTaxButton();    // Now waits for radio buttons
+        buyVsRentPage.selectTaxSlab();     // Clicks 10% radio button
+        buyVsRentPage.selectCityType();    // Clicks Non-Metro radio button
+    }
+
+    @Then("the trend graph should be visible on scrolling.")
+    public void the_trend_graph_should_be_visible_on_scrolling() {
+        buyVsRentPage.scrollToTrendGraph();
+        assert buyVsRentPage.isTrendGraphDisplayed() : "Trend graph is NOT visible";
+    }
+}

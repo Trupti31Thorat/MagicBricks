@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?><testrun name="TestRunnerJunit" project="Magicbricks" tests="1" started="1" failures="0" errors="1" ignored="0">
+  <testsuite name="com.runner.TestRunnerJunit" time="18.742">
+    <testsuite name="MagicBricks Buy Module Testing" time="18.742">
+      <testcase name="Apply budget filter and sort option on Ready To Move page" classname="MagicBricks Buy Module Testing" time="18.742">
+        <error>org.openqa.selenium.TimeoutException: Expected condition failed: waiting for element to be clickable: [[ChromeDriver: chrome on windows (5b57c8856a8ef1da9d660f6bde80c9a0)] -&gt; xpath: //ul[@class="mb-srp__tabs__sortby__dd__list"]/li[2]] (tried for 10 second(s) with 500 milliseconds interval)
+Build info: version: '4.34.0', revision: '707dcb4246*'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.15'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 138.0.7204.96, chrome: {chromedriverVersion: 138.0.7204.92 (f079b9bc781e..., userDataDir: C:\Users\rsing124\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:63678}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:63678/devtoo..., se:cdpVersion: 138.0.7204.96, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 5b57c8856a8ef1da9d660f6bde80c9a0&#13;
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)&#13;
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:228)&#13;
+	at com.pages.BasePage.waitUntilClickable(BasePage.java:39)&#13;
+	at com.pages.BasePage.click(BasePage.java:44)&#13;
+	at com.pages.ReadyToMovePage.selectSortByOption(ReadyToMovePage.java:35)&#13;
+	at com.stepDefinition.ReadyToMoveFilterStep.the_user_selects_a_sort_by_option(ReadyToMoveFilterStep.java:21)&#13;
+	at ✽.the user selects a Sort By option(file:///C:/Windows/System32/config/systemprofile/SprintWorkspace/Magicbricks/src/test/resources/Features/BuyModule.feature:16)&#13;
+&#13;
+</error>
+      </testcase>
+    </testsuite>
+  </testsuite>
+</testrun>

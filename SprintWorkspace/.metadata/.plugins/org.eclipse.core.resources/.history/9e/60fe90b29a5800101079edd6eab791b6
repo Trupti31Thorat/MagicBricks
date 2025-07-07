@@ -1,0 +1,71 @@
+package com.pages;
+
+import java.time.Duration;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+public class InvestmentHotspotPage extends BasePage {
+
+    WebDriver driver;
+
+    public InvestmentHotspotPage(WebDriver driver) {
+        super(driver);
+    }
+
+    
+
+    
+
+    @FindBy(xpath = "//a[text()='Investment Hotspot']")
+    WebElement investmentHotspot;
+
+    @FindBy(name = "cname") 
+    WebElement nameInput;
+
+    @FindBy(name="cmobileNo") 
+    WebElement phoneInput;
+
+    @FindBy(name="cemailId") 
+    WebElement emailInput;
+
+    @FindBy(xpath= "//input[@class=\"customBtn register-entity\"]") 
+    WebElement submitBtn;
+
+    @FindBy(xpath = "//div[@class=\"tankyouMsglabel1\"]")
+    WebElement successMsg;
+
+    
+
+    public void clickInvestmentHotspot() {
+        investmentHotspot.click();
+        switchToNewTab();
+    }
+
+    public void fillForm(String name, String email, String phone) {
+    	
+    	
+        nameInput.clear();
+        nameInput.sendKeys(name);
+
+        emailInput.clear();
+        emailInput.sendKeys(email);
+
+        phoneInput.clear();
+        phoneInput.sendKeys(phone);
+    }
+
+    public void submitForm() {
+        submitBtn.click();
+    }
+
+    public boolean isSuccessMessageDisplayed() {
+    	WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(10));
+    	wait.until(ExpectedConditions.visibilityOf(successMsg));
+        return successMsg.isDisplayed();
+    }
+    
+}

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?><testrun name="TestRunnerJunit" project="Magicbricks" tests="6" started="6" failures="0" errors="1" ignored="0">
+  <testsuite name="com.runner.TestRunnerJunit" time="64.08">
+    <testsuite name="MagicBricks Buy Module Testing" time="64.08">
+      <testcase name="Verify Ready To Move listing page is accessible" classname="MagicBricks Buy Module Testing" time="8.622"/>
+      <testcase name="Apply budget filter and sort option on Ready To Move page" classname="MagicBricks Buy Module Testing" time="17.077"/>
+      <testcase name="Submit Investment Hotspot form with valid details" classname="MagicBricks Buy Module Testing" time="10.261"/>
+      <testcase name="Submit Investment Hotspot form with invalid details" classname="MagicBricks Buy Module Testing" time="7.718">
+        <error>java.lang.IllegalArgumentException: Keys to send should be a not null CharSequence&#13;
+	at org.openqa.selenium.remote.RemoteWebElement.sendKeys(RemoteWebElement.java:96)&#13;
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)&#13;
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)&#13;
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)&#13;
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)&#13;
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:51)&#13;
+	at jdk.proxy2/jdk.proxy2.$Proxy18.sendKeys(Unknown Source)&#13;
+	at com.pages.InvestmentHotspotPage.fillForm(InvestmentHotspotPage.java:58)&#13;
+	at com.StepDefinitions.BuyModuleSteps.the_user_fills_the_form_with_invalid_details_from_sheet_and_row(BuyModuleSteps.java:145)&#13;
+	at ✽.the user fills the form with invalid details from sheet 1 and row 1(file:///C:/Windows/System32/config/systemprofile/SprintWorkspace/Magicbricks/src/test/resources/Features/BuyModule.feature:31)&#13;
+&#13;
+</error>
+      </testcase>
+      <testcase name="Select tax slab and city in Buy vs Rent and scroll to graph" classname="MagicBricks Buy Module Testing" time="7.524"/>
+      <testcase name="User navigates to Tips and Guides, searches for a locality, and views results" classname="MagicBricks Buy Module Testing" time="12.878"/>
+    </testsuite>
+  </testsuite>
+</testrun>

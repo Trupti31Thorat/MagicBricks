@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?><testrun name="TestRunnerJunit" project="Magicbricks" tests="1" started="1" failures="0" errors="1" ignored="0">
+  <testsuite name="com.runner.TestRunnerJunit" time="16.768">
+    <testsuite name="MagicBricks Buy Module Testing" time="16.768">
+      <testcase name="User navigates to Tips and Guides, searches for a locality, and views results" classname="MagicBricks Buy Module Testing" time="16.768">
+        <error>io.cucumber.junit.UndefinedStepException: The step 'the user clicks on the "Tips and Guides" section' and 3 other step(s) are undefined.
+You can implement these steps using the snippet(s) below:
+
+@When("the user clicks on the {string} section")
+public void the_user_clicks_on_the_section(String string) {
+    // Write code here that turns the phrase above into concrete actions
+    throw new io.cucumber.java.PendingException();
+}
+@When("the user enters city from the sheet {int} and the row {int} into the search bar")
+public void the_user_enters_city_from_the_sheet_and_the_row_into_the_search_bar(Integer int1, Integer int2) {
+    // Write code here that turns the phrase above into concrete actions
+    throw new io.cucumber.java.PendingException();
+}
+@When("the user clicks on the {string} button")
+public void the_user_clicks_on_the_button(String string) {
+    // Write code here that turns the phrase above into concrete actions
+    throw new io.cucumber.java.PendingException();
+}
+@Then("the user should be redirected to the locality results page")
+public void the_user_should_be_redirected_to_the_locality_results_page() {
+    // Write code here that turns the phrase above into concrete actions
+    throw new io.cucumber.java.PendingException();
+}
+&#13;
+&#13;
+</error>
+      </testcase>
+    </testsuite>
+  </testsuite>
+</testrun>
