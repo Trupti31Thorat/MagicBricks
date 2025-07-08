@@ -1,99 +1,233 @@
 package com.pages;
 
+import java.awt.Robot;
+import java.awt.event.KeyEvent;
+import java.time.Duration;
+import java.util.List;
 import java.util.Set;
-
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.Keys;
-import org.openqa.selenium.StaleElementReferenceException;
+import org.openqa.selenium.TimeoutException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.Select;
+import org.openqa.selenium.support.ui.WebDriverWait;
+import com.parameters.ConfigReader;
 
-//
-//    public void selectCity(String cityName) {
-//        //handleInitialPopups();
-//        String cityXpath = String.format(
-//            "//a[text()='Pune']",
-//            cityName);
-//
-//        
-//        WebElement cityElement = wait.until(
-//            ExpectedConditions.elementToBeClickable(By.xpath(cityXpath))
-//        );
-//        
-//        cityElement.click();
-//    }
-//
-//
-//    public void selectBudget(String budget) {
-//        click(budgetSelectTrigger);
-//        WebElement option = wait.until(
-//            ExpectedConditions.elementToBeClickable(
-//                By.xpath(String.format(budgetOptionXpath, budget))
-//            )
-//        );
-//        option.click();
-//        System.out.println("✅ Budget: " + budget);
-//    }
-//
-//    public void clickCheckProject() {
-//        click(checkProjectBtn);
-//    }
-//
-//    public void fillContactForm(String name, String mobile) {
-//        type(nameInput, name);
-//        type(mobileInput, mobile);
-//        click(submitContactFormBtn);
-//    }
-//
-//    public boolean isDesignerMatchingConfirmationDisplayed() {
-//        return isDisplayed(designerMatchingConfirmationMsg);
-//    }
-//}
+
 
 public class HomeInteriorPageFactory extends HomeInteriorBasePage {
 
     public HomeInteriorPageFactory(WebDriver driver) {
+    	
         super(driver);
         PageFactory.initElements(driver, this);
+      
     }
+    
+    public static final String HOME_INTERIOR_URL="url";
+    public void openHomeInteriorsFromConfigUrl() {
+    	String url=ConfigReader.get(HOME_INTERIOR_URL);
+    	driver.get(url);
+    }
+    
+ //-----------------------------------------------------Scenario 1 @HomeInteriors-----------------------------------------------------------------------
+	
+  		@FindBy(xpath = "/html/body/div/div/div[1]/div[1]/div/div[2]/div[1]/a")
+  		WebElement postPropertyBtn;
 
+  		@FindBy(css = "#pp-exit-intent [class*='close'], #pp-exit-intent svg, #pp-exit-intent button")
+  		WebElement popupCloseBtn;
+
+  		@FindBy(xpath = "label[contains(text(),'Owner')]")
+  		WebElement ownerRadioBtn;
+
+  		@FindBy(xpath = "label[contains(text(),'Sell')]")
+  		WebElement sellRadioBtn;
+
+  		@FindBy(xpath = "label[contains(text(),'WhatsApp Number')]") // Corrected from previous label reference
+  		WebElement contactNumberInput;
+
+  		public void clickPostProperty() {
+  			  try {
+  			        wait.until(ExpectedConditions.elementToBeClickable(postPropertyBtn)).click();
+  			        System.out.println(" Clicked on Post Property using WebDriver.");
+  			    } catch (Exception e) {
+  			        System.out.println(" Normal click failed, trying JavaScript click: " + e.getMessage());
+  			        ((JavascriptExecutor) driver).executeScript("arguments[0].click();", postPropertyBtn);
+  			    }
+  			}
+
+
+
+
+  		public void closePopupIfPresent() {
+  			driver.get("https://post.magicbricks.com/?_gl=1*67ehie*_gcl_au*MTgwMzg2OTQ1LjE3NTE4NzQ0NDI.*_ga*MTg4NjQwNTc4NS4xNzUxODc0NDQy*_ga_Y3D9LD1B01*czE3NTE4NzQ0NDIkbzEkZzEkdDE3NTE4NzQ0NDkkajUzJGwwJGgw");
+  			try {
+  		        System.out.println(" Waiting for popup to appear...");
+  		        
+  		        WebDriverWait longWait = new WebDriverWait(driver, Duration.ofSeconds(15));
+  		        longWait.until(ExpectedConditions.visibilityOf(popupCloseBtn));
+
+  		        // Scroll and click using JS to avoid overlap or invisibility
+  		        ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", popupCloseBtn);
+  		        ((JavascriptExecutor) driver).executeScript("arguments[0].click();", popupCloseBtn);
+
+  		        System.out.println(" Popup closed.");
+  		    } catch (TimeoutException e) {
+  		        System.out.println(" Popup did not appear within wait time.");
+  		    } catch (Exception e) {
+  		        System.out.println(" Failed to close popup: " + e.getMessage());
+  		    }
+  		}
+  		
+
+  		public void switchToFormIframe() {
+  		    try {
+  		        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+  		        wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt(0));
+  		        System.out.println(" Switched to iframe containing the form.");
+  		    } catch (Exception e) {
+  		        System.out.println(" Could not switch to iframe: " + e.getMessage());
+  		    }
+  		}
+
+  
+  			@FindBy(css = "label[for='Owner'], label[for='Sell']")  // Adjust selector as needed
+  			List<WebElement> radioOptions;
+
+  		// Move this outside of any other method
+  			public void selectRadioByLabel(String labelText) {
+  			    for (WebElement option : radioOptions) {
+  			        if (option.getText().trim().equalsIgnoreCase(labelText)) {
+  			            try {
+  			                Thread.sleep(1000); // Pause for 1 second before clicking
+  			            } catch (InterruptedException e) {
+  			                e.printStackTrace();
+  			            }
+  			            option.click();
+  			            System.out.println("Selected radio option " + labelText);
+  			            return;
+  			        }
+  			    }
+  			    System.out.println("Radio option not found: " + labelText);
+  			}
+
+
+  		     
+  		public void enterContactNumber(String number) {
+  		                if (number == null || number.trim().isEmpty()) {
+  		                    System.out.println(" Contact number is null or empty! Please check test data.");
+  		                    return;
+  		                }
+  		                try {
+  		                    WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+  		                    wait.until(ExpectedConditions.visibilityOf(contactNumberInput));
+  		                    wait.until(ExpectedConditions.elementToBeClickable(contactNumberInput));
+  		                    ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", contactNumberInput);
+  		                    contactNumberInput.clear();
+  		                    contactNumberInput.sendKeys(number);
+  		                    System.out.println(" Mobile number entered: " + number);
+  		                } catch (Exception e) {
+  		                    System.out.println(" Failed to enter mobile number: " + e.getMessage());
+  		                }
+  		            }
+
+  		            public void clickStartNow() {
+  		            	
+  		            		try {
+  		            			Robot robot=new Robot();
+  		            			robot.delay(1000);
+  		            			
+  		            			for(int i=0;i<8;i++) {
+  		            			robot.keyPress(KeyEvent.VK_TAB);
+  		            			Thread.sleep(1000);
+  		            			robot.keyRelease(KeyEvent.VK_TAB);
+  		            			robot.delay(500);
+  		            			Thread.sleep(1000);
+  		            			
+  		            			}
+  		            			robot.keyPress(KeyEvent.VK_ENTER);
+  		            			robot.keyRelease(KeyEvent.VK_ENTER);
+  		            			System.out.println("Sent message using tab and enter");
+  		            			                   
+  		                } catch (Exception e) {
+  		                    System.out.println(" Failed to click Start Now: " + e.getMessage());
+  		                }
+  		            }
+    
+ //-----------------------------------------------------------------Scenario -2 @EngineeredWoods-----------------------------------------------
+  
+  	 @FindBy(xpath = "//div[contains(text(), 'Your Home Interiors Price Guide')]")
+     WebElement priceGuideSection;
+      
+      @FindBy(xpath = "//*[@id=\"root\"]/div[2]/div[4]/div/div/div[2]/div/div[3]/a[8]/div[2]")
+      WebElement engineeredWoodsLink;
+     
+      public void scrollToPriceGuideSection() throws InterruptedException {
+      	Thread.sleep(1000);
+          ((org.openqa.selenium.JavascriptExecutor) driver)
+              .executeScript("arguments[0].scrollIntoView(true);", priceGuideSection);
+      }
+
+      // Clicks on the "Engineered Woods" link
+      public void clickEngineeredWoods() throws InterruptedException {
+          engineeredWoodsLink.click();
+      }
+      
+      public boolean isEngineeredWoodsPageOpen() {
+          // Option 1: Verify using part of the URL
+          String currentUrl = driver.getCurrentUrl();
+          return currentUrl.contains("engineered-woods");
+
+         
+      }
+
+//----------------------------------------------------------Scenario 3 @Estimation & 4 @NegativeTest ---------------------------------------------------------------//
     // Home Interiors menu and link
     @FindBy(linkText = "Home Interiors")
     public WebElement homeInteriorsMenu;
 
     @FindBy(xpath = "//a[contains(text(),'Home Interior Design Services')]")
     private WebElement designServicesLink;
+    
+    @FindBy(xpath = "//*[@id=\"root\"]/div[2]/div[4]/div/div/div[1]/div/a[2]/span")
+    private WebElement kitchenWardrobeEstimator;
 
-    // Budget dropdown trigger
-    @FindBy(xpath = "//div[contains(@class,'form-input-box') and contains(.,'Select Budget')]")
-    private WebElement budgetSelectTrigger;
+    @FindBy(xpath = "//label[contains(.,'L - shape')]") WebElement kitchenLayout;
+    @FindBy(xpath = "//label[contains(.,'Big')]") WebElement kitchenSize;
 
-    // Buttons and inputs
-    @FindBy(xpath = "//button[contains(text(),'Check Project')]")
-    private WebElement checkProjectBtn;
+    @FindBy(xpath = "//button[.='+']") WebElement plusBtn;
+    @FindBy(xpath = "//label[contains(.,'Medium')]") WebElement wardrobeSize;
+    
+    @FindBy(id = "user-name")
+	WebElement nameInput;
 
-    @FindBy(id = "name")
-    private WebElement nameInput;
+	@FindBy(id ="phone")
+	WebElement mobileInput;
 
-    @FindBy(id = "mobile")
-    private WebElement mobileInput;
+	@FindBy(id = "email")
+	WebElement emailInput;
 
-    @FindBy(css = "button#submitBtn, button[type='submit']")
-    private WebElement submitContactFormBtn;
+	@FindBy(xpath = "//button[contains(text(),'Get Free Estimate')]")
+	WebElement getFreeEstimateBtn;
 
-    @FindBy(xpath = "//div[contains(text(),'designer matching confirmation') or contains(text(),'Your request has been sent')]")
-    private WebElement designerMatchingConfirmationMsg;
+    
+    @FindBy(xpath = "//button[contains(text(),'Next')]")
+    public WebElement nextButton;
 
-    // Dynamic-option XPaths
-    private final String cityOptionXpath = "//li[contains(@class,'mb-list__item')][normalize-space()='%1$s'] | //a[normalize-space()='%1$s'] | //span[normalize-space()='%1$s']";
-   
-    private final String budgetOptionXpath = "//*[contains(@class,'dropdown') or contains(@class,'option') or contains(@class,'list')]//*[normalize-space(text())='%1$s']";
+    @FindBy(xpath = "//*[@id=\"kwpeScroll\"]/div[2]/div[1]/div[3]/div[2]/div[2]/div/div")
+    WebElement mobileErrorMsg;
 
+    public String getMobileErrorText() {
+        return mobileErrorMsg.getText().trim();
+    }
+
+    @FindBy(xpath = "//button[contains(text(),'Get Free Estimate')]") WebElement getEstimateBtn;
 
     // --- Actions ---
 
@@ -121,96 +255,124 @@ public class HomeInteriorPageFactory extends HomeInteriorBasePage {
      */
     public void waitForPopupsToSettle() {
         try {
-            Thread.sleep(2000); // Wait for 2 seconds
-            System.out.println(" Waited for popups to settle.");
-        } catch (InterruptedException e) {
-            System.out.println(" Interrupted while waiting: " + e.getMessage());
+            System.out.println(" Waiting for city popup to appear...");
+
+            // Wait for up to 10 seconds for the close button to appear in DOM
+            WebDriverWait popupWait = new WebDriverWait(driver, Duration.ofSeconds(10));
+            WebElement closeBtn = popupWait.until(ExpectedConditions.presenceOfElementLocated(
+                By.cssSelector("div.city-popup__close")
+            ));
+
+            // Optional: wait until it's visible
+            wait.until(ExpectedConditions.visibilityOf(closeBtn));
+
+            // Click via JS since it's a pseudo-element
+            ((JavascriptExecutor) driver).executeScript("arguments[0].click();", closeBtn);
+            System.out.println(" City popup closed using JavaScript.");
+
+        } catch (TimeoutException e) {
+            System.out.println(" City popup did not appear within timeout. Proceeding.");
+        } catch (Exception e) {
+            System.out.println(" Failed to close city popup: " + e.getMessage());
         }
     }
+    public void clickKitchenWardrobeEstimator() {
+        JavascriptExecutor js = (JavascriptExecutor) driver;
 
-    public void selectCity(String cityName) {
-        try {
-            String cityLocator = String.format(cityOptionXpath, cityName);
-            WebElement cityElement = wait.until(
-                ExpectedConditions.elementToBeClickable(By.xpath(cityLocator))
-            );
-            cityElement.click();
-            System.out.println(" City selected directly: " + cityName);
-        } catch (Exception e) {
-            System.out.println(" Failed to select city: " + cityName + ". Error: " + e.getMessage());
+        // Scroll down multiple times
+        for (int i = 0; i < 5; i++) {
+            js.executeScript("window.scrollBy(0, 300);");
+            try {
+                Thread.sleep(500);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+            
         }
+
+        // Try clicking
+        wait.until(ExpectedConditions.elementToBeClickable(kitchenWardrobeEstimator));
+        kitchenWardrobeEstimator.click();
     }
     
 
-//    public void clickBudget(String budget) {
-//        try {
-//            // Scroll to the dropdown trigger
-//            ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", budgetSelectTrigger);
-//
-//            // Use Actions to move and click the dropdown
-//            Actions actions = new Actions(driver);
-//            actions.moveToElement(budgetSelectTrigger).click().perform();
-//            System.out.println("✅ Clicked budget dropdown using Actions.");
-//
-//            // Wait for dropdown options to be visible
-//            String budgetLocator = String.format(budgetOptionXpath, budget);
-//            WebElement option = wait.until(ExpectedConditions.elementToBeClickable(By.xpath(budgetLocator)));
-//
-//            // Scroll to and click the option
-//            ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", option);
-//            actions.moveToElement(option).click().perform();
-//            System.out.println("✅ Budget selected: " + budget);
-//        } catch (Exception e) {
-//            System.out.println("❌ Failed to select budget: " + budget + ". Error: " + e.getMessage());
-//        }
-//    }
-
-    public void selectBudget(String budget) {
-        try {
-            // Define the dropdown trigger using the provided XPath
-            WebElement budgetSelectTrigger = driver.findElement(By.xpath("//*[@id='intsrpPages']/div[1]/div[1]/div/div/div[1]"));
-
-            // Click the dropdown trigger
-            new Actions(driver).moveToElement(budgetSelectTrigger).click().perform();
-            System.out.println("✅ Opened budget dropdown.");
-
-            // Define the XPath for the dropdown option
-            By optionLocator = By.xpath("//*[contains(@class,'dropdown') or contains(@class,'option') or contains(@class,'list')]//*[normalize-space(text())='" + budget + "']");
-
-            // Wait for the option to be clickable and click it
-            WebElement option = wait.until(ExpectedConditions.elementToBeClickable(optionLocator));
-            new Actions(driver).moveToElement(option).click().perform();
-            System.out.println("✅ Selected budget: " + budget);
-
-        } catch (Exception e) {
-            System.out.println("❌ Failed to select budget '" + budget + "'. Error: " + e.getMessage());
-        }
+	public void selectKitchen(String layout, String size) {
+        click(kitchenLayout);
+        click(kitchenSize);
+        click(nextButton);
     }
+	public void selectWardrobe(int count, String size) {
+	    //  Wait until overlay disappears
+	    try {
+	        WebDriverWait waitForOverlay = new WebDriverWait(driver, Duration.ofSeconds(10));
+	        waitForOverlay.until(ExpectedConditions.invisibilityOfElementLocated(By.className("mb-cal-prog_wrapper")));
+	        System.out.println(" Overlay disappeared. Proceeding with wardrobe clicks.");
+	    } catch (Exception e) {
+	        System.out.println("Overlay may not have disappeared, but proceeding anyway.");
+	    }
+
+	    // Click plus button
+	    for (int i = 0; i < count; i++) {
+	        click(plusBtn);  // This uses the custom click method with wait
+	    }
+
+	    click(wardrobeSize);
+	    click(nextButton);
+	}
+	
+
+	public void fillContactDetails(String name, String mobile, String email) {
+	    type(nameInput, name);
+	    type(mobileInput, mobile);
+	    type(emailInput, email);
+	    click(getFreeEstimateBtn);
+	}
+	
+//-------------------------------------------------------Scenario 6 @Language---------------------------------------------------------//
 
 
+	    @FindBy(xpath="//*[@id=\"root\"]/div[2]/div[4]/div/div/div[2]/div/div[2]/a") // Replace with actual locator
+	    WebElement viewAllButton;
 
-    public void clickCheckProject() {
-        try {
-            ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", checkProjectBtn);
-            wait.until(ExpectedConditions.elementToBeClickable(checkProjectBtn)).click();
-            System.out.println(" Clicked 'Check Project' button.");
-        } catch (Exception e) {
-            System.out.println(" Failed to click 'Check Project'. Error: " + e.getMessage());
-        }
-    }
+	    @FindBy(xpath="/html/body/header/div/div[6]/div/div[1]/span[2]") // Replace with actual locator
+	    WebElement languageDropdown;
 
-    public void fillContactForm(String name, String mobile) {
-        type(nameInput, name);
-        type(mobileInput, mobile);
-        click(submitContactFormBtn);
-    }
+	    @FindBy(xpath = "/html/body/header/div/div[6]/div/div[1]/span[2]") // Replace with actual language option
+	    WebElement hindiOption;
 
-    public boolean isDesignerMatchingConfirmationDisplayed() {
-        return isDisplayed(designerMatchingConfirmationMsg);
-    }
+	    public void clickViewAll() {
+	        try {
+	            ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", viewAllButton);
+	            Thread.sleep(1000); // Optional: wait for scroll animation
+	            ((JavascriptExecutor) driver).executeScript("arguments[0].click();", viewAllButton);
+	            System.out.println("Clicked View All using JavaScript.");
+	        } catch (Exception e) {
+	            System.out.println("Failed to click View All: " + e.getMessage());
+	        }
+	    }
+
+
+	    public void openLanguageDropdown() {
+	        ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", languageDropdown);
+	        ((JavascriptExecutor) driver).executeScript("arguments[0].click();", languageDropdown);
+	    }
+
+
+	    public void selectLanguage(String language) {
+	        try {
+	            WebElement languageOption = driver.findElement(By.xpath("//a[text()='" + language + "']"));
+	            languageOption.click();
+	            System.out.println("Selected language: " + language);
+	        } catch (Exception e) {
+	            System.out.println("Failed to select language: " + language + " - " + e.getMessage());
+	        }
+	    }
+
+	}
 
 	
 
-}
 
+		        
+		
 

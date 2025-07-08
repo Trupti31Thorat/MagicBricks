@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="Cucumber" time="19.071" tests="1" skipped="0" failures="0" errors="0" timestamp="2025-07-08T08:54:15.443969100Z">
+<testcase classname="Home Interiors Functionality" name="Scroll and open Engineered Woods guide" time="18.829">
+<system-out><![CDATA[
+Given user is on MagicBricks homepage.......................................passed
+When user navigates to Home Interiors and hovers on Home Interior Design Services page.passed
+And user clicks on Home Interior Design Services............................passed
+When user scrolls down to "Your Home Interiors Price Guide" section.........passed
+And user clicks on "Engineered Woods".......................................passed
+Then Engineered Woods page should open......................................passed
+]]></system-out>
+</testcase>
+</testsuite>

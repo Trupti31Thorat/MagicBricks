@@ -1,0 +1,10 @@
+
+@HomeInteriors @Estimation
+Scenario: Submit interior estimator without personal details using Excel                 [90m# src/test/resource/features/HomeInterior.feature:28[0m
+  [32mGiven [0m[32muser is on MagicBricks homepage[0m                                                  [90m# com.stepdefinitions.HomeInteriorSteps.on_homepage()[0m
+  [32mWhen [0m[32muser navigates to Home Interiors and hovers on Home Interior Design Services page[0m [90m# com.stepdefinitions.HomeInteriorSteps.hover_home_interiors()[0m
+  [32mAnd [0m[32muser clicks on Home Interior Design Services[0m                                       [90m# com.stepdefinitions.HomeInteriorSteps.click_design_services()[0m
+  [32mAnd [0m[32muser scrolls down and clicks on the Kitchen & Wardrobe calculate section[0m           [90m# com.stepdefinitions.HomeInteriorSteps.click_estimator_section()[0m
+  [32mAnd [0m[32muser fills full estimator form from Excel row [0m[32m[1m1[0m                                    [90m# com.stepdefinitions.HomeInteriorSteps.fill_full_form_excel(int)[0m
+  [32mAnd [0m[32muser fills contact details from Excel row [0m[32m[1m1[0m                                        [90m# com.stepdefinitions.HomeInteriorSteps.fill_contact_details_from_excel(int)[0m
+  [32mThen [0m[32muser should see the estimated quote[0m                                               [90m# com.stepdefinitions.HomeInteriorSteps.verify_quote()[0m
