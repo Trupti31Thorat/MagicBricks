@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="Cucumber" time="24.405" tests="1" skipped="0" failures="0" errors="0" timestamp="2025-07-08T10:49:37.578801600Z">
+<testcase classname="Magic Bricks Home Loans Functionality" name="Verify selection of SBI Home Loan with data from Excel" time="24.176">
+<system-out><![CDATA[
+Given the user is on the Magic Bricks homepage..............................passed
+When the user clicks on the "SBI Home Loans" link in the Home Loans Menu bar.passed
+And the user fills the SBI Home Loan form with data from Excel..............passed
+Then the user should be redirected to the Mobile Number Verification page...passed
+]]></system-out>
+</testcase>
+</testsuite>

@@ -1,0 +1,58 @@
+package com.stepdefination;
+
+import org.openqa.selenium.WebDriver;
+
+import com.pages.HomeLoansPageFactory;
+import com.setup.BaseSteps;
+import org.testng.Assert;
+import io.cucumber.java.en.Given;
+import io.cucumber.java.en.Then;
+import io.cucumber.java.en.When;
+
+public class MagicBricksHomeLoans {
+	WebDriver driver;
+	HomeLoansPageFactory homeLoansPage;
+
+	@Given("user is on Magic Bricks homepage")
+	public void user_is_on_magic_bricks_homepage() {
+		driver = BaseSteps.getDriver();
+		driver.get(BaseSteps.getBaseUrl());
+		homeLoansPage = new HomeLoansPageFactory(driver);
+	}
+
+	@When("the user clicks on the {string} link in the navigation bar")
+	public void the_user_clicks_on_the_link_in_the_navigation_bar(String string) {
+		
+		homeLoansPage.clickHomeLoansbtn();   
+	}
+
+	@Then("the user should be redirected to the Home Loans page")
+	public void the_user_should_be_redirected_to_the_home_loans_page() {
+		// Assert.assertTrue(driver.getTitle().contains("Home Loans"));
+}
+	
+	@When("the user fills the loan form with {string} amount")
+	public void the_user_fills_the_loan_form_with_amount(String string) {
+	    homeLoansPage.enterLoanAmount(amount);
+	}
+
+	@When("the user enters mobile number {string}")
+	public void the_user_enters_mobile_number(String string) {
+	   homeLoansPage.enterMobileNumber(mobile);
+	}
+
+	@When("the user selects {string} for property finalized")
+	public void the_user_selects_for_property_finalized(String string) {
+	   homeLoansPage.selectPropertyFinalized(option);
+	}
+
+	@When("the user clicks on the Check Eligibility button")
+	public void the_user_clicks_on_the_check_eligibility_button() {
+	   homeLoansPage.clickCheckEligibility();
+	}
+
+	@Then("the eligibility form should be submitted successfully")
+	public void the_eligibility_form_should_be_submitted_successfully() {
+	    System.out.println("Eligibility form Submitted successfully");
+	}
+}

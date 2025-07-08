@@ -1,0 +1,29 @@
+Feature: create account functionality for RedBus application
+
+Scenario: validate create account functionality with data
+Given user is on Rediff Homepage
+When user clicks on "Create Account"
+Then should navigate to the create account page
+
+
+Scenario: Validate registration with valid data
+Given the user is on the Rediffmail registration page
+When the user enters their full name
+And chooses a Rediffmail ID
+And enters a password
+And retypes the password
+And selects their date of birth
+And selects their gender
+And selects their city
+And enters their recovery email ID
+And enters their mobile number
+And enters the captcha text
+And clicks on "Create my account"
+Then the account should be successfully created
+
+
+Scenario: Validate registration with missing mandatory fields
+Given the user is on the Rediffmail registration page
+When the user leaves the full name field empty
+And tries to proceed with the registration
+Then an error message should be displayed indicating that the full name is required

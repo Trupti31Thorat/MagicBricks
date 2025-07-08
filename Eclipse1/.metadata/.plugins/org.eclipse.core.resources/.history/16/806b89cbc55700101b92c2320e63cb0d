@@ -1,0 +1,47 @@
+package com.stepdefination;
+
+package com.pages;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
+
+/**
+ * Page Object for Magic Bricks Home Loans navigation.
+ */
+public class HomeLoansPageFactory {
+
+    WebDriver driver;
+
+    // =============== LOCATORS ===============
+
+    // This assumes the "Home Loans" link is visible in the main nav bar.
+    // Adjust the locator to match actual HTML if needed.
+    @FindBy(linkText = "Home Loans")
+    WebElement homeLoansNavLink;
+
+    // Optional: If you want to verify a page heading or banner,
+    // add more elements here. Example:
+    @FindBy(xpath = "//h1[contains(text(),'Home Loans')]")
+    WebElement homeLoansHeading;
+
+    // =============== CONSTRUCTOR ===============
+
+    public HomeLoansPage(WebDriver driver) {
+        this.driver = driver;
+        PageFactory.initElements(driver, this);
+    }
+
+    // =============== ACTIONS ===============
+
+    public void clickHomeLoansLink() {
+        homeLoansNavLink.click();
+    }
+
+    // Optional: If you want to verify page content
+    public boolean isHomeLoansHeadingDisplayed() {
+        return homeLoansHeading.isDisplayed();
+    }
+
+}

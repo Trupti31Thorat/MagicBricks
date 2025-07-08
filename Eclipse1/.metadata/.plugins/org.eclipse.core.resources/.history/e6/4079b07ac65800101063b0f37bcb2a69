@@ -1,0 +1,8 @@
+Feature: MagicBricks Rent Section Functionalities
+ 
+  @ownerPhoto
+  Scenario: Open Rent Owner Properties Click Photo and Scroll
+    Given user launches the MagicBricks website
+    When user hovers on Rent and clicks on Owner Properties under Popular Choices
+    And user clicks on first property photo
+    Then user scrolls down the photo view page

@@ -1,0 +1,133 @@
+package com.pages;
+
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.FindBy;
+
+public class CityPageFactory extends BasePage {
+	 JavascriptExecutor js = (JavascriptExecutor) driver;
+	  // Constructor
+    public CityPageFactory(WebDriver driver) {
+       // this.driver = driver;
+       // PageFactory.initElements(driver, this);
+    	super(driver);
+    }
+    
+    // WebElements
+    @FindBy(xpath = "(//a[text()=\"Home Loans\"])[1]")
+    public WebElement homeLoansMenu;
+    
+    @FindBy(xpath = "(//a[text()=\"Home Loans\"])[2]")
+   // @FindBy(css = "a[href*='https://www.magicbricks.com/homeloan/home?inc=desktop_homeloan_menu_linkage']")
+    public WebElement homeLoansbtn;
+
+    @FindBy(xpath = "//*[@id=\"compare-offer-widget-bank-list\"]/div[1]/div[4]/div[2]/a")
+    public WebElement checkOfferButton;
+    
+    @FindBy(xpath = "/html/body/div[1]/div/div[2]/div/div[4]")
+    public WebElement getStartedButton;
+    
+    @FindBy(xpath = "//*[@id=\"4378\"]/div[1]/img")
+    public WebElement cityClickBtn;
+    
+    public void clickHomeLoansbtn() {
+//      if (homeLoansbtn != null) {
+//             homeLoansbtn.click();
+//    } else {
+//    	
+//      throw new RuntimeException("Home Loans link is not initialized.");
+
+waitUntilWebElementIsVisible(homeLoansMenu);
+
+Actions actions = new Actions(driver);
+actions.moveToElement(homeLoansMenu).perform();
+waitUntilWebElementIsVisible(homeLoansbtn);
+
+homeLoansbtn.click();
+}
+
+
+
+public String getPageTitle() {
+    return driver.getTitle();
+}
+
+/* public void switchToLatestWindow()
+{
+	String currentWindow = driver.getWindowHandle();
+	for(String windowHandle: driver.getWindowHandles())
+
+{
+		if(!windowHandle.equals(currentWindow))
+		{
+			driver.switchTo().window(windowHandle);
+				break;
+		}
+}	
+
+*/
+
+public void switchToNewestWindow()
+{
+	for(String handle:
+		driver.getWindowHandles())
+	{
+		driver.switchTo().window(handle);
+	}
+}
+
+public void scrollDown() throws InterruptedException {
+	Thread.sleep(2000);
+      // JavascriptExecutor js = (JavascriptExecutor) driver;
+      js.executeScript("window.scrollBy(0,500)"); // Adjust the scroll value as needed
+}
+
+public void clickCheckOffer() {
+	
+    waitUntilWebElementIsVisible(checkOfferButton);
+    waitUntilElementIsClickable(checkOfferButton);
+   checkOfferButton.click();
+}
+
+  /*public void switchToLatestWindowII()
+{
+	String currentWindow = driver.getWindowHandle();
+	for(String windowHandle: driver.getWindowHandles())
+
+{
+		if(!windowHandle.equals(currentWindow))
+		{
+			driver.switchTo().window(windowHandle);
+				break;
+		}
+}	
+}
+
+
+*/
+    
+public void scrollDownII() {
+  //  JavascriptExecutor jsII = (JavascriptExecutor) driver;
+   js.executeScript("window.scrollBy(0,1500)"); // Adjust the scroll value as needed
+}
+    
+
+public void clickGetStarted() {
+	
+    waitUntilWebElementIsVisible(getStartedButton);
+    waitUntilElementIsClickable(getStartedButton);
+    getStartedButton.click();
+
+}
+
+public void clickCity() {
+	
+    waitUntilWebElementIsVisible(cityClickBtn);
+    waitUntilElementIsClickable(cityClickBtn);
+    cityClickBtn.click();
+
+}
+
+}

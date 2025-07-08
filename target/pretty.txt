@@ -1,0 +1,7 @@
+
+@SBIforminput2
+Scenario: Verify selection of SBI Home Loan with data from Excel               [90m# src/test/resource/Features/HomeLoans.feature:43[0m
+  [32mGiven [0m[32mthe user is on the Magic Bricks homepage[0m                               [90m# com.stepdefination.MagicBricksHomeLoans.the_user_is_on_the_magic_bricks_homepage()[0m
+  [32mWhen [0m[32mthe user clicks on the [0m[32m[1m"SBI Home Loans"[0m[32m link in the Home Loans Menu bar[0m [90m# com.stepdefination.MagicBricksHomeLoans.the_user_clicks_on_the_link_in_the_home_loans_menu_bar(java.lang.String)[0m
+  [32mAnd [0m[32mthe user fills the SBI Home Loan form with data from Excel[0m               [90m# com.stepdefination.MagicBricksHomeLoans.the_user_fills_the_SBI_Home_Loan_form_with_data_from_Excel()[0m
+  [32mThen [0m[32mthe user should be redirected to the Mobile Number Verification page[0m    [90m# com.stepdefination.MagicBricksHomeLoans.the_user_should_be_redirected_to_the_mobile_number_verification_page()[0m

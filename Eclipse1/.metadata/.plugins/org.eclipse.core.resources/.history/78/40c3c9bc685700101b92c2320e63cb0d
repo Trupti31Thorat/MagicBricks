@@ -1,0 +1,15 @@
+Feature: Validate Hone Page Arrivals
+
+Background:
+Given user launches the prowser and navigates to "https://practice.automationtesting.in/ "
+
+Scenario:Validate Home Page has only three Arrivals
+    When the user clicks on the "Shop" menu
+    And the user clicks on the "Home" menu
+    Then the Home page should display exactly three Arrivals
+ 
+Scenario: Validate navigation from Arrival image to product detail page
+    Given the Home page displays three Arrivals
+    When the user clicks on any Arrival image
+    Then the user should be navigated to the product detail page
+    And the user should be able to add the book to the basket

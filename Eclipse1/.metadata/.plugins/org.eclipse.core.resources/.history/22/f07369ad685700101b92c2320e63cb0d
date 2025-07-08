@@ -1,0 +1,17 @@
+Feature: LoginFunctionality
+
+Scenario Outline: validate login with different sets of data
+Given User is on Login Page
+When User enters username and password from <sheetNo> and <rowNo>
+And click on Login
+Then It should navigate to HomePage
+
+#Examples:
+#|sheetno		 |row no|
+#|error_user  |secret_sauce|
+#|problem_user|secret_sauce|
+
+Examples:
+|sheetNo |rowNo|
+|0       |1  |
+|0       |2  |

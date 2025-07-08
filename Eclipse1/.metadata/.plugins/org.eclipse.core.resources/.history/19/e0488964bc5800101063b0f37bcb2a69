@@ -1,0 +1,194 @@
+package com.stepdefination;
+
+import org.openqa.selenium.WebDriver;
+
+import com.pages.CityPageFactory;
+import com.pages.HomeLoansPageFactory;
+import com.pages.SBIPageFactory;
+import com.setup.BaseSteps;
+import org.testng.Assert;
+import io.cucumber.java.en.Given;
+import io.cucumber.java.en.Then;
+import io.cucumber.java.en.When;
+
+public class MagicBricksHomeLoans {
+	WebDriver driver;
+/*	HomeLoansPageFactory homeLoansPage;
+
+	@Given("user is on Magic Bricks homepage")
+	public void user_is_on_magic_bricks_homepage() {
+		driver = BaseSteps.getDriver();
+		driver.get(BaseSteps.getBaseUrl());
+		homeLoansPage = new HomeLoansPageFactory(driver);
+	}
+
+	@When("the user clicks on the {string} link in the navigation bar")
+	public void the_user_clicks_on_the_link_in_the_navigation_bar(String string) {
+		
+		homeLoansPage.clickHomeLoansbtn();   
+		homeLoansPage.switchToLatestWindow();
+	}
+
+	@Then("the user should be redirected to the Home Loans page")
+	public void the_user_should_be_redirected_to_the_home_loans_page() {
+		// Assert.assertTrue(driver.getTitle().contains("Home Loans"));
+}
+	
+	@When("the user fills the loan form with {string} amount")
+	public void the_user_fills_the_loan_form_with_amount(String amount){
+	    homeLoansPage.enterLoanAmount(amount);
+	}
+
+	@When("the user enters mobile number {string}")
+	public void the_user_enters_mobile_number(String mobile) {
+	   homeLoansPage.enterMobileNumber(mobile);
+	}
+	
+	@When("the user enters property city {string}")
+	public void the_user_enters_property_city(String property) {
+		homeLoansPage.enterPropertyCity(property);
+	}
+	
+	@When("the user selects {string} for property city")
+	public void the_user_selects_for_property_city(String city) {
+	    homeLoansPage.selectPropertyCity(city);
+	}
+
+	@When("the user selects {string} for property finalized")
+	public void the_user_selects_for_property_finalized(String option) {
+	   homeLoansPage.selectPropertyFinalized(option);
+	}
+	
+	@When("the user selects {string} for is token amount paid")
+	public void the_user_selects_for_is_token_amount_paid(String token) {
+	    homeLoansPage.selectTokenAmount(token);
+	}
+
+	@When("the user clicks on the Check Eligibility button")
+	public void the_user_clicks_on_the_check_eligibility_button() {
+	   homeLoansPage.clickCheckEligibility();
+	}
+
+	@Then("the eligibility form should be submitted successfully")
+	public void the_eligibility_form_should_be_submitted_successfully() {
+	    System.out.println("Eligibility form Submitted successfully");
+	}
+}
+
+
+
+*/
+
+//------------------------------------------------------------------------------------------------------------
+
+/*	
+	
+	
+SBIPageFactory SBIpage;
+
+@Given("the user is on the Magic Bricks homepage")
+public void the_user_is_on_the_magic_bricks_homepage() {
+   driver = BaseSteps.getDriver();
+		driver.get(BaseSteps.getBaseUrl());
+		SBIpage = new SBIPageFactory(driver);
+}
+
+@When("the user clicks on the {string} link in the Home Loans Menu bar")
+public void the_user_clicks_on_the_link_in_the_home_loans_menu_bar(String string) {
+   SBIpage.clickSBILoansbtn();   
+		SBIpage.switchToLatestWindow();
+}
+
+@When("the user enters the loan amount in the {string} field")
+public void the_user_enters_the_loan_amount_in_the_field(String amount) {
+   SBIpage.enterLoanAmount(amount);
+}
+
+@Then("the user enters a valid mobile number in the {string} field")
+public void the_user_enters_a_valid_mobile_number_in_the_field(String mobile) {
+	SBIpage.enterMobileNumber(mobile);
+}
+
+@Then("the user enters a valid value in {string} field")
+public void the_user_enters_a_valid_value_in_field(String property) {
+   SBIpage.enterPropertyCity(property);
+}
+
+@Then("the user selects the city where the property is located from the {string} dropdown")
+public void the_user_selects_the_city_where_the_property_is_located_from_the_dropdown(String city) {
+   SBIpage.selectPropertyCity(city);
+}
+
+@Then("the user selects the appropriate option for {string}")
+public void the_user_selects_the_appropriate_option_for(String option) {
+    SBIpage.selectPropertyFinalized(option);
+}
+
+@Then("the user clicks on the {string} button")
+public void the_user_clicks_on_the_button(String token) {
+   SBIpage.selectTokenAmount(token);
+}
+
+@Then("the user should be redirected to the Mobile Number Verification page")
+public void the_user_should_be_redirected_to_the_mobile_number_verification_page() {
+   SBIpage.clickCheckEligibility();
+}
+
+
+}
+
+*/
+
+//---------------------------------------Scenario city----------------------------------------------------------
+
+	CityPageFactory cityPage;
+	@Given("user is on Magic Bricks homepage")
+	public void user_is_on_magic_bricks_homepage() {
+		driver = BaseSteps.getDriver();
+		driver.get(BaseSteps.getBaseUrl());
+		cityPage = new CityPageFactory(driver);
+	}
+
+	@When("the user clicks on the {string} link in the navigation bar")
+	public void the_user_clicks_on_the_link_in_the_navigation_bar(String string) {
+		cityPage.clickHomeLoansbtn();   
+		cityPage.switchToLatestWindow();
+	}
+
+	@Then("the user should be redirected to the Home Loans page")
+	public void the_user_should_be_redirected_to_the_home_loans_page() {
+		// Assert.assertTrue(driver.getTitle().contains("Home Loans"));
+	}
+
+	@Then("the user scrolls down on the Home Loans Page")
+	public void the_user_scrolls_down_on_the_home_loans_page() throws InterruptedException {
+	    cityPage.scrollDown();
+	}
+
+	@Then("the user clicks on {string} button on SBI Home Loan Offer")
+	public void the_user_clicks_on_button_on_sbi_home_loan_offer(String string) {
+		cityPage.clickCheckOffer();   
+		cityPage.switchToLatestWindowII();
+	}
+
+	@Then("the user should be redirected to the MagicLoans page")
+	public void the_user_should_be_redirected_to_the_magic_loans_page() {
+	   //Assert.assertTrue(driver.getTitle());
+	}
+
+	@Then("the user scrolls down on the MagicLoans Page")
+	public void the_user_scrolls_down_on_the_magic_loans_page() {
+	  cityPage.scrollDownII();
+	}
+
+	@Then("the user clicks on {string} button")
+	public void the_user_clicks_on_button(String string) {
+		cityPage.clickGetStarted();   
+	}
+
+	@Then("the user clicks on one of the cities")
+	public void the_user_clicks_on_one_of_the_cities() {
+	    cityPage.clickCity();
+	}
+
+}
