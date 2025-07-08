@@ -78,7 +78,11 @@ public void takesScreen() throws IOException
 {
 	TakesScreenshot screen1=(TakesScreenshot)driver;
 	File src1= screen1.getScreenshotAs(OutputType.FILE);
+<<<<<<< HEAD
 	String filename = "Web_Stories"+System.currentTimeMillis()+".png";
+=======
+	String filename = "WebStories"+System.currentTimeMillis()+".png";
+>>>>>>> 6f304837b531716b8c9fa5d00444a260dc41f325
 	String destination ="C:\\Users\\TRTHORAT\\OneDrive - Capgemini\\Desktop\\Sprint\\MagicBricsMbAdviceTesting\\Screenshots\\"
 	+filename;
 	
@@ -88,5 +92,8 @@ public void takesScreen() throws IOException
 
 	
 }
+<<<<<<< HEAD
 
+=======
+>>>>>>> 6f304837b531716b8c9fa5d00444a260dc41f325
 }

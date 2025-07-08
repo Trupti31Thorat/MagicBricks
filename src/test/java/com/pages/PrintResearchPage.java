@@ -20,17 +20,24 @@ import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
+<<<<<<< HEAD
 import com.aventstack.extentreports.gherkin.model.Scenario;
 
 import io.cucumber.java.After;
 
 public class PrintResearchPage extends BasePage {
+=======
+public class PrintResearchPage {
+>>>>>>> 6f304837b531716b8c9fa5d00444a260dc41f325
 
 	
 	WebDriver driver;
 	Properties prop;
 	public PrintResearchPage(WebDriver driver) {
+<<<<<<< HEAD
 		super(driver);
+=======
+>>>>>>> 6f304837b531716b8c9fa5d00444a260dc41f325
 		this.driver = driver;
 		PageFactory.initElements(driver, this);
 
@@ -90,7 +97,11 @@ public void takesScreen() throws IOException
 {
 	TakesScreenshot screen1=(TakesScreenshot)driver;
 	File src1= screen1.getScreenshotAs(OutputType.FILE);
+<<<<<<< HEAD
 	String filename = "Print_Report"+System.currentTimeMillis()+".png";
+=======
+	String filename = "ReaserchInsights"+System.currentTimeMillis()+".png";
+>>>>>>> 6f304837b531716b8c9fa5d00444a260dc41f325
 	String destination ="C:\\Users\\TRTHORAT\\OneDrive - Capgemini\\Desktop\\Sprint\\MagicBricsMbAdviceTesting\\Screenshots\\"
 	+filename;
 	

@@ -1,17 +1,25 @@
 package com.pages;
 
+<<<<<<< HEAD
 import java.io.File;
+=======
+>>>>>>> 6f304837b531716b8c9fa5d00444a260dc41f325
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.time.Duration;
 import java.util.Properties;
 import java.util.Set;
 
+<<<<<<< HEAD
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
+=======
+import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
+>>>>>>> 6f304837b531716b8c9fa5d00444a260dc41f325
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
@@ -20,11 +28,16 @@ import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+<<<<<<< HEAD
 public class ResearchInsightsPage extends BasePage {
+=======
+public class ResearchInsightsPage {
+>>>>>>> 6f304837b531716b8c9fa5d00444a260dc41f325
 	
 	WebDriver driver;
 	Properties prop;
 	public ResearchInsightsPage(WebDriver driver) {
+<<<<<<< HEAD
 		super(driver);
 		this.driver = driver;
 		PageFactory.initElements(driver, this);
@@ -32,6 +45,12 @@ public class ResearchInsightsPage extends BasePage {
 		
 		
 	    prop = new Properties();
+=======
+		this.driver = driver;
+		PageFactory.initElements(driver, this);
+
+		prop = new Properties();
+>>>>>>> 6f304837b531716b8c9fa5d00444a260dc41f325
 		try {
 			FileInputStream fis = new FileInputStream(
 					"C:\\Users\\TRTHORAT\\OneDrive - Capgemini\\Desktop\\Sprint\\MagicBricsMbAdviceTesting\\src\\test\\resource\\PropertyFiles\\config.properties");
@@ -39,7 +58,10 @@ public class ResearchInsightsPage extends BasePage {
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
+<<<<<<< HEAD
 		
+=======
+>>>>>>> 6f304837b531716b8c9fa5d00444a260dc41f325
 	}
 	
 	@FindBy(xpath = "/html/body/header/section[2]/div/ul/li[6]/a")
@@ -129,6 +151,7 @@ public class ResearchInsightsPage extends BasePage {
 	  
 	}
 	
+<<<<<<< HEAD
 	
 	public void takesScreen() throws IOException
 	{
@@ -146,6 +169,8 @@ public class ResearchInsightsPage extends BasePage {
 		
 	}
 	
+=======
+>>>>>>> 6f304837b531716b8c9fa5d00444a260dc41f325
 
 
 }

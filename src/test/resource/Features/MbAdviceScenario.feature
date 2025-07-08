@@ -11,12 +11,21 @@
 #And select city from  dropdown
 #And select quarters  from dropdown
 #Then select year  from dropdown
+<<<<<<< HEAD
 #
 
 
 #-----------------------------------------Latest_Blogs_Screenshot----------------------------------------------
  
 #
+=======
+
+
+
+#-----------------------------------------Latest_Blogs_Screenshot----------------------------------------------
+ #
+
+>>>>>>> 6f304837b531716b8c9fa5d00444a260dc41f325
 #Feature: Taking screenshot of page																															  #Complete
 #
 #@Latest_Blogs_Screenshot
@@ -27,8 +36,13 @@
 
 
 #---------------------------------------------------PrintReport-----------------------------------------------------------
+<<<<<<< HEAD
 
 
+=======
+#
+#
+>>>>>>> 6f304837b531716b8c9fa5d00444a260dc41f325
 #Feature: Using Robot class for Print functionality  																									#Complete
 #
 #@PrintReport
@@ -37,11 +51,19 @@
   #When the user navigates to Price Trends
   #Then press Ctrl+P using Robot class to print
 #
+<<<<<<< HEAD
 #
 #
 
 #---------------------------------------------------Multiple Window handling---------------------------------------
 
+=======
+
+
+
+#---------------------------------------------------Multiple Window handling---------------------------------------
+#
+>>>>>>> 6f304837b531716b8c9fa5d00444a260dc41f325
 #
 #Feature: Multiple Window handling with magicbricks 																									  #Complete
 #
@@ -51,7 +73,11 @@
   #When the user opens multiple links under MB Advice
   #Then switch to each window and print title
   #
+<<<<<<< HEAD
   
+=======
+  #
+>>>>>>> 6f304837b531716b8c9fa5d00444a260dc41f325
 
   #---------------------------------------------------------Robot scroll with key down----------------------------------------TrendSteps
   #Feature: Scroll Trending Web Stories page using Robot																													
@@ -74,6 +100,7 @@
   #Then switch to new window and validate the title
   #
 
+<<<<<<< HEAD
 
  
   #----------------------------------------Excel Data Valid------------------------------
@@ -125,3 +152,37 @@
     
     
     
+=======
+  #----------------------------------------------------------------------------------------------------------
+  #Feature: Search City and Show Trends using Excel data
+#
+#@ExcelData
+  #Scenario Outline: Fetch city from Excel, select via Robot key and show trends
+    #Given user is on Rates and Trends page
+    #When user enters city name from Excel with "<RowIndex>"
+    #And selects suggestion using Robot
+    #And clicks on Show Trends button
+    #Then Trends page for that city should be displayed
+    #Examples:
+    #|RoWIndex|
+    #|1       |
+  #
+  #-----------------------------------------------------------excel new------------
+  #
+  Feature: Contact dealer with Excel																													#Complete
+
+@ContactDealer
+Scenario: Contact dealer with excel By nevigating into Localities
+  Given the user is on the MB Advise page and nevigate Localities page
+  When the user clicks on see all projects
+  And the user click on contact dealer
+  And fill the form with name email and mobileno
+  Then click on continueo
+  
+  
+  #
+  #
+  #
+  #
+  
+>>>>>>> 6f304837b531716b8c9fa5d00444a260dc41f325
