@@ -8,17 +8,15 @@ import io.cucumber.junit.*;
    features = "C:\\Users\\SHANKARE\\eclipse-workspace\\MagicBricksRent\\src\\test\\resource\\Features\\Rent.feature",
    glue = {"com.stepDefination", "com.setup"},
    //tags="@ownerPhoto",
-   //tags="@contactOwnerPositive",
+  // tags="@contactOwnerPositive",
+   tags="@contactOwnerPositiveOutline",
   // tags="@contactOwnerNegative",
 	//tags="@sortHighToLow",
- // tags="@furnishedHomesBHK",
+   // tags="@furnishedHomesBHK",
    //tags="@findAgent",
-   tags="@exploreLocalities",
-   plugin = {"pretty", "html:target/cucumber-html", "json:target/cucumber.json"},
+  // tags="@exploreLocalities",
+   plugin = {"pretty", "html:target/cucumber-html.html"},
    monochrome = true
 )
 public class TestRunnerWithJunit { }
-
-
-
 

@@ -17,6 +17,21 @@ Feature: MagicBricks Rent Section Functionalities
   #And user clicks on Continue button
   #Then contact form should proceed next
   
+  
+  @contactOwnerPositiveOutline
+	Scenario Outline: Contact Owner from Rent using sheet name and row
+  Given user launches the MagicBricks website
+  When user hovers on Rent and clicks on Owner Properties under Popular Choices
+  And user clicks on Contact Owner button
+  And user fills the contact form using sheet "<sheetname>" and row <rowno>
+  And user clicks on Continue button
+  Then contact form should proceed next
+
+	Examples:
+  | sheetname | rowno |
+  | Sheet1    | 1     |
+  
+  
 
  #@contactOwnerNegative
  #Scenario: Contact Owner from Rent in Owner Properties with invalid WhatsApp number
@@ -52,9 +67,9 @@ Feature: MagicBricks Rent Section Functionalities
   #Then user clicks on View Details of the first agent
   
   
-  @exploreLocalities
-  Scenario: Explore Localities and Search
-  Given user launches the MagicBricks website
-  When user hovers on Rent and clicks on Localities under Explore
-  And user enters city "Mumbai" in the search box and selects from suggestions
-  Then user scrolls down to view locality results
+  #@exploreLocalities
+  #Scenario: Explore Localities and Search
+  #Given user launches the MagicBricks website
+  #When user hovers on Rent and clicks on Localities under Explore
+  #And user enters city "Mumbai" in the search box and selects from suggestions
+  #Then user scrolls down to view locality results

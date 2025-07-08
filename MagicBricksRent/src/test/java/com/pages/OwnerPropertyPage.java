@@ -1,8 +1,10 @@
 package com.pages;
 
+import java.io.File;
 import java.time.Duration;
 import java.util.List;
 
+import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.*;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
@@ -65,7 +67,7 @@ public class OwnerPropertyPage extends BasePage {
 	
 	
 //2nd Scenario 
-/*	
+	
 	// WebElements
 		@FindBy(id = "rentheading")
 		public WebElement rentTag;
@@ -140,12 +142,12 @@ public class OwnerPropertyPage extends BasePage {
 		public boolean isVerificationDisplayed() {
 		    return verificationElement.isDisplayed();
 		}
-*/
-	
-	
-/*	
-//3rd Scenario
 
+	
+	
+	
+//3rd Scenario
+/*
 	// WebElements
 		@FindBy(id = "rentheading")
 		public WebElement rentTag;
@@ -238,14 +240,29 @@ public class OwnerPropertyPage extends BasePage {
 		    waitUntilElementIsClickable(continueButton);
 		    continueButton.click();
 		}
-*/		
+		
+		
+		public void takesscreen() {
+		    try {
+		        TakesScreenshot ts = (TakesScreenshot) driver;
+		        File src = ts.getScreenshotAs(OutputType.FILE);
+		
+		        String dest = "C:\\Users\\SHANKARE\\eclipse-workspace\\MagicBricksRent\\src\\test\\resource\\Screenshot\\" + System.currentTimeMillis() + ".png";
+		        FileUtils.copyFile(src, new File(dest));
+		
+		        System.out.println("Screenshot saved at: " + dest);
+		    } catch (Exception e) {
+		        System.out.println("Failed to take screenshot: " + e.getMessage());
+		    }
+		}
+*/	
 
 		
 
-/*		
+		
 		
 //4th Scenario
-	
+/*	
 	@FindBy(id = "rentheading")
 	public WebElement rentTag;
 	

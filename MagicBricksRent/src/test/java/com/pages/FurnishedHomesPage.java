@@ -1,5 +1,9 @@
 package com.pages;
 
+import java.awt.AWTException;
+import java.awt.Robot;
+import java.awt.event.KeyEvent;
+
 import org.openqa.selenium.*;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
@@ -50,5 +54,24 @@ public class FurnishedHomesPage extends BasePage {
             driver.switchTo().window(handle);
         }
     }
+    
+    public void scrollWithRobotPageDown() {
+        try {
+            Robot robot = new Robot();
+            robot.delay(1000); // wait before scroll
+
+            // Scroll 3 times for better visibility
+            for (int i = 0; i < 2; i++) {
+                robot.keyPress(KeyEvent.VK_PAGE_DOWN);
+                robot.keyRelease(KeyEvent.VK_PAGE_DOWN);
+                robot.delay(1000);
+            }
+        } catch (AWTException e) {
+            throw new RuntimeException("Failed to scroll using Robot", e);
+        }
+    }
+    
+    
+    
 }
 

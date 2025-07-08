@@ -1,0 +1,9 @@
+
+@contactOwnerPositive
+Scenario: Contact Owner from Rent in that Owner Properties with valid data      [90m# src/test/resource/Features/Rent.feature:12[0m
+  [32mGiven [0m[32muser launches the MagicBricks website[0m                                   [90m# com.stepDefination.Rent.user_launches_the_magic_bricks_website()[0m
+  [32mWhen [0m[32muser hovers on Rent and clicks on Owner Properties under Popular Choices[0m [90m# com.stepDefination.Rent.user_hovers_on_rent_and_clicks_on_owner_properties_under_popular_choices()[0m
+  [32mAnd [0m[32muser clicks on Contact Owner button[0m                                       [90m# com.stepDefination.Rent.user_clicks_on_contact_owner_button()[0m
+  [32mAnd [0m[32muser fills the contact form with valid data from Excel[0m                    [90m# com.stepDefination.Rent.user_fills_the_contact_form_with_valid_data_from_excel()[0m
+  [32mAnd [0m[32muser clicks on Continue button[0m                                            [90m# com.stepDefination.Rent.user_clicks_on_continue_button()[0m
+  [32mThen [0m[32mcontact form should proceed next[0m                                         [90m# com.stepDefination.Rent.contact_form_should_proceed_next()[0m

@@ -47,8 +47,11 @@ public class LocalityPage extends BasePage {
 }
 */
 
-
 package com.pages;
+
+import java.awt.AWTException;
+import java.awt.Robot;
+import java.awt.event.KeyEvent;
 
 import org.openqa.selenium.*;
 import org.openqa.selenium.interactions.Actions;
@@ -66,14 +69,13 @@ public class LocalityPage extends BasePage {
     @FindBy(xpath = "//a[text()='Localities']")
     public WebElement localitiesOption;
 
-  //  @FindBy(xpath = "//*[@id='cityLocalityInput']")
     @FindBy(id = "cityLocalityInput")
     public WebElement citySearchInput;
 
-    @FindBy(xpath = "//li[contains(@class,'suggestion') or contains(@class,'sbct')]")
-    public WebElement citySuggestionClick;
+    @FindBy(xpath = "//*[@id='cityLocalityValue']/div/div/div")
+    public WebElement crossButton;
 
-    // Hover on Rent and click on Localities
+    // Hover on Rent and click Localities
     public void clickLocalitiesFromRent() {
         waitUntilWebElementIsVisible(rentMenu);
         Actions actions = new Actions(driver);
@@ -82,18 +84,37 @@ public class LocalityPage extends BasePage {
         localitiesOption.click();
     }
 
-    // Enter city name in search box
-    public void enterLocalityCity(String cityName) {
-        waitUntilWebElementIsVisible(citySearchInput);
-        citySearchInput.clear();
-        citySearchInput.click();
-        citySearchInput.sendKeys(cityName);
+    // Clear previous city using cross button
+    public void clearSearchBoxIfPresent() {
+        try {
+            waitUntilWebElementIsVisible(crossButton);
+            waitUntilElementIsClickable(crossButton);
+            crossButton.click();
+        } catch (Exception e) {
+            System.out.println("Cross button not visible, skipping clear.");
+        }
     }
 
-    // Click on first suggestion from dropdown
-    public void selectLocalityCityFromList() {
-        waitUntilWebElementIsVisible(citySuggestionClick);
-        citySuggestionClick.click();
+    // Enter city using Robot
+    public void enterCityWithRobot(String city) throws AWTException {
+        waitUntilWebElementIsVisible(citySearchInput);
+        citySearchInput.click(); // focus inside box
+
+        Robot robot = new Robot();
+        robot.setAutoDelay(150);
+
+        // Type each character of the city
+        for (char c : city.toCharArray()) {
+            int keyCode = KeyEvent.getExtendedKeyCodeForChar(Character.toUpperCase(c));
+            robot.keyPress(keyCode);
+            robot.keyRelease(keyCode);
+        }
+
+        robot.delay(1000); // Wait for suggestions to load
+        robot.keyPress(KeyEvent.VK_DOWN); // Select first suggestion
+        robot.keyRelease(KeyEvent.VK_DOWN);
+        robot.keyPress(KeyEvent.VK_ENTER); // Enter to confirm
+        robot.keyRelease(KeyEvent.VK_ENTER);
     }
 
     // Scroll results

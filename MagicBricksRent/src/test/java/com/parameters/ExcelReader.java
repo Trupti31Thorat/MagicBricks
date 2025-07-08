@@ -1,4 +1,34 @@
-/*
+
+//For Excel 2 scenario
+package com.parameters;
+
+import java.io.FileInputStream;
+import org.apache.poi.ss.usermodel.*;
+
+public class ExcelReader {
+
+    public static String getCellValue(String filePath, String sheetName, int rowNum, int colNum) {
+        try (FileInputStream fis = new FileInputStream(filePath)) {
+            Workbook workbook = WorkbookFactory.create(fis);
+            Sheet sheet = workbook.getSheet(sheetName);
+            Row row = sheet.getRow(rowNum);
+            Cell cell = row.getCell(colNum);
+
+            String value = new DataFormatter().formatCellValue(cell);
+            System.out.println("Reading from Excel [Sheet: " + sheetName + ", Row: " + rowNum + ", Col: " + colNum + "] = " + value);
+
+            return value;
+        } catch (Exception e) {
+            System.out.println("Error reading Excel: " + e.getMessage());
+            e.printStackTrace();
+            return "";
+        }
+    }
+}
+
+
+
+/* 
 package com.parameters;
 
 import java.io.File;
@@ -33,12 +63,13 @@ public class ExcelReader {
 	    return data;
 	}
 }
-
 */
 
+//for Outline
+
+
 //3rd Scenario
-
-
+/*
 package com.parameters;
 
 import java.io.File;
@@ -64,7 +95,7 @@ public class ExcelReader {
             FileInputStream fis = new FileInputStream("src/test/resource/ExcelData/ContactFormData.xlsx");
             Workbook workbook = WorkbookFactory.create(fis);
             Sheet sheet = workbook.getSheetAt(0);
-            Row row = sheet.getRow(rowNum); // 1 = second row, 2 = third, etc.
+            Row row = sheet.getRow(rowNum); // 1 = second row, 2 = third
 
             for (int i = 0; i < 3; i++) {
                 Cell cell = row.getCell(i);
@@ -82,11 +113,12 @@ public class ExcelReader {
         }
         return data;
     }
-    
+ */  
     
     
    
 //6th Scenario
+/*
     public String getCellValue(String sheetName, String columnName, int rowIndex) {
         try {
             FileInputStream fis = new FileInputStream("src/test/resource/ExcelData/ContactFormData.xlsx");
@@ -113,8 +145,6 @@ public class ExcelReader {
             return null;
         }
     }
-    
-    
-    
 }
+*/
 

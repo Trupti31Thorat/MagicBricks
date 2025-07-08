@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="Cucumber" time="20.533" tests="1" skipped="0" failures="0" errors="0" timestamp="2025-07-08T09:52:22.495830700Z">
+<testcase classname="MagicBricks Rent Section Functionalities" name="Contact Owner from Rent in that Owner Properties with valid data" time="20.295">
+<system-out><![CDATA[
+Given user launches the MagicBricks website.................................passed
+When user hovers on Rent and clicks on Owner Properties under Popular Choices.passed
+And user clicks on Contact Owner button.....................................passed
+And user fills the contact form with valid data from Excel..................passed
+And user clicks on Continue button..........................................passed
+Then contact form should proceed next.......................................passed
+]]></system-out>
+</testcase>
+</testsuite>
