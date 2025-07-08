@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?><testrun name="Cucumber" tests="6" started="6" failures="0" errors="0" ignored="0">
+  <testsuite name="Cucumber" time="70.383">
+    <testcase name="Verify Ready To Move listing page is accessible" classname="MagicBricks Buy Module Testing" time="12.817"/>
+    <testcase name="Apply budget filter and sort option on Ready To Move page" classname="MagicBricks Buy Module Testing" time="15.715"/>
+    <testcase name="Submit Investment Hotspot form with valid details" classname="MagicBricks Buy Module Testing" time="11.289"/>
+    <testcase name="Submit Investment Hotspot form with invalid details - #1.1" classname="MagicBricks Buy Module Testing" time="9.163"/>
+    <testcase name="Select tax slab and city in Buy vs Rent and scroll to graph" classname="MagicBricks Buy Module Testing" time="8.978"/>
+    <testcase name="User navigates to Tips and Guides, searches for a locality, and views results" classname="MagicBricks Buy Module Testing" time="12.18"/>
+  </testsuite>
+</testrun>

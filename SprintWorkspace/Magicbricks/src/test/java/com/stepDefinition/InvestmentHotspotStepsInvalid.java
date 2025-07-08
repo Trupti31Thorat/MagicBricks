@@ -1,6 +1,7 @@
 package com.stepDefinition;
 
 import com.pages.InvestmentHotspotPage;
+
 import com.parameters.ExcelReader;
 import com.setup.BaseSteps;
 import org.junit.Assert;
@@ -57,7 +58,7 @@ public class InvestmentHotspotStepsInvalid extends BaseSteps {
 	    String email = data.get("Email");
 	    String phone = data.get("Phone");
 
-	    System.out.println("Invalid Test Data → Name: " + name + ", Email: " + email + ", Phone: " + phone);
+	    //System.out.println("Invalid Test Data → Name: " + name + ", Email: " + email + ", Phone: " + phone);
 
 	    hotspotPage.fillForm(name, email, phone);
 	    hotspotPage.submitForm();

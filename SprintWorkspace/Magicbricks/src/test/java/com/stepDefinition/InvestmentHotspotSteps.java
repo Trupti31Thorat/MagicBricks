@@ -48,7 +48,7 @@ public class InvestmentHotspotSteps extends BaseSteps {
 
         ExcelReader reader = new ExcelReader();
         Map<String, String> data = reader.getRowData("InvestmentHotspot", "TC_01");
-        System.out.println("Excel Map :"+data);
+        //System.out.println("Excel Map :"+data);
 
         String name = data.get("Name");
         String email = data.get("Email");

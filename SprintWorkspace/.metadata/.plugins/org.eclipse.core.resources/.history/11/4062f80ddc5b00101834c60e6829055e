@@ -1,0 +1,154 @@
+package com.parameters;
+
+import java.io.FileInputStream;
+
+import java.io.IOException;
+import java.util.HashMap;
+import java.util.Map;
+
+import org.apache.poi.ss.usermodel.*;
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;
+
+public class ExcelReader {
+
+    public Map<String, String> getRowData(String sheetName, String testCaseId) {
+        Map<String, String> data = new HashMap<>();
+        DataFormatter formatter = new DataFormatter(); //  handles all cell types as String
+
+        try (FileInputStream fis = new FileInputStream("src/test/resources/ExcelData/Data.xlsx");
+             Workbook workbook = new XSSFWorkbook(fis)) {
+
+            Sheet sheet = workbook.getSheet(sheetName);
+            if (sheet == null) throw new RuntimeException("Sheet " + sheetName + " not found");
+
+            Row headerRow = sheet.getRow(0);
+            int rowCount = sheet.getPhysicalNumberOfRows();
+
+            for (int i = 1; i < rowCount; i++) {
+                Row currentRow = sheet.getRow(i);
+                if (currentRow == null) continue;
+
+                String id = formatter.formatCellValue(currentRow.getCell(0));
+                if (id.equalsIgnoreCase(testCaseId)) {
+                    for (int j = 0; j < headerRow.getLastCellNum(); j++) {
+                        String key = formatter.formatCellValue(headerRow.getCell(j)).trim();
+                        String value = formatter.formatCellValue(currentRow.getCell(j)).trim();
+                        data.put(key, value);
+                    }
+                    break;
+                }
+            }
+
+        } catch (IOException e) {
+            throw new RuntimeException("Excel reading failed: " + e.getMessage());
+        }
+
+        return data;
+    }
+    
+    public Map<String, String> getRowData(int sheetIndex, int rowNumber) {
+        Map<String, String> data = new HashMap<>();
+        DataFormatter formatter = new DataFormatter(); // Converts any type to String
+
+        try (FileInputStream fis = new FileInputStream("src/test/resources/ExcelData/Data.xlsx");
+             Workbook workbook = new XSSFWorkbook(fis)) {
+
+            Sheet sheet = workbook.getSheetAt(sheetIndex); // Access by index
+            Row headerRow = sheet.getRow(0);
+            Row dataRow = sheet.getRow(rowNumber);
+
+            if (dataRow == null) throw new RuntimeException("Row " + rowNumber + " not found in sheet " + sheetIndex);
+
+            for (int i = 0; i < headerRow.getLastCellNum(); i++) {
+                String key = formatter.formatCellValue(headerRow.getCell(i)).trim();
+                String value = formatter.formatCellValue(dataRow.getCell(i)).trim();
+                data.put(key, value);
+            }
+
+        } catch (IOException e) {
+            throw new RuntimeException("Excel reading failed: " + e.getMessage());
+        }
+
+        return data;
+    }
+    
+    
+    
+    //DataTable Input Method
+    public String readCityFromSheet(String fileName, String sheetName) {
+        String city = "";
+        try {
+            String path = "src/test/resources/ExcelData/" + fileName;
+            FileInputStream fis = new FileInputStream(path);
+            Workbook workbook = new XSSFWorkbook(fis);
+            Sheet sheet = workbook.getSheet(sheetName);
+            if (sheet == null) throw new RuntimeException("Sheet " + sheetName + " not found");
+
+            Row row = sheet.getRow(1); // 2nd row (index 1)
+            Cell cell = row.getCell(0); // 1st column
+            city = cell.getStringCellValue();
+
+            workbook.close();
+        } catch (Exception e) {
+            throw new RuntimeException("Failed to read city from Excel: " + e.getMessage());
+        }
+        return city;
+    }
+    
+    
+}
+
+//package com.parameters;
+//
+//import java.io.FileInputStream;
+//import java.io.IOException;
+//import java.util.HashMap;
+//import java.util.Map;
+//
+//import org.apache.poi.ss.usermodel.*;
+//import org.apache.poi.xssf.usermodel.XSSFWorkbook;
+//
+//public class ExcelReader {
+//
+//    public Map<String, String> getRowData(String sheetName, String testCaseId) {
+//        Map<String, String> data = new HashMap<>();
+//
+//        try {
+//            FileInputStream fis = new FileInputStream("src/test/resources/ExcelData/Data.xlsx");
+//            Workbook workbook = new XSSFWorkbook(fis);
+//            Sheet sheet = workbook.getSheet(sheetName);
+//
+//            if (sheet == null) {
+//                workbook.close();
+//                throw new RuntimeException("Sheet " + sheetName + " not found");
+//            }
+//
+//            Row headerRow = sheet.getRow(0);
+//            int rowCount = sheet.getPhysicalNumberOfRows();
+//
+//            for (int i = 1; i < rowCount; i++) {
+//                Row currentRow = sheet.getRow(i);
+//                if (currentRow == null) continue;
+//
+//                Cell idCell = currentRow.getCell(0);
+//                if (idCell != null && idCell.getStringCellValue().equalsIgnoreCase(testCaseId)) {
+//                    for (int j = 0; j < headerRow.getLastCellNum(); j++) {
+//                        String key = headerRow.getCell(j).getStringCellValue();
+//                        String value = currentRow.getCell(j).getStringCellValue();
+//                        data.put(key, value);
+//                    }
+//                    break;
+//                }
+//            }
+//
+//            workbook.close();
+//            fis.close();
+//
+//        } catch (IOException e) {
+//            e.printStackTrace();
+//            throw new RuntimeException("Excel reading failed: " + e.getMessage());
+//        }
+//
+//        return data;
+//    }
+//}

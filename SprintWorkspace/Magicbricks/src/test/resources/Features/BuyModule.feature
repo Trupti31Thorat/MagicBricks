@@ -5,26 +5,26 @@ Feature: MagicBricks Buy Module Testing
     Given the user launches the Magicbricks website
     And the user hoves over the Buy module
 
-  @ReadytoMove
+  @MagicBricks @ReadytoMove
   Scenario: Verify Ready To Move listing page is accessible
     When the user clicks on "Ready to Move" option
     Then the user should be navigated to the Ready to Move page with property listings
 
-  @FilterAndSort
+  @MagicBricks @FilterAndSort
   Scenario: Apply budget filter and sort option on Ready To Move page
     When the user click on "Ready To Move"
     And the user selects a Sort By option
     Then the user clicks on the property listing using Robot
     Then the selected property should be displayed on a new page
 
-  @InvestmentHotspotValid
+  @MagicBricks @InvestmentHotspotValid
   Scenario: Submit Investment Hotspot form with valid details
     When the user clicks on "Investment Hotspot"
     And the user scrolls down to the request callback form
     And the user fills the form with valid data from Excel
     Then the callback request should be submitted successfully
 
-  @InvestmentHotspotInvalid
+  @MagicBricks @InvestmentHotspotInvalid
   Scenario Outline: Submit Investment Hotspot form with invalid details
     When the user clicks on the "Investment Hotspot"
     And the user scrolls down to the request the callback form
@@ -35,13 +35,13 @@ Feature: MagicBricks Buy Module Testing
       | sheetNo | rowNo |
       |       1 |     1 |
 
-  @BuyVsRent
+  @MagicBricks @BuyVsRent
   Scenario: Select tax slab and city in Buy vs Rent and scroll to graph
     When the user clicks on the link "Buy vs Rent"
     And the user selects a tax slab and city type
     Then the trend graph should be visible on scrolling.
 
-  @TipsAndGuides
+  @MagicBricks @TipsAndGuides
   Scenario: User navigates to Tips and Guides, searches for a locality, and views results
     When the user clicks on the "Tips and Guides" section
     And the user enters city from the following Excel file

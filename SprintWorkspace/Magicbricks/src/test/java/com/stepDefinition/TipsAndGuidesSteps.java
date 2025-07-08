@@ -3,7 +3,6 @@ package com.stepDefinition;
 import com.pages.TipsAndGuidesPage;
 import com.parameters.ExcelReader;
 import com.setup.BaseSteps;
-
 import io.cucumber.datatable.DataTable;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;

@@ -1,0 +1,19 @@
+package com.utility;
+
+import com.relevantcodes.extentreports.ExtentReports;
+
+public class ExtentManager {
+
+    private static ExtentReports extent;
+
+    public static ExtentReports getInstance() {
+        if (extent == null) {
+            String reportPath = System.getProperty("user.dir") + "/Reports/ExtentReport.html";
+            extent = new ExtentReports(reportPath, true); // true = overwrite
+            extent.addSystemInfo("User", "rsing124")
+                  .addSystemInfo("Build", "Windows")
+                  .addSystemInfo("AppName", "Eclipse");
+        }
+        return extent;
+    }
+}

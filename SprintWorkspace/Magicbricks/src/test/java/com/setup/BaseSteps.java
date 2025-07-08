@@ -1,6 +1,7 @@
 package com.setup;
 
 import org.openqa.selenium.WebDriver;
+
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.edge.EdgeDriver;
@@ -18,7 +19,7 @@ public class BaseSteps {
 	public static ChromeOptions chromeOptions;
 	public static EdgeOptions edgeOptions;
 	
-	@Before
+	
 	public static WebDriver setupDriver(String browser) throws InterruptedException {
 	    switch (browser.toLowerCase()) {
 //For Chrome Broswer	    
@@ -51,14 +52,20 @@ public class BaseSteps {
 	    }
 
 	    driver.get(ConfigReader.getProperty("base.url"));
-	    Thread.sleep(1000);
+	    Thread.sleep(3000);
 
 	    return driver;
 	}
 	
-	@After
-	public void tearDown() {
+	
+	public static void tearDown() {
+		if(driver!=null) {
 		driver.quit();
+		}
+	}
+	
+	public static WebDriver getDriver() {
+		return driver;
 	}
 
 }

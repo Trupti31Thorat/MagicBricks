@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="Cucumber" time="70.383" tests="6" skipped="0" failures="0" errors="0" timestamp="2025-07-08T09:15:16.337891400Z">
+<testcase classname="MagicBricks Buy Module Testing" name="Verify Ready To Move listing page is accessible" time="12.817">
+<system-out><![CDATA[
+Given the user launches the Magicbricks website.............................passed
+And the user hoves over the Buy module......................................passed
+When the user clicks on "Ready to Move" option..............................passed
+Then the user should be navigated to the Ready to Move page with property listings.passed
+]]></system-out>
+</testcase>
+<testcase classname="MagicBricks Buy Module Testing" name="Apply budget filter and sort option on Ready To Move page" time="15.715">
+<system-out><![CDATA[
+Given the user launches the Magicbricks website.............................passed
+And the user hoves over the Buy module......................................passed
+When the user click on "Ready To Move"......................................passed
+And the user selects a Sort By option.......................................passed
+Then the user clicks on the property listing using Robot....................passed
+Then the selected property should be displayed on a new page................passed
+]]></system-out>
+</testcase>
+<testcase classname="MagicBricks Buy Module Testing" name="Submit Investment Hotspot form with valid details" time="11.289">
+<system-out><![CDATA[
+Given the user launches the Magicbricks website.............................passed
+And the user hoves over the Buy module......................................passed
+When the user clicks on "Investment Hotspot"................................passed
+And the user scrolls down to the request callback form......................passed
+And the user fills the form with valid data from Excel......................passed
+Then the callback request should be submitted successfully..................passed
+]]></system-out>
+</testcase>
+<testcase classname="MagicBricks Buy Module Testing" name="Submit Investment Hotspot form with invalid details - #1.1" time="9.163">
+<system-out><![CDATA[
+Given the user launches the Magicbricks website.............................passed
+And the user hoves over the Buy module......................................passed
+When the user clicks on the "Investment Hotspot"............................passed
+And the user scrolls down to the request the callback form..................passed
+And the user fills the form with invalid details from sheet 1 and row 1.....passed
+Then an appropriate error message should be displayed.......................passed
+]]></system-out>
+</testcase>
+<testcase classname="MagicBricks Buy Module Testing" name="Select tax slab and city in Buy vs Rent and scroll to graph" time="8.978">
+<system-out><![CDATA[
+Given the user launches the Magicbricks website.............................passed
+And the user hoves over the Buy module......................................passed
+When the user clicks on the link "Buy vs Rent"..............................passed
+And the user selects a tax slab and city type...............................passed
+Then the trend graph should be visible on scrolling.........................passed
+]]></system-out>
+</testcase>
+<testcase classname="MagicBricks Buy Module Testing" name="User navigates to Tips and Guides, searches for a locality, and views results" time="12.18">
+<system-out><![CDATA[
+Given the user launches the Magicbricks website.............................passed
+And the user hoves over the Buy module......................................passed
+When the user clicks on the "Tips and Guides" section.......................passed
+And the user enters city from the following Excel file......................passed
+And the user clicks on the Explore button...................................passed
+Then the user should be redirected to the locality results page.............passed
+]]></system-out>
+</testcase>
+</testsuite>

@@ -6,14 +6,16 @@ import org.testng.annotations.DataProvider;
 
 @CucumberOptions(
     features = "src/test/resources/Features",          // Path to your feature file(s)
-    glue = {"com.StepDefinitions"},  
+    glue = {"com.StepDefinitions" , "com.hooks"},  
+    tags="@MagicBricks",
 
     
     plugin = {
         "pretty",
         "html:target/CucumberReport.html",
-        "json:target/cucumber.json"
+        "json:target/cucumber.json",
         // Extent Report plugin will be added later
+        "testng:target/testng-cucumber.xml"
     },
     monochrome = true
                                  // Run only this scenario
