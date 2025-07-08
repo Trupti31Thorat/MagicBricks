@@ -1,5 +1,4 @@
 package com.pages;
-
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.time.Duration;
@@ -12,24 +11,16 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class BasePage {
 
-    protected WebDriver driver;
-    protected Properties prop;
+	WebDriver driver;
+    Properties prop;
 
     public BasePage(WebDriver driver) {
         this.driver = driver;
         this.prop = new Properties();
-        loadProperties();
+       // loadProperties();
     }
 
-    // Load config.properties
-    private void loadProperties() {
-        try (FileInputStream fis = new FileInputStream("C:\\Users\\TRTHORAT\\OneDrive - Capgemini\\Desktop\\Sprint\\MagicBricsMbAdviceTesting\\src\\test\\resource\\PropertyFiles\\config.properties")) {
-            prop.load(fis);
-        } catch (IOException e) {
-            System.err.println("Failed to load config.properties: " + e.getMessage());
-        }
-    }
-
+  
     // Wait until element is visible
     public void waitUntilWebElementIsVisible(WebElement element) {
         new WebDriverWait(driver, Duration.ofSeconds(10))
