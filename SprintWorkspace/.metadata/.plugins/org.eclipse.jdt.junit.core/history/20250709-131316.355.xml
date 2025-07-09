@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?><testrun name="TestRunnerJunit" project="Magicbricks" tests="1" started="1" failures="0" errors="0" ignored="0">
+  <testsuite name="com.runner.TestRunnerJunit" time="9.793">
+    <testsuite name="MagicBricks Buy Module Testing" time="9.793">
+      <testcase name="Verify Ready To Move listing page is accessible" classname="MagicBricks Buy Module Testing" time="9.793"/>
+    </testsuite>
+  </testsuite>
+</testrun>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?><testrun name="TestRunnerJunit" project="Magicbricks" tests="1" started="1" failures="0" errors="1" ignored="0">
+  <testsuite name="com.runner.TestRunnerJunit" time="11.536">
+    <testsuite name="MagicBricks Buy Module Testing" time="11.536">
+      <testcase name="Submit Investment Hotspot form with valid details" classname="MagicBricks Buy Module Testing" time="11.536">
+        <error>java.lang.NullPointerException: Cannot invoke "org.openqa.selenium.SearchContext.findElement(org.openqa.selenium.By)" because "this.searchContext" is null&#13;
+	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:68)&#13;
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)&#13;
+	at jdk.proxy2/jdk.proxy2.$Proxy18.isDisplayed(Unknown Source)&#13;
+	at org.openqa.selenium.support.ui.ExpectedConditions.elementIfVisible(ExpectedConditions.java:304)&#13;
+	at org.openqa.selenium.support.ui.ExpectedConditions$10.apply(ExpectedConditions.java:290)&#13;
+	at org.openqa.selenium.support.ui.ExpectedConditions$10.apply(ExpectedConditions.java:287)&#13;
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:203)&#13;
+	at com.pages.BasePage.waitUntilVisible(BasePage.java:35)&#13;
+	at com.stepDefinition.InvestmentHotspotSteps.the_user_scrolls_down_to_the_request_callback_form(InvestmentHotspotSteps.java:35)&#13;
+	at ✽.the user scrolls down to the request callback form(file:///C:/Windows/System32/config/systemprofile/SprintWorkspace/Magicbricks/src/test/resources/Features/BuyModule.feature:23)&#13;
+&#13;
+</error>
+      </testcase>
+    </testsuite>
+  </testsuite>
+</testrun>

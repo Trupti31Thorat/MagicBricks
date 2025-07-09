@@ -1,0 +1,61 @@
+package com.pages;
+
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
+
+public class BuyVsRentPage extends BasePage {
+
+    public BuyVsRentPage(WebDriver driver) {
+        super(driver);
+        PageFactory.initElements(driver, this);
+    }
+
+    @FindBy(xpath = "//a[text()='Buy vs Rent']")
+    WebElement buyVsRentLink;
+
+   
+    @FindBy(xpath = "//span[text()='Tax']")
+    WebElement taxButton;
+    
+    @FindBy(xpath="//input[@id=\"taxSlab10\"]")
+    WebElement taxRadioButton;
+
+    @FindBy(id="nonMetroCity")
+    WebElement cityType;
+
+    @FindBy(xpath ="//div[@id=\"savingsChart\"]") 
+    WebElement trendGraph;
+
+    public void clickBuyVsRent() {
+        click(buyVsRentLink);
+    }
+    
+    public void clickTaxButton() throws InterruptedException {
+    	click(taxButton);
+    }
+
+    public void selectTaxSlab() {
+    	//clicking because we do not need to wait for the button here     
+    	taxRadioButton.click();
+        
+    }
+
+    public void selectCityType() {
+    	//clicking because we do not need to wait for the button here 
+       cityType.click();
+    }
+
+    public void scrollToTrendGraph() {
+    	scrollToElement(trendGraph);
+    	JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("window.scrollBy(0, -200)");
+    }
+
+    public boolean isTrendGraphDisplayed() {
+        waitUntilVisible(trendGraph);
+        return trendGraph.isDisplayed();
+    }
+}

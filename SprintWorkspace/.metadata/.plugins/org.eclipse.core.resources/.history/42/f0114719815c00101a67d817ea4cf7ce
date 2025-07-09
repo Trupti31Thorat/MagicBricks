@@ -1,0 +1,46 @@
+package com.stepDefinition;
+
+import com.pages.TipsAndGuidesPage;
+import com.parameters.ExcelReader;
+import com.setup.BaseSteps;
+import io.cucumber.datatable.DataTable;
+import io.cucumber.java.en.Then;
+import io.cucumber.java.en.When;
+
+import java.util.List;
+
+import org.testng.Assert;
+
+public class TipsAndGuidesSteps extends BaseSteps{
+
+    TipsAndGuidesPage tipsPage = new TipsAndGuidesPage(driver);
+
+    @When("the user clicks on the {string} section")
+    public void the_user_clicks_on_the_section(String sectionName) {
+        tipsPage.clickTipsAndGuides();
+          // From BasePage
+        tipsPage.switchToNewTab();
+    }
+
+    @When("the user enters city from the following Excel file")
+    public void the_user_enters_city_from_the_following_excel_file(DataTable dataTable) throws InterruptedException {
+        List<List<String>> data = dataTable.asLists(String.class);
+        String fileName = data.get(0).get(0); // First row, first column = file name
+
+        ExcelReader reader = new ExcelReader();
+        String city = reader.readCityFromSheet(fileName, "CityData"); // Sheet name is hardcoded
+        tipsPage.enterCity(city);
+    }
+
+    @When("the user clicks on the Explore button")
+    public void the_user_clicks_on_the_explore_button() {
+        tipsPage.clickExplore();
+        tipsPage.switchToLatestWindow();
+    }
+
+    @Then("the user should be redirected to the locality results page")
+    public void the_user_should_be_redirected_to_the_locality_results_page() {
+    	
+        Assert.assertTrue(tipsPage.isOnResultsPage(), "User is not on the locality result page.");
+    }
+}

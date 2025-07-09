@@ -1,6 +1,7 @@
 package com.pages;
 
 import org.openqa.selenium.WebDriver;
+
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
@@ -20,8 +21,6 @@ public class ReadyToMovePage extends BasePage {
     @FindBy(xpath = "//ul[@class=\"mb-srp__tabs__sortby__dd__list\"]/li[2]")
     WebElement sortByOption;
 
-//    @FindBy(xpath = "(//div[contains(@class,'projectTuple')])[1]") // reference element to scroll
-//    WebElement scrollReference;
 
     public void clickReadyToMove() {
         click(readyToMoveLink);
@@ -50,9 +49,15 @@ public class ReadyToMovePage extends BasePage {
         switchToLatestWindow(); // move to property tab
     }
 
-    public boolean isNewPropertyPageOpened() {
-        String currentUrl = driver.getCurrentUrl();
-        String title = driver.getTitle().toLowerCase();
-        return currentUrl.contains("propertyDetails") || title.contains("project") || title.contains("details");
+//    public boolean isNewPropertyPageOpened() {
+//        String currentUrl = driver.getCurrentUrl();
+//        String title = driver.getTitle().toLowerCase();
+//        return currentUrl.contains("propertyDetails") || title.contains("project") || title.contains("details");
+//    }
+    
+    public void verifyPropertyDetailsPageOpened() {
+    	
+    	switchToLatestWindow();
+    	verifyCurrentURL("propertyDetails.urlPart");
     }
 }

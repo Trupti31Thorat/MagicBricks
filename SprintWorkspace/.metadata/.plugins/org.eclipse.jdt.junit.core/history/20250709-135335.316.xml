@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?><testrun name="TestRunnerJunit" project="Magicbricks" tests="6" started="6" failures="0" errors="0" ignored="0">
+  <testsuite name="com.runner.TestRunnerJunit" time="79.868">
+    <testsuite name="MagicBricks Buy Module Testing" time="79.868">
+      <testcase name="Verify Ready To Move listing page is accessible" classname="MagicBricks Buy Module Testing" time="11.999"/>
+      <testcase name="Apply budget filter and sort option on Ready To Move page" classname="MagicBricks Buy Module Testing" time="19.525"/>
+      <testcase name="Submit Investment Hotspot form with valid details" classname="MagicBricks Buy Module Testing" time="13.736"/>
+      <testcase name="Submit Investment Hotspot form with invalid details" classname="MagicBricks Buy Module Testing" time="10.441"/>
+      <testcase name="Select tax slab and city in Buy vs Rent and scroll to graph" classname="MagicBricks Buy Module Testing" time="9.819"/>
+      <testcase name="User navigates to Tips and Guides, searches for a locality, and views results" classname="MagicBricks Buy Module Testing" time="14.348"/>
+    </testsuite>
+  </testsuite>
+</testrun>

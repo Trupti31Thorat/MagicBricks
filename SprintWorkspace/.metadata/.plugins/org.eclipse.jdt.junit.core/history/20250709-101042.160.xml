@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?><testrun name="TestRunnerJunit" project="Magicbricks" tests="1" started="1" failures="0" errors="0" ignored="0">
+  <testsuite name="com.runner.TestRunnerJunit" time="11.477">
+    <testsuite name="MagicBricks Buy Module Testing" time="11.477">
+      <testcase name="Select tax slab and city in Buy vs Rent and scroll to graph" classname="MagicBricks Buy Module Testing" time="11.477"/>
+    </testsuite>
+  </testsuite>
+</testrun>

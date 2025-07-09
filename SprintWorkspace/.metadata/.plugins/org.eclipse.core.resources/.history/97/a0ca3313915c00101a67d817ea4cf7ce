@@ -1,0 +1,260 @@
+package com.StepDefinitions;
+
+import com.pages.*;
+
+
+import com.parameters.ConfigReader;
+import com.parameters.ExcelReader;
+import com.setup.BaseSteps;
+
+import io.cucumber.datatable.DataTable;
+import io.cucumber.java.en.*;
+
+import org.junit.Assert;
+//import org.testng.Assert;
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.ui.WebDriverWait;
+import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+
+import java.time.Duration;
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
+
+public class BuyModuleSteps {
+	 
+	
+	WebDriver driver = BaseSteps.driver;
+
+    HomePage home = new HomePage(driver);
+    InvestmentHotspotPage hotspotPage = new InvestmentHotspotPage(driver);
+    BuyVsRentPage buyVsRentPage= new BuyVsRentPage(driver);
+    TipsAndGuidesPage tipsPage = new TipsAndGuidesPage(driver);
+    ReadyToMovePage movePage = new ReadyToMovePage(driver);
+
+   
+
+    // ========== Common Background Step ==========
+    @Given("the user launches the Magicbricks website")
+    public void the_user_launches_the_magicbricks_website() throws InterruptedException {
+        String browser = ConfigReader.getProperty("browser");
+        BaseSteps.driver = BaseSteps.setupDriver(browser);
+        driver = BaseSteps.driver;
+        
+    }
+
+    @Given("the user hoves over the Buy module")
+    public void the_user_hoves_over_the_buy_module() {
+        home.hoverOnBuyMenu();
+    }
+
+    
+    
+    
+    // ========== Scenario 1 - Ready To Move ==========
+    
+    
+    
+    
+    
+    @When("the user clicks on {string} option")
+    public void the_user_clicks_on_option(String option) {
+        if (option.equalsIgnoreCase("Ready To Move")) {
+            home.clickReadyToMove();
+        } 
+    }
+
+    @Then("the user should be navigated to the Ready to Move page with property listings")
+    public void the_user_should_be_navigated_to_the_ready_to_move_page_with_property_listings() {
+        home.verifyNavigationToReadyToMovePage();
+    }
+
+    
+    
+    
+    // ========== Scenario 2 - Apply Filters ==========
+    
+    
+    
+    
+    
+    @When("the user click on {string}")
+    public void the_user_click_on(String option) {
+        
+        if (option.equalsIgnoreCase("Ready To Move")) {
+            movePage.clickReadyToMove();
+        }
+    }
+
+    @When("the user selects a Sort By option")
+    public void the_user_selects_a_sort_by_option() throws InterruptedException {
+        movePage.selectSortByOption();
+    }
+
+    @Then("the user clicks on the property listing using Robot")
+    public void the_user_clicks_on_the_property_listing_using_robot() throws Exception {
+        movePage.clickFirstPropertyWithRobot();
+    }
+
+    @Then("the selected property should be displayed on a new page")
+    public void the_selected_property_should_be_displayed_on_a_new_page() {
+    	movePage.verifyPropertyDetailsPageOpened();
+    }
+
+    
+    
+    // ========== Scenario 3 - Investment Hotspot Valid ==========
+    
+    
+    
+    @When("the user clicks on {string}")
+    public void the_user_clicks_on(String option)  {
+        if (option.equalsIgnoreCase("Investment Hotspot")) {
+            
+            PageFactory.initElements(driver, hotspotPage); // for @FindBy support
+            hotspotPage.clickInvestmentHotspot(); // No need to hover, done in Background
+        }
+    }
+    @When("the user scrolls down to the request callback form")
+    public void the_user_scrolls_down_to_the_request_callback_form()  {
+       
+    	hotspotPage.waitUntilVisible(hotspotPage.nameInput);
+    	hotspotPage.scrollToElement(hotspotPage.nameInput);
+        
+    }
+
+    @When("the user fills the form with valid data from Excel")
+    public void the_user_fills_the_form_with_valid_data_from_excel() {
+        ExcelReader reader = new ExcelReader();
+        Map<String, String> data = reader.getRowData("InvestmentHotspot", "TC_01");
+        String name = data.get("Name");
+	    String email = data.get("Email");
+	    String phone = data.get("Phone");
+
+	    hotspotPage.fillForm(name, email, phone);
+        //hotspotPage.fillForm(data.get("Name"), data.get("Email"), data.get("Phone"));
+        hotspotPage.submitForm();
+    }
+
+    @Then("the callback request should be submitted successfully")
+    public void the_callback_request_should_be_submitted_successfully() {
+        Assert.assertTrue("Success message not displayed!", hotspotPage.isSuccessMessageDisplayed());
+       
+    }
+
+    
+    
+    // ========== Scenario 4 - Investment Hotspot Invalid ==========
+    
+    
+    
+    @When("the user clicks on the {string}")
+	public void the_user_clicks_on_the(String option)  {
+		if (option.equalsIgnoreCase("Investment Hotspot")) {
+			
+			PageFactory.initElements(driver, hotspotPage); // for @FindBy support
+			hotspotPage.clickInvestmentHotspot(); // No need to hover, done in Background
+		}
+	}
+    
+    @When("the user scrolls down to the request the callback form")
+    public void the_user_scrolls_down_to_the_request_the_callback_form() {
+
+    	hotspotPage.waitUntilVisible(hotspotPage.nameInput);
+        hotspotPage.scrollToElement(hotspotPage.nameInput);
+        
+    }
+    
+    
+    @When("the user fills the form with invalid details from sheet {int} and row {int}")
+	public void the_user_fills_the_form_with_invalid_details_from_sheet_and_row(Integer int1, Integer int2) {
+		
+
+	    ExcelReader reader = new ExcelReader();
+	    Map<String, String> data = reader.getRowData(int1.intValue(), int2.intValue());
+
+	    String name = data.get("Name");
+	    String email = data.get("Email");
+	    String phone = data.get("Phone");
+
+	    hotspotPage.fillForm(name, email, phone);
+	    hotspotPage.submitForm();
+
+	}
+
+
+
+    @Then("an appropriate error message should be displayed")
+    public void an_appropriate_error_message_should_be_displayed() {
+        Assert.assertTrue("Expected error message is not displayed!", hotspotPage.isErrorMessageDisplayed());
+    }
+
+    
+    
+    
+    // ========== Scenario 5 - Buy vs Rent ==========
+    
+    
+    
+    
+    @When("the user clicks on the link {string}")
+    public void the_user_clicks_on_the_link(String linkName) {
+        if (linkName.equalsIgnoreCase("Buy vs Rent")) {
+            //buyVsRentPage = new BuyVsRentPage(driver);
+            buyVsRentPage.clickBuyVsRent();
+            buyVsRentPage.switchToNewTab();
+        }
+    }
+
+
+    @When("the user selects a tax slab and city type")
+    public void the_user_selects_a_tax_slab_and_city_type() throws InterruptedException {
+        buyVsRentPage.clickTaxButton();
+        buyVsRentPage.selectTaxSlab();
+        buyVsRentPage.selectCityType();
+    }
+
+    @Then("the trend graph should be visible on scrolling.")
+    public void the_trend_graph_should_be_visible_on_scrolling() {
+        buyVsRentPage.scrollToTrendGraph();
+        Assert.assertTrue("Trend graph is NOT visible", buyVsRentPage.isTrendGraphDisplayed());
+    }
+
+    
+    
+    // ========== Scenario 6 - Tips and Guides ==========
+    
+    
+    @When("the user clicks on the {string} section")
+    public void the_user_clicks_on_the_section(String sectionName) {
+        tipsPage = new TipsAndGuidesPage(driver);
+        if(sectionName.equalsIgnoreCase("Tips and Guides")) {
+            tipsPage.clickTipsAndGuides();
+             // From BasePage
+            tipsPage.switchToNewTab();
+        	}
+    }
+
+    @When("the user enters city from the following Excel file")
+    public void the_user_enters_city_from_the_following_excel_file(DataTable dataTable) throws InterruptedException {
+        List<List<String>> data = dataTable.asLists(String.class);
+        String fileName = data.get(0).get(0);
+        ExcelReader reader = new ExcelReader();
+        String city = reader.readCityFromSheet(fileName, "CityData");
+        tipsPage.enterCity(city);
+    }
+
+    @When("the user clicks on the Explore button")
+    public void the_user_clicks_on_the_explore_button() {
+        tipsPage.clickExplore();
+        tipsPage.switchToLatestWindow();
+    }
+
+    @Then("the user should be redirected to the locality results page")
+    public void the_user_should_be_redirected_to_the_locality_results_page() {
+        
+    	tipsPage.verifyUserIsOnResultsPage();
+    }
+}

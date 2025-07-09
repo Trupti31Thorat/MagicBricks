@@ -1,0 +1,58 @@
+package com.pages;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
+
+public class ReadyToMovePage extends BasePage {
+
+    public ReadyToMovePage(WebDriver driver) {
+        super(driver);
+    }
+
+    @FindBy(xpath = "//a[text()='Ready to Move']")
+    WebElement readyToMoveLink;
+
+    @FindBy(xpath = "//div[@class=\"mb-srp__tabs__sortby--title\"]")
+    WebElement sortByDropdown;
+
+    @FindBy(xpath = "//ul[@class=\"mb-srp__tabs__sortby__dd__list\"]/li[2]")
+    WebElement sortByOption;
+
+//    @FindBy(xpath = "(//div[contains(@class,'projectTuple')])[1]") // reference element to scroll
+//    WebElement scrollReference;
+
+    public void clickReadyToMove() {
+        click(readyToMoveLink);
+        switchToNewTab(); // ⬅ switch after new tab opens
+        PageFactory.initElements(driver,this);
+    }
+
+    public void selectSortByOption() throws InterruptedException {
+    	Thread.sleep(2000);
+        click(sortByDropdown);
+        click(sortByOption);
+        Thread.sleep(2000);
+        
+    }
+
+    public void clickFirstPropertyWithRobot() throws Exception {
+        //scrollToElement(scrollReference); // bring area into view
+
+        // manually decided coordinates, update as needed
+    	
+        int x = 650;
+        int y = 620;
+
+        clickUsingRobot(x, y); // ⬅ from BasePage
+        Thread.sleep(2000);
+        switchToLatestWindow(); // move to property tab
+    }
+
+    public boolean isNewPropertyPageOpened() {
+        String currentUrl = driver.getCurrentUrl();
+        String title = driver.getTitle().toLowerCase();
+        return currentUrl.contains("propertyDetails") || title.contains("project") || title.contains("details");
+    }
+}

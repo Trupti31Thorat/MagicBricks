@@ -9,12 +9,13 @@ import io.cucumber.junit.CucumberOptions;
 @RunWith(Cucumber.class)
 @CucumberOptions(
     features = "src/test/resources/Features/",
-    glue = {"com.StepDefinitions", "com.hooks"},
-    tags = "@MagicBricks",
+    glue = {"com.stepDefinition"
+    , "com.hooks"},
+    tags = "@BuyVsRent",
     plugin = { "pretty" ,
-    "html:target/CucumberReport.html",
-    "json:target/CucumberReport.json",
-    "junit:target/CucumberReport.xml"
+    //"html:target/CucumberReport.html",
+//    "json:target/CucumberReport.json",
+//    "junit:target/CucumberReport.xml"
     },
     monochrome = true
 

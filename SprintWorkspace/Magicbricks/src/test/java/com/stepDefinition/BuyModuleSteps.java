@@ -1,0 +1,196 @@
+package com.stepDefinition;
+
+import java.util.List;
+
+import java.util.Map;
+
+import org.junit.Assert;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.PageFactory;
+
+import com.pages.*;
+import com.parameters.ConfigReader;
+import com.parameters.ExcelReader;
+import com.setup.BaseSteps;
+
+import io.cucumber.datatable.DataTable;
+import io.cucumber.java.en.*;
+
+public class BuyModuleSteps extends BaseSteps {
+
+    WebDriver driver = BaseSteps.driver;
+    
+    HomePage home;
+    ReadyToMovePage readyPage;
+    InvestmentHotspotPage hotspotPage;
+    BuyVsRentPage buyVsRentPage;
+    TipsAndGuidesPage tipsPage;
+
+    // ----------------- COMMON SETUP -----------------
+    @Given("the user launches the Magicbricks website")
+    public void the_user_launches_the_magicbricks_website() throws InterruptedException {
+        String browser = ConfigReader.getProperty("browser");
+        driver = BaseSteps.setupDriver(browser);
+        BaseSteps.driver = driver;
+
+        // Initialize all pages
+        home = new HomePage(driver);
+        readyPage = new ReadyToMovePage(driver);
+        hotspotPage = new InvestmentHotspotPage(driver);
+        buyVsRentPage = new BuyVsRentPage(driver);
+        tipsPage = new TipsAndGuidesPage(driver);
+    }
+
+    @Given("the user hoves over the Buy module")
+    public void the_user_hoves_over_the_buy_module() {
+        home.hoverOnBuyMenu();
+    }
+
+    // ----------------- READY TO MOVE -----------------
+    @When("the user clicks on {string} option")
+    public void the_user_clicks_on_option(String option) {
+        if (option.equalsIgnoreCase("Ready To Move")) {
+            home.clickReadyToMove();
+        }
+    }
+
+    @Then("the user should be navigated to the Ready to Move page with property listings")
+    public void the_user_should_be_navigated_to_the_ready_to_move_page_with_property_listings() {
+        home.verifyNavigationToReadyToMovePage();
+    }
+    
+    
+    
+    //------------------ FILTER AND SORT---------------------
+
+    @When("the user click on {string}")
+    public void the_user_click_on(String option) {
+        readyPage.clickReadyToMove();
+    }
+
+    @When("the user selects a Sort By option")
+    public void the_user_selects_a_sort_by_option() throws InterruptedException {
+        readyPage.selectSortByOption();
+    }
+
+    @Then("the user clicks on the property listing using Robot")
+    public void the_user_clicks_on_the_property_listing_using_robot() throws Exception {
+        readyPage.clickFirstPropertyWithRobot();
+    }
+
+    @Then("the selected property should be displayed on a new page")
+    public void the_selected_property_should_be_displayed_on_a_new_page() {
+        readyPage.verifyPropertyDetailsPageOpened();
+    }
+
+    // ----------------- INVESTMENT HOTSPOT - VALID -----------------
+    @When("the user clicks on {string}")
+    public void the_user_clicks_on(String option) {
+        if (option.equalsIgnoreCase("Investment Hotspot")) {
+            PageFactory.initElements(driver, hotspotPage);
+            hotspotPage.clickInvestmentHotspot();
+        }
+    }
+
+    @When("the user scrolls down to the request callback form")
+    public void the_user_scrolls_down_to_the_request_callback_form() {
+        hotspotPage.waitUntilVisible(hotspotPage.nameInput);
+        hotspotPage.scrollToElement(hotspotPage.nameInput);
+    }
+
+    @When("the user fills the form with valid data from Excel")
+    public void the_user_fills_the_form_with_valid_data_from_excel() {
+        ExcelReader reader = new ExcelReader();
+        Map<String, String> data = reader.getRowData("InvestmentHotspot", "TC_01");
+
+        hotspotPage.fillForm(data.get("Name"), data.get("Email"), data.get("Phone"));
+        hotspotPage.submitForm();
+    }
+
+    @Then("the callback request should be submitted successfully")
+    public void the_callback_request_should_be_submitted_successfully() {
+        Assert.assertTrue("Success message not displayed!", hotspotPage.isSuccessMessageDisplayed());
+    }
+
+    // ----------------- INVESTMENT HOTSPOT - INVALID -----------------
+    @When("the user clicks on the {string}")
+    public void the_user_clicks_on_the(String option) {
+        if (option.equalsIgnoreCase("Investment Hotspot")) {
+            PageFactory.initElements(driver, hotspotPage);
+            hotspotPage.clickInvestmentHotspot();
+        }
+    }
+
+    @When("the user scrolls down to the request the callback form")
+    public void the_user_scrolls_down_to_the_request_the_callback_form() {
+        hotspotPage.waitUntilVisible(hotspotPage.nameInput);
+        hotspotPage.scrollToElement(hotspotPage.nameInput);
+    }
+
+    @When("the user fills the form with invalid details from sheet {int} and row {int}")
+    public void the_user_fills_the_form_with_invalid_details_from_sheet_and_row(Integer sheetIndex, Integer rowIndex) {
+        ExcelReader reader = new ExcelReader();
+        Map<String, String> data = reader.getRowData(sheetIndex, rowIndex);
+
+        hotspotPage.fillForm(data.get("Name"), data.get("Email"), data.get("Phone"));
+        hotspotPage.submitForm();
+    }
+
+    @Then("an appropriate error message should be displayed")
+    public void an_appropriate_error_message_should_be_displayed() {
+        Assert.assertTrue("Expected error message is not displayed!", hotspotPage.isErrorMessageDisplayed());
+    }
+
+    // ----------------- BUY VS RENT -----------------
+    @When("the user clicks on the link {string}")
+    public void the_user_clicks_on_the_link(String linkName) {
+        if (linkName.equalsIgnoreCase("Buy vs Rent")) {
+            buyVsRentPage.clickBuyVsRent();
+            buyVsRentPage.switchToNewTab();
+        }
+    }
+
+    @When("the user selects a tax slab and city type")
+    public void the_user_selects_a_tax_slab_and_city_type() throws InterruptedException {
+        buyVsRentPage.clickTaxButton();
+        buyVsRentPage.selectTaxSlab();
+        buyVsRentPage.selectCityType();
+    }
+
+    @Then("the trend graph should be visible on scrolling.")
+    public void the_trend_graph_should_be_visible_on_scrolling() {
+        buyVsRentPage.scrollToTrendGraph();
+        Assert.assertTrue("Trend graph is NOT visible", buyVsRentPage.isTrendGraphDisplayed());
+    }
+
+    // ----------------- TIPS AND GUIDES -----------------
+    @When("the user clicks on the {string} section")
+    public void the_user_clicks_on_the_section(String sectionName) {
+        if (sectionName.equalsIgnoreCase("Tips and Guides")) {
+            tipsPage.clickTipsAndGuides();
+            tipsPage.switchToNewTab();
+        }
+    }
+
+    @When("the user enters city from the following Excel file")
+    public void the_user_enters_city_from_the_following_excel_file(DataTable dataTable) throws InterruptedException {
+        List<List<String>> data = dataTable.asLists(String.class);
+        String fileName = data.get(0).get(0);
+
+        ExcelReader reader = new ExcelReader();
+        String city = reader.readCityFromSheet(fileName, "CityData");
+
+        tipsPage.enterCity(city);
+    }
+
+    @When("the user clicks on the Explore button")
+    public void the_user_clicks_on_the_explore_button() {
+        tipsPage.clickExplore();
+        tipsPage.switchToLatestWindow();
+    }
+
+    @Then("the user should be redirected to the locality results page")
+    public void the_user_should_be_redirected_to_the_locality_results_page() {
+        tipsPage.verifyUserIsOnResultsPage();
+    }
+}

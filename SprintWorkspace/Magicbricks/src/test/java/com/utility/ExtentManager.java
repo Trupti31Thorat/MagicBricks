@@ -2,12 +2,13 @@ package com.utility;
 
 import com.relevantcodes.extentreports.ExtentReports;
 
+
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class ExtentManager {
 
-    private static ExtentReports extent;
+    private static ExtentReports extent; 
     private static String reportFolderPath;
 
     public static ExtentReports getInstance() {

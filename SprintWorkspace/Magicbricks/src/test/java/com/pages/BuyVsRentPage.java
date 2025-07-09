@@ -4,11 +4,13 @@ import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
 
 public class BuyVsRentPage extends BasePage {
 
     public BuyVsRentPage(WebDriver driver) {
         super(driver);
+        
     }
 
     @FindBy(xpath = "//a[text()='Buy vs Rent']")
@@ -28,33 +30,27 @@ public class BuyVsRentPage extends BasePage {
     WebElement trendGraph;
 
     public void clickBuyVsRent() {
-        waitUntilVisible(buyVsRentLink);
-        buyVsRentLink.click();
+        click(buyVsRentLink);
     }
     
     public void clickTaxButton() throws InterruptedException {
-    	waitUntilVisible(taxButton);
-    	taxButton.click();
-    	//Thread.sleep(2000);
-    	//waitUntilVisible(taxRadioButton);	
+    	click(taxButton);
     }
 
     public void selectTaxSlab() {
-    	
-       // waitUntilVisible(taxRadioButton);
-        taxRadioButton.click();
-        //jfjff
+    	//clicking because we do not need to wait for the button here     
+    	taxRadioButton.click();
+        
     }
 
     public void selectCityType() {
-       // waitUntilVisible(cityType);
-        cityType.click();
+    	//clicking because we do not need to wait for the button here 
+       cityType.click();
     }
 
     public void scrollToTrendGraph() {
     	scrollToElement(trendGraph);
-    	JavascriptExecutor js = (JavascriptExecutor) driver;
-		js.executeScript("window.scrollBy(0, -200)");
+    	
     }
 
     public boolean isTrendGraphDisplayed() {

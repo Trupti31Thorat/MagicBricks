@@ -36,38 +36,9 @@ public class HomePage extends BasePage {
         readyToMoveOption.click();
     }
 
-    // (Optional) Get current page title for assertion
-//    public String getPageTitle() {
-//        return driver.getTitle();
-//    }
-    public void validateReadyToMovePage() {
-        // Step 1: Switch to new tab
-        String parentWindow = driver.getWindowHandle();
-
-        for (String handle : driver.getWindowHandles()) {
-            if (!handle.equals(parentWindow)) {
-                driver.switchTo().window(handle);
-                break;
-            }
-        }
-
-        // Step 2: Read expected URL part from home.properties
-        String expectedUrlPart = ConfigReader.getProperty("home.properties", "readyToMove.UrlPart");
-
-        // Step 3: Wait until the expected URL appears
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-        boolean urlMatches = wait.until(d ->
-            d.getCurrentUrl().toLowerCase().contains(expectedUrlPart.toLowerCase())
-        );
-
-        if (!urlMatches) {
-            throw new AssertionError("Navigation failed! Current URL: " + driver.getCurrentUrl());
-        }
-    }
-
-    //  Get current URL for assertion
-    public String getCurrentUrl() {
-        return driver.getCurrentUrl();
+    public void verifyNavigationToReadyToMovePage() {
+    	switchToNewTab();
+    	verifyCurrentURL("readyToMove.urlPart");
     }
 
 }

@@ -12,15 +12,14 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 public class InvestmentHotspotPage extends BasePage {
 
     WebDriver driver;
+    
 
     public InvestmentHotspotPage(WebDriver driver) {
-        super(driver);
+        super(driver);   
         
     }
-
     
-
-    
+     
 
     @FindBy(xpath = "//a[text()='Investment Hotspot']")
     WebElement investmentHotspot;
@@ -47,8 +46,10 @@ public class InvestmentHotspotPage extends BasePage {
     
 
     public void clickInvestmentHotspot() {
-        investmentHotspot.click();
+    	 
+        click(investmentHotspot);
         switchToNewTab();
+       
     }
 
     public void fillForm(String name, String email, String phone) {
@@ -65,18 +66,16 @@ public class InvestmentHotspotPage extends BasePage {
     }
 
     public void submitForm() {
-        submitBtn.click();
+        click(submitBtn);
     }
 
     public boolean isSuccessMessageDisplayed() {
-    	WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(10));
-    	wait.until(ExpectedConditions.visibilityOf(successMsg));
+    	waitUntilVisible(successMsg);
         return successMsg.isDisplayed();
     }
     
     public boolean isErrorMessageDisplayed() {
-    	WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(10));
-    	wait.until(ExpectedConditions.visibilityOf(errorMsg));
+    	waitUntilVisible(errorMsg);
         return errorMsg.isDisplayed();
     }
     

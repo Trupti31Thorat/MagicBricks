@@ -1,0 +1,54 @@
+package com.parameters;
+
+import java.io.FileInputStream;
+
+
+import java.io.IOException;
+import java.util.Properties;
+
+public class ConfigReader {
+	
+	private static Properties prop;
+	
+	
+	 //Used for base.url and browser from profile.properties
+
+	
+	public static void initProperties() {
+		prop = new Properties();
+		try {
+			FileInputStream input = new FileInputStream("src/test/resources/PropertiesFile/profile.properties");
+			prop.load(input);
+		}
+		catch (IOException e){
+			System.out.println("Failed To Load profile.properties");
+			e.printStackTrace();	
+		}
+		//return prop;
+	}
+	
+	
+	
+	public static String getProperty(String key) {
+		if(prop==null) {
+			initProperties();
+		}
+		return prop.getProperty(key);
+	}
+	
+	
+	//For any other .properties file like home.properties
+	
+	public static String getProperty(String fileName, String key) {
+        Properties tempProp = new Properties();
+        try {
+            FileInputStream input = new FileInputStream("src/test/resources/PropertiesFile/" + fileName);
+            tempProp.load(input);
+        } catch (IOException e) {
+            System.out.println(" Failed to load " + fileName);
+            e.printStackTrace();
+        }
+        return tempProp.getProperty(key);
+    }
+
+}
