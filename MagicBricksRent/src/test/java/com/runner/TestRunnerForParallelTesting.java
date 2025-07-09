@@ -5,16 +5,8 @@ import io.cucumber.testng.CucumberOptions;
 import org.testng.annotations.DataProvider;
 
 @CucumberOptions(
-//    features = "src/test/resources/Features",
-//    glue = {"com.stepDefination"},
-//    plugin = {
-//        "pretty",
-//        "html:target/parallel/CucumberReport.html",
-//        "json:target/parallel/cucumber.json",
-//        "com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:"
-//    },
-//    tags = "@ownerPhoto or @contactOwnerPositive or @contactOwnerNegative or @sortHighToLow or @furnishedHomesBHK or @findAgent or @exploreLocalities",
-//    monochrome = true
+    features = "C:\\Users\\SHANKARE\\eclipse-workspace\\MagicBricksRent\\src\\test\\resource\\Features\\Rent.feature",
+    glue = {"com.stepDefination","com.setup"}
 )
 public class TestRunnerForParallelTesting extends AbstractTestNGCucumberTests {
 

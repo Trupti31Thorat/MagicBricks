@@ -1,9 +1,170 @@
 
+@ownerPhoto
+Scenario: Open Rent Owner Properties Click Photo and Scroll                     [90m# src/test/resource/Features/Rent.feature:4[0m
+  [32mGiven [0m[32muser launches the MagicBricks website[0m                                   [90m# com.stepDefination.Rent.user_launches_the_magic_bricks_website()[0m
+
+    Embedding Image [image/png 212721 bytes]
+
+  [32mWhen [0m[32muser hovers on Rent and clicks on Owner Properties under Popular Choices[0m [90m# com.stepDefination.Rent.user_hovers_on_rent_and_clicks_on_owner_properties_under_popular_choices()[0m
+
+    Embedding Image [image/png 256242 bytes]
+
+  [32mAnd [0m[32muser clicks on first property photo[0m                                       [90m# com.stepDefination.Rent.user_clicks_on_first_property_photo()[0m
+
+    Embedding Image [image/png 1260585 bytes]
+
+  [32mThen [0m[32muser scrolls down the photo view page[0m                                    [90m# com.stepDefination.Rent.user_scrolls_down_the_photo_view_page()[0m
+
+    Embedding Image [image/png 1260585 bytes]
+
+
 @contactOwnerPositive
 Scenario: Contact Owner from Rent in that Owner Properties with valid data      [90m# src/test/resource/Features/Rent.feature:12[0m
   [32mGiven [0m[32muser launches the MagicBricks website[0m                                   [90m# com.stepDefination.Rent.user_launches_the_magic_bricks_website()[0m
+
+    Embedding Image [image/png 210744 bytes]
+
   [32mWhen [0m[32muser hovers on Rent and clicks on Owner Properties under Popular Choices[0m [90m# com.stepDefination.Rent.user_hovers_on_rent_and_clicks_on_owner_properties_under_popular_choices()[0m
+
+    Embedding Image [image/png 256735 bytes]
+
   [32mAnd [0m[32muser clicks on Contact Owner button[0m                                       [90m# com.stepDefination.Rent.user_clicks_on_contact_owner_button()[0m
+
+    Embedding Image [image/png 259393 bytes]
+
   [32mAnd [0m[32muser fills the contact form with valid data from Excel[0m                    [90m# com.stepDefination.Rent.user_fills_the_contact_form_with_valid_data_from_excel()[0m
+
+    Embedding Image [image/png 266149 bytes]
+
   [32mAnd [0m[32muser clicks on Continue button[0m                                            [90m# com.stepDefination.Rent.user_clicks_on_continue_button()[0m
+
+    Embedding Image [image/png 266936 bytes]
+
   [32mThen [0m[32mcontact form should proceed next[0m                                         [90m# com.stepDefination.Rent.contact_form_should_proceed_next()[0m
+
+    Embedding Image [image/png 258046 bytes]
+
+
+@contactOwnerPositiveOutline
+Scenario Outline: Contact Owner from Rent using sheet name and row              [90m# src/test/resource/Features/Rent.feature:32[0m
+  [32mGiven [0m[32muser launches the MagicBricks website[0m                                   [90m# com.stepDefination.Rent.user_launches_the_magic_bricks_website()[0m
+
+    Embedding Image [image/png 210734 bytes]
+
+  [32mWhen [0m[32muser hovers on Rent and clicks on Owner Properties under Popular Choices[0m [90m# com.stepDefination.Rent.user_hovers_on_rent_and_clicks_on_owner_properties_under_popular_choices()[0m
+
+    Embedding Image [image/png 256741 bytes]
+
+  [32mAnd [0m[32muser clicks on Contact Owner button[0m                                       [90m# com.stepDefination.Rent.user_clicks_on_contact_owner_button()[0m
+
+    Embedding Image [image/png 259399 bytes]
+
+  [32mAnd [0m[32muser fills the contact form using sheet [0m[32m[1m"Sheet1"[0m[32m and row [0m[32m[1m1[0m                [90m# com.stepDefination.Rent.user_fills_contact_form_excel(java.lang.String,int)[0m
+
+    Embedding Image [image/png 266149 bytes]
+
+  [32mAnd [0m[32muser clicks on Continue button[0m                                            [90m# com.stepDefination.Rent.user_clicks_on_continue_button()[0m
+
+    Embedding Image [image/png 266941 bytes]
+
+  [32mThen [0m[32mcontact form should proceed next[0m                                         [90m# com.stepDefination.Rent.contact_form_should_proceed_next()[0m
+
+    Embedding Image [image/png 258046 bytes]
+
+
+@contactOwnerDataProvider
+Scenario: Contact Owner form with data from Excel                               [90m# src/test/resource/Features/Rent.feature:37[0m
+  [32mGiven [0m[32muser launches the MagicBricks website[0m                                   [90m# com.stepDefination.Rent.user_launches_the_magic_bricks_website()[0m
+
+    Embedding Image [image/png 210744 bytes]
+
+  [32mWhen [0m[32muser hovers on Rent and clicks on Owner Properties under Popular Choices[0m [90m# com.stepDefination.Rent.user_hovers_on_rent_and_clicks_on_owner_properties_under_popular_choices()[0m
+
+    Embedding Image [image/png 255558 bytes]
+
+  [32mAnd [0m[32muser clicks on Contact Owner button[0m                                       [90m# com.stepDefination.Rent.user_clicks_on_contact_owner_button()[0m
+
+    Embedding Image [image/png 258433 bytes]
+
+  [32mAnd [0m[32muser fills the contact form using data from[0m                               [90m# com.stepDefination.Rent.user_fills_contact_form_using_data_from(io.cucumber.datatable.DataTable)[0m
+    | ContactFormData.xlsx | Sheet1 | 1 |
+
+    Embedding Image [image/png 264884 bytes]
+
+  [32mAnd [0m[32muser clicks on Continue button[0m                                            [90m# com.stepDefination.Rent.user_clicks_on_continue_button()[0m
+
+    Embedding Image [image/png 265836 bytes]
+
+  [32mThen [0m[32mcontact form should proceed next[0m                                         [90m# com.stepDefination.Rent.contact_form_should_proceed_next()[0m
+
+    Embedding Image [image/png 256851 bytes]
+
+
+@contactOwnerNegative
+Scenario: Contact Owner from Rent in Owner Properties with invalid WhatsApp number [90m# src/test/resource/Features/Rent.feature:49[0m
+  [32mGiven [0m[32muser launches the MagicBricks website[0m                                      [90m# com.stepDefination.Rent.user_launches_the_magic_bricks_website()[0m
+
+    Embedding Image [image/png 212721 bytes]
+
+  [32mWhen [0m[32muser hovers on Rent and clicks on Owner Properties under Popular Choices[0m    [90m# com.stepDefination.Rent.user_hovers_on_rent_and_clicks_on_owner_properties_under_popular_choices()[0m
+
+    Embedding Image [image/png 255397 bytes]
+
+  [32mAnd [0m[32muser clicks on Contact Owner button[0m                                          [90m# com.stepDefination.Rent.user_clicks_on_contact_owner_button()[0m
+
+    Embedding Image [image/png 258270 bytes]
+
+  [32mAnd [0m[32muser fills the contact form with invalid WhatsApp number from Excel[0m          [90m# com.stepDefination.Rent.user_fills_the_contact_form_with_invalid_data_from_excel()[0m
+
+    Embedding Image [image/png 265025 bytes]
+
+  [32mAnd [0m[32muser clicks on Continue button[0m                                               [90m# com.stepDefination.Rent.user_clicks_on_continue_button()[0m
+
+    Embedding Image [image/png 265854 bytes]
+
+  [32mThen [0m[32mphone number validation error message should appear[0m                         [90m# com.stepDefination.Rent.phone_number_validation_error_should_appear()[0m
+
+    Embedding Image [image/png 265882 bytes]
+
+
+@sortHighToLow
+Scenario: Sort Owner Properties by Price High to Low                            [90m# src/test/resource/Features/Rent.feature:59[0m
+  [32mGiven [0m[32muser launches the MagicBricks website[0m                                   [90m# com.stepDefination.Rent.user_launches_the_magic_bricks_website()[0m
+
+    Embedding Image [image/png 209296 bytes]
+
+  [32mWhen [0m[32muser hovers on Rent and clicks on Owner Properties under Popular Choices[0m [90m# com.stepDefination.Rent.user_hovers_on_rent_and_clicks_on_owner_properties_under_popular_choices()[0m
+
+    Embedding Image [image/png 256828 bytes]
+
+  [32mAnd [0m[32muser selects Sort By as [0m[32m[1m"Price: High to Low"[0m                              [90m# com.stepDefination.Rent.user_selects_sort_by_as(java.lang.String)[0m
+
+    Embedding Image [image/png 236580 bytes]
+
+  [32mThen [0m[32msorting should be applied[0m                                                [90m# com.stepDefination.Rent.sorting_should_be_applied()[0m
+
+    Embedding Image [image/png 236580 bytes]
+
+
+@furnishedHomesBHK
+Scenario: Furnished Homes BHK Selection and Window Handling                    [90m# src/test/resource/Features/Rent.feature:66[0m
+  [32mGiven [0m[32muser launches the MagicBricks website[0m                                  [90m# com.stepDefination.Rent.user_launches_the_magic_bricks_website()[0m
+
+    Embedding Image [image/png 210892 bytes]
+
+  [32mWhen [0m[32muser hovers on Rent and clicks on Furnished Homes under Popular Choices[0m [90m# com.stepDefination.Rent.user_hovers_on_rent_and_clicks_on_furnished_homes_under_popular_choices()[0m
+
+    Embedding Image [image/png 112053 bytes]
+
+  [32mAnd [0m[32muser scrolls to the bedroom selection section[0m                            [90m# com.stepDefination.Rent.user_scrolls_to_the_bedroom_selection_section()[0m
+
+    Embedding Image [image/png 254364 bytes]
+
+  [32mAnd [0m[32muser clicks on 1BHK option[0m                                               [90m# com.stepDefination.Rent.user_clicks_on_1bhk_option()[0m
+
+    Embedding Image [image/png 382141 bytes]
+
+  [32mThen [0m[32mthe page should display only 1BHK furnished properties[0m                  [90m# com.stepDefination.Rent.the_page_should_display_only_1bhk_furnished_properties()[0m
+
+    Embedding Image [image/png 382010 bytes]
+
