@@ -3,8 +3,12 @@ package com.stepdefination;
 import java.awt.AWTException;
 import java.util.List;
 
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 
+//import com.aventstack.extentreports.gherkin.model.Scenario;
+import io.cucumber.java.Scenario;
 import com.pages.BalanceTransferPageFactory;
 import com.pages.CityPageFactory;
 import com.pages.EMIPageFactory;
@@ -14,6 +18,8 @@ import com.parameter.ExcelReader;
 import com.setup.BaseSteps;
 import org.testng.Assert;
 
+import io.cucumber.java.After;
+import io.cucumber.java.AfterStep;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
@@ -25,76 +31,7 @@ public class MagicBricksHomeLoans {
 	
 	
 	//------------------------------------Scenario 1---------------------------------------------------
-/*	HomeLoansPageFactory homeLoansPage;
 
-	@Given("user is on Magic Bricks homepage")
-	public void user_is_on_magic_bricks_homepage() {
-		driver = BaseSteps.getDriver();
-		driver.get(BaseSteps.getBaseUrl());
-		homeLoansPage = new HomeLoansPageFactory(driver);
-	}
-
-	@When("the user clicks on the {string} link in the navigation bar")
-	public void the_user_clicks_on_the_link_in_the_navigation_bar(String string) {
-		
-		homeLoansPage.clickHomeLoansbtn();   
-		homeLoansPage.switchToNewestWindow();
-	}
-
-	@Then("the user should be redirected to the Home Loans page")
-	public void the_user_should_be_redirected_to_the_home_loans_page() {
-		// Assert.assertTrue(driver.getTitle().contains("Home Loans"));
-}
-	
-	@When("the user fills the loan form with {string} amount")
-	public void the_user_fills_the_loan_form_with_amount(String amount){
-	    homeLoansPage.enterLoanAmount(amount);
-	}
-
-	@When("the user enters mobile number {string}")
-	public void the_user_enters_mobile_number(String mobile) {
-	   homeLoansPage.enterMobileNumber(mobile);
-	}
-	
-	@When("the user enters property city {string}")
-	public void the_user_enters_property_city(String property) {
-		homeLoansPage.enterPropertyCity(property);
-	}
-	
-	@When("the user selects {string} for property city")
-	public void the_user_selects_for_property_city(String city) {
-	    homeLoansPage.selectPropertyCity(city);
-	}
-
-	@When("the user selects {string} for property finalized")
-	public void the_user_selects_for_property_finalized(String option) {
-	   homeLoansPage.selectPropertyFinalized(option);
-	}
-	
-	@When("the user selects {string} for is token amount paid")
-	public void the_user_selects_for_is_token_amount_paid(String token) {
-	    homeLoansPage.selectTokenAmount(token);
-	}
-
-	@When("the user clicks on the Check Eligibility button")
-	public void the_user_clicks_on_the_check_eligibility_button() {
-	   homeLoansPage.clickCheckEligibility();
-	}
-
-	@Then("the eligibility form should be submitted successfully")
-	public void the_eligibility_form_should_be_submitted_successfully() {
-	    System.out.println("Eligibility form Submitted successfully");
-	}
-}
-
-
-
-*/
-
-//-----------------------------------SBI Eligibility Scenario----------------------------------------------------------------------
-
-	/*
-	
 	
 SBIPageFactory SBIpage;
 
@@ -150,19 +87,19 @@ public void the_user_clicks_on_the_button(String eligibility) {
 
 @Then("the user should be redirected to the Mobile Number Verification page")
 public void the_user_should_be_redirected_to_the_mobile_number_verification_page() {
-   
+	//Assert.assertTrue(driver.getTitle().contains("Verify your Number"));
+	SBIpage.takesscreen();
+	Assert.assertTrue(driver.getTitle().contains(""));
 }
 
 
-}
-//
 
-*/
+
 
 	
-//----------------------------------------SBI Eligibility using Excel Scenario----------------------------------------------
+//----------------------------------------SBI Eligibility using Excel----------------------------------------------
 	
-	  SBIPageFactory sbiPage;
+/*	  SBIPageFactory sbiPage;
 
 	    @Given("the user is on the Magic Bricks homepage")
 	    public void the_user_is_on_the_magic_bricks_homepage() {
@@ -225,7 +162,7 @@ public void the_user_should_be_redirected_to_the_mobile_number_verification_page
 	    	sbiPage.takesscreen();
 	    }
 	
-
+*/
 
 
 //---------------------------------------Scenario navigate to city----------------------------------------------------------
@@ -279,85 +216,25 @@ public void the_user_should_be_redirected_to_the_mobile_number_verification_page
 	@Then("the user clicks on one of the cities")
 	public void the_user_clicks_on_one_of_the_cities() {
 	    cityPage.clickCity();
+	    cityPage.takesscreen();
 	}
 	
 	@Then("the user clicks on {string} button to generate signup form")
 	public void the_user_clicks_on_button_to_generate_signup_form(String string) {
 	    cityPage.clickNext();
-	}
-
-	
-
-}          
-
-
-
-//-----------------------------------EMI Calculation Scenario--------------------------------------------------------
-	
-	
-	/*
-	
-EMIPageFactory emiPage;
-	
-	@Given("I am on the home page")
-	public void i_am_on_the_home_page() {
-		driver = BaseSteps.getDriver();
-		driver.get(BaseSteps.getBaseUrl());
-		emiPage = new EMIPageFactory(driver);
-	}
-
-	@When("I navigate to the home loans menu")
-	public void i_navigate_to_the_home_loans_menu() {
-		emiPage.EMICalculatorbtn();   
-		emiPage.switchToNewestWindow();
-	}
-
-	@When("I click on the home loan EMI calculator")
-	public void i_click_on_the_home_loan_emi_calculator() {
-	    //-----------------------------------
-	}
-
-	@When("I fill in the loan amount {string}")
-	public void i_fill_in_the_loan_amount(String amount) {
-	    emiPage.enterEMILoanAmount(amount);
-	}
-
-	@When("I fill in the loan tenure {string}")
-	public void i_fill_in_the_loan_tenure(String tenure) {
-		emiPage.enterEMITenure(tenure);
-	}
-
-	@When("I fill in the interest rate {string}")
-	public void i_fill_in_the_interest_rate(String interest) {
-	    emiPage.enterEMIInterest(interest);
-	}
-	
-	@When("I select appropriate option for Is Property Finalized? {string}")
-	public void i_select_appropriate_option_for_is_property_finalized(String option) {
-		 emiPage.selectPropertyFinalized(option);
-		 emiPage.selectFreeBreakfastFilter();
-	}
-
-	@When("I click on {string}")
-	public void i_click_on(String calculate) {
-		emiPage.clickCalculateEMI(calculate);
-	}
-
-	@Then("I should see the recalculated EMI")
-	public void i_should_see_the_recalculated_emi() {
-	    ///------------------------------------------------
+	    cityPage.takesscreen();
+	    
+	    
+	    
+	    
 	}
 
 
-
-}
-
-*/
 
 
 
 //---------------------------------------EMI Calculator using Excel---------------------------------------------------
-/*
+
 
     EMIPageFactory emiPage;
 
@@ -409,17 +286,15 @@ EMIPageFactory emiPage;
     @Then("I should see the recalculated EMI")
     public void i_should_see_the_recalculated_emi() {
         // Add your assertion here
+    	emiPage.takesscreen();
     }
-
-}
-
 
 
 
 	
 	//--------------------------------Balance Transfer using excel------------------------------------
 
-/*	
+
 	BalanceTransferPageFactory btPage;
 	
 	
@@ -472,15 +347,23 @@ public void the_user_fills_the_old_and_new_loan_details_with_data_from_excel() t
 
         btPage.clickCompare("");
 
-        System.out.println("✔️ Filled: " + oldLoanAmount + " | " + oldTenure + " | " + oldRate + " | " + installments + " | " + processingFees + " | " + newTenure + " | " + newRate);
+        System.out.println(" Filled: " + oldLoanAmount + " | " + oldTenure + " | " + oldRate + " | " + installments + " | " + processingFees + " | " + newTenure + " | " + newRate);
     }
 }
 	@Then("the user compares the old and new loan details")
 	public void the_user_compares_the_old_and_new_loan_details() {
-		   System.out.println("✔️ Comparison triggered successfully.");
+		   System.out.println(" Comparison triggered successfully.");
 
 	}
 
+	@AfterStep
+	public void tearDown(Scenario scenario) 
+	{
+		final byte[] screenshot = ((TakesScreenshot)driver).getScreenshotAs(OutputType.BYTES);
+		scenario.attach(screenshot, "image/png", "Image");
+		
+	}
 }
 
-*/
+
+

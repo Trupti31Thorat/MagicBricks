@@ -1,8 +1,12 @@
 package com.pages;
 
 import java.awt.Robot;
+import java.io.File;
 
+import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
@@ -142,6 +146,22 @@ public void clickCity() {
     cityClickBtn.click();
 
 }
+
+
+public void takesscreen() {
+    try {
+        TakesScreenshot ts = (TakesScreenshot) driver;
+        File src = ts.getScreenshotAs(OutputType.FILE);
+
+        String dest = "C:\\Users\\teshahan\\OneDrive - Capgemini\\Eclipse1\\HomeLoansFunctionality\\src\\test\\resource\\screenshot\\" + System.currentTimeMillis() + ".png";
+        FileUtils.copyFile(src, new File(dest));
+
+        System.out.println("Screenshot saved at: " + dest);
+    } catch (Exception e) {
+        System.out.println("Failed to take screenshot: " + e.getMessage());
+    }
+}
+
 
 public void clickNext() {
 	

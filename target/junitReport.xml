@@ -1,11 +1,68 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="Cucumber" time="24.405" tests="1" skipped="0" failures="0" errors="0" timestamp="2025-07-08T10:49:37.578801600Z">
-<testcase classname="Magic Bricks Home Loans Functionality" name="Verify selection of SBI Home Loan with data from Excel" time="24.176">
+<testsuite name="Cucumber" time="96.936" tests="5" skipped="0" failures="1" errors="0" timestamp="2025-07-09T10:39:49.073081200Z">
+<testcase classname="Magic Bricks Home Loans Functionality" name="Verify selection of SBI Home Loan - #1.1" time="20.837">
 <system-out><![CDATA[
 Given the user is on the Magic Bricks homepage..............................passed
 When the user clicks on the "SBI Home Loans" link in the Home Loans Menu bar.passed
-And the user fills the SBI Home Loan form with data from Excel..............passed
+And the user enters the loan amount in the "5000000" field..................passed
+Then the user enters a valid mobile number in the "9876543210" field........passed
+Then the user enters a valid value in "mum" field...........................passed
+Then the user selects the city where the property is located from the Property City dropdown.passed
+Then the user selects the appropriate option for Is Property Finalized? "Yes".passed
+And the user selects the appropriate option for Is Token Amount Paid "No"...passed
+And the user clicks on the "Check Eligibility" button.......................passed
 Then the user should be redirected to the Mobile Number Verification page...passed
+]]></system-out>
+</testcase>
+<testcase classname="Magic Bricks Home Loans Functionality" name="Verify selection of SBI Home Loan - #1.2" time="18.19">
+<system-out><![CDATA[
+Given the user is on the Magic Bricks homepage..............................passed
+When the user clicks on the "SBI Home Loans" link in the Home Loans Menu bar.passed
+And the user enters the loan amount in the "3000000" field..................passed
+Then the user enters a valid mobile number in the "912346789" field.........passed
+Then the user enters a valid value in "pun" field...........................passed
+Then the user selects the city where the property is located from the Property City dropdown.passed
+Then the user selects the appropriate option for Is Property Finalized? "Yes".passed
+And the user selects the appropriate option for Is Token Amount Paid "No"...passed
+And the user clicks on the "Check Eligibility" button.......................passed
+Then the user should be redirected to the Mobile Number Verification page...passed
+]]></system-out>
+</testcase>
+<testcase classname="Magic Bricks Home Loans Functionality" name="Verify navigation to City Selection Page" time="24.002">
+<system-out><![CDATA[
+Given user is on Magic Bricks homepage......................................passed
+When the user clicks on the "Home Loans" link in the navigation bar.........passed
+Then the user should be redirected to the Home Loans page...................passed
+Then the user scrolls down on the Home Loans Page...........................passed
+And the user clicks on "Claim Now" button on SBI Home Loan Offer............passed
+Then the user should be redirected to the MagicLoans page...................passed
+Then the user scrolls down on the MagicLoans Page...........................passed
+And the user clicks on "Get Started-->" button..............................passed
+Then the user clicks on one of the cities...................................passed
+Then the user clicks on "Next" button to generate signup form...............passed
+]]></system-out>
+</testcase>
+<testcase classname="Magic Bricks Home Loans Functionality" name="Calculate Home Loan EMI with data from Excel" time="26.732">
+<system-out><![CDATA[
+Given I am on the home page.................................................passed
+When I navigate to the home loans menu......................................passed
+And I click on the home loan EMI calculator.................................passed
+And I calculate EMI for all rows in Excel...................................passed
+Then I should see the recalculated EMI......................................passed
+]]></system-out>
+</testcase>
+<testcase classname="Magic Bricks Home Loans Functionality" name="Navigate to Home Loans and perform balance transfer" time="6.889">
+<failure type="java.lang.NullPointerException" message="Cannot invoke &quot;org.openqa.selenium.TakesScreenshot.getScreenshotAs(org.openqa.selenium.OutputType)&quot; because &quot;this.driver&quot; is null">
+<![CDATA[java.lang.NullPointerException: Cannot invoke "org.openqa.selenium.TakesScreenshot.getScreenshotAs(org.openqa.selenium.OutputType)" because "this.driver" is null
+	at com.stepdefination.MagicBricksHomeLoans.tearDown(MagicBricksHomeLoans.java:509)
+]]>
+</failure>
+<system-out><![CDATA[
+Given user is on the home page..............................................undefined
+When the user navigates to the Home Loans section...........................skipped
+And the user clicks on the Balance Transfer option..........................skipped
+And the user fills the old and new loan details with data from Excel........skipped
+Then the user compares the old and new loan details.........................skipped
 ]]></system-out>
 </testcase>
 </testsuite>

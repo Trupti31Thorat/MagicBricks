@@ -3,7 +3,7 @@ package com.runner;
 import io.cucumber.testng.AbstractTestNGCucumberTests;
 import io.cucumber.testng.CucumberOptions;
 
-@CucumberOptions(features={"src\\test\\resource\\Features\\HomeLoans.feature"}, tags = "@SBIforminput2", 
+@CucumberOptions(features={"src\\test\\resource\\Features\\HomeLoans.feature"}, tags = "@CityNavigation or @EMICalc or @SBIforminput1", 
 glue={"com.stepdefination", "com.setup"},
 plugin= {"pretty:target/pretty.txt",
 		"json:target/jsonreport.json", 

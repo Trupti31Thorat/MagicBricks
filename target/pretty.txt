@@ -1,7 +1,162 @@
 
-@SBIforminput2
-Scenario: Verify selection of SBI Home Loan with data from Excel               [90m# src/test/resource/Features/HomeLoans.feature:43[0m
-  [32mGiven [0m[32mthe user is on the Magic Bricks homepage[0m                               [90m# com.stepdefination.MagicBricksHomeLoans.the_user_is_on_the_magic_bricks_homepage()[0m
-  [32mWhen [0m[32mthe user clicks on the [0m[32m[1m"SBI Home Loans"[0m[32m link in the Home Loans Menu bar[0m [90m# com.stepdefination.MagicBricksHomeLoans.the_user_clicks_on_the_link_in_the_home_loans_menu_bar(java.lang.String)[0m
-  [32mAnd [0m[32mthe user fills the SBI Home Loan form with data from Excel[0m               [90m# com.stepdefination.MagicBricksHomeLoans.the_user_fills_the_SBI_Home_Loan_form_with_data_from_Excel()[0m
-  [32mThen [0m[32mthe user should be redirected to the Mobile Number Verification page[0m    [90m# com.stepdefination.MagicBricksHomeLoans.the_user_should_be_redirected_to_the_mobile_number_verification_page()[0m
+@SBIforminput1
+Scenario Outline: Verify selection of SBI Home Loan                                            [90m# src/test/resource/Features/HomeLoans.feature:28[0m
+  [32mGiven [0m[32mthe user is on the Magic Bricks homepage[0m                                               [90m# com.stepdefination.MagicBricksHomeLoans.the_user_is_on_the_magic_bricks_homepage()[0m
+
+    Embedding Image [image/png 206583 bytes]
+
+  [32mWhen [0m[32mthe user clicks on the [0m[32m[1m"SBI Home Loans"[0m[32m link in the Home Loans Menu bar[0m                 [90m# com.stepdefination.MagicBricksHomeLoans.the_user_clicks_on_the_link_in_the_home_loans_menu_bar(java.lang.String)[0m
+
+    Embedding Image [image/png 48463 bytes]
+
+  [32mAnd [0m[32mthe user enters the loan amount in the [0m[32m[1m"5000000"[0m[32m field[0m                                   [90m# com.stepdefination.MagicBricksHomeLoans.the_user_enters_the_loan_amount_in_the_field(java.lang.String)[0m
+
+    Embedding Image [image/png 116674 bytes]
+
+  [32mThen [0m[32mthe user enters a valid mobile number in the [0m[32m[1m"9876543210"[0m[32m field[0m                         [90m# com.stepdefination.MagicBricksHomeLoans.the_user_enters_a_valid_mobile_number_in_the_field(java.lang.String)[0m
+
+    Embedding Image [image/png 119031 bytes]
+
+  [32mThen [0m[32mthe user enters a valid value in [0m[32m[1m"mum"[0m[32m field[0m                                            [90m# com.stepdefination.MagicBricksHomeLoans.the_user_enters_a_valid_value_in_field(java.lang.String)[0m
+
+    Embedding Image [image/png 124819 bytes]
+
+  [32mThen [0m[32mthe user selects the city where the property is located from the Property City dropdown[0m [90m# com.stepdefination.MagicBricksHomeLoans.the_user_selects_the_city_where_the_property_is_located_from_the_property_city_dropdown()[0m
+
+    Embedding Image [image/png 121905 bytes]
+
+  [32mThen [0m[32mthe user selects the appropriate option for Is Property Finalized? [0m[32m[1m"Yes"[0m                [90m# com.stepdefination.MagicBricksHomeLoans.the_user_selects_the_appropriate_option_for_is_property_finalized(java.lang.String)[0m
+
+    Embedding Image [image/png 126971 bytes]
+
+  [32mAnd [0m[32mthe user selects the appropriate option for Is Token Amount Paid [0m[32m[1m"No"[0m                    [90m# com.stepdefination.MagicBricksHomeLoans.the_user_selects_the_appropriate_option_for_is_token_amount_paid(java.lang.String)[0m
+
+    Embedding Image [image/png 209781 bytes]
+
+  [32mAnd [0m[32mthe user clicks on the [0m[32m[1m"Check Eligibility"[0m[32m button[0m                                        [90m# com.stepdefination.MagicBricksHomeLoans.the_user_clicks_on_the_button(java.lang.String)[0m
+
+    Embedding Image [image/png 152994 bytes]
+
+  [32mThen [0m[32mthe user should be redirected to the Mobile Number Verification page[0m                    [90m# com.stepdefination.MagicBricksHomeLoans.the_user_should_be_redirected_to_the_mobile_number_verification_page()[0m
+
+    Embedding Image [image/png 152616 bytes]
+
+
+@SBIforminput1
+Scenario Outline: Verify selection of SBI Home Loan                                            [90m# src/test/resource/Features/HomeLoans.feature:29[0m
+  [32mGiven [0m[32mthe user is on the Magic Bricks homepage[0m                                               [90m# com.stepdefination.MagicBricksHomeLoans.the_user_is_on_the_magic_bricks_homepage()[0m
+
+    Embedding Image [image/png 211040 bytes]
+
+  [32mWhen [0m[32mthe user clicks on the [0m[32m[1m"SBI Home Loans"[0m[32m link in the Home Loans Menu bar[0m                 [90m# com.stepdefination.MagicBricksHomeLoans.the_user_clicks_on_the_link_in_the_home_loans_menu_bar(java.lang.String)[0m
+
+    Embedding Image [image/png 49549 bytes]
+
+  [32mAnd [0m[32mthe user enters the loan amount in the [0m[32m[1m"3000000"[0m[32m field[0m                                   [90m# com.stepdefination.MagicBricksHomeLoans.the_user_enters_the_loan_amount_in_the_field(java.lang.String)[0m
+
+    Embedding Image [image/png 116537 bytes]
+
+  [32mThen [0m[32mthe user enters a valid mobile number in the [0m[32m[1m"912346789"[0m[32m field[0m                          [90m# com.stepdefination.MagicBricksHomeLoans.the_user_enters_a_valid_mobile_number_in_the_field(java.lang.String)[0m
+
+    Embedding Image [image/png 121759 bytes]
+
+  [32mThen [0m[32mthe user enters a valid value in [0m[32m[1m"pun"[0m[32m field[0m                                            [90m# com.stepdefination.MagicBricksHomeLoans.the_user_enters_a_valid_value_in_field(java.lang.String)[0m
+
+    Embedding Image [image/png 126450 bytes]
+
+  [32mThen [0m[32mthe user selects the city where the property is located from the Property City dropdown[0m [90m# com.stepdefination.MagicBricksHomeLoans.the_user_selects_the_city_where_the_property_is_located_from_the_property_city_dropdown()[0m
+
+    Embedding Image [image/png 124852 bytes]
+
+  [32mThen [0m[32mthe user selects the appropriate option for Is Property Finalized? [0m[32m[1m"Yes"[0m                [90m# com.stepdefination.MagicBricksHomeLoans.the_user_selects_the_appropriate_option_for_is_property_finalized(java.lang.String)[0m
+
+    Embedding Image [image/png 130023 bytes]
+
+  [32mAnd [0m[32mthe user selects the appropriate option for Is Token Amount Paid [0m[32m[1m"No"[0m                    [90m# com.stepdefination.MagicBricksHomeLoans.the_user_selects_the_appropriate_option_for_is_token_amount_paid(java.lang.String)[0m
+
+    Embedding Image [image/png 209796 bytes]
+
+  [32mAnd [0m[32mthe user clicks on the [0m[32m[1m"Check Eligibility"[0m[32m button[0m                                        [90m# com.stepdefination.MagicBricksHomeLoans.the_user_clicks_on_the_button(java.lang.String)[0m
+
+    Embedding Image [image/png 152657 bytes]
+
+  [32mThen [0m[32mthe user should be redirected to the Mobile Number Verification page[0m                    [90m# com.stepdefination.MagicBricksHomeLoans.the_user_should_be_redirected_to_the_mobile_number_verification_page()[0m
+
+    Embedding Image [image/png 152845 bytes]
+
+
+@CityNavigation
+Scenario: Verify navigation to City Selection Page                    [90m# src/test/resource/Features/HomeLoans.feature:45[0m
+  [32mGiven [0m[32muser is on Magic Bricks homepage[0m                              [90m# com.stepdefination.MagicBricksHomeLoans.user_is_on_magic_bricks_homepage()[0m
+
+    Embedding Image [image/png 210796 bytes]
+
+  [32mWhen [0m[32mthe user clicks on the [0m[32m[1m"Home Loans"[0m[32m link in the navigation bar[0m [90m# com.stepdefination.MagicBricksHomeLoans.the_user_clicks_on_the_link_in_the_navigation_bar(java.lang.String)[0m
+
+    Embedding Image [image/png 13349 bytes]
+
+  [32mThen [0m[32mthe user should be redirected to the Home Loans page[0m           [90m# com.stepdefination.MagicBricksHomeLoans.the_user_should_be_redirected_to_the_home_loans_page()[0m
+
+    Embedding Image [image/png 251532 bytes]
+
+  [32mThen [0m[32mthe user scrolls down on the Home Loans Page[0m                   [90m# com.stepdefination.MagicBricksHomeLoans.the_user_scrolls_down_on_the_home_loans_page()[0m
+
+    Embedding Image [image/png 185691 bytes]
+
+  [32mAnd [0m[32mthe user clicks on [0m[32m[1m"Claim Now"[0m[32m button on SBI Home Loan Offer[0m    [90m# com.stepdefination.MagicBricksHomeLoans.the_user_clicks_on_button_on_sbi_home_loan_offer(java.lang.String)[0m
+
+    Embedding Image [image/png 306798 bytes]
+
+  [32mThen [0m[32mthe user should be redirected to the MagicLoans page[0m           [90m# com.stepdefination.MagicBricksHomeLoans.the_user_should_be_redirected_to_the_magic_loans_page()[0m
+
+    Embedding Image [image/png 305034 bytes]
+
+  [32mThen [0m[32mthe user scrolls down on the MagicLoans Page[0m                   [90m# com.stepdefination.MagicBricksHomeLoans.the_user_scrolls_down_on_the_magic_loans_page()[0m
+
+    Embedding Image [image/png 128154 bytes]
+
+  [32mAnd [0m[32mthe user clicks on [0m[32m[1m"Get Started-->"[0m[32m button[0m                      [90m# com.stepdefination.MagicBricksHomeLoans.the_user_clicks_on_button(java.lang.String)[0m
+
+    Embedding Image [image/png 115427 bytes]
+
+  [32mThen [0m[32mthe user clicks on one of the cities[0m                           [90m# com.stepdefination.MagicBricksHomeLoans.the_user_clicks_on_one_of_the_cities()[0m
+
+    Embedding Image [image/png 120387 bytes]
+
+  [32mThen [0m[32mthe user clicks on [0m[32m[1m"Next"[0m[32m button to generate signup form[0m       [90m# com.stepdefination.MagicBricksHomeLoans.the_user_clicks_on_button_to_generate_signup_form(java.lang.String)[0m
+
+    Embedding Image [image/png 72713 bytes]
+
+
+@EMICalc
+Scenario: Calculate Home Loan EMI with data from Excel [90m# src/test/resource/Features/HomeLoans.feature:62[0m
+  [32mGiven [0m[32mI am on the home page[0m                          [90m# com.stepdefination.MagicBricksHomeLoans.i_am_on_the_home_page()[0m
+
+    Embedding Image [image/png 210639 bytes]
+
+  [32mWhen [0m[32mI navigate to the home loans menu[0m               [90m# com.stepdefination.MagicBricksHomeLoans.i_navigate_to_the_home_loans_menu()[0m
+
+    Embedding Image [image/png 19957 bytes]
+
+  [32mAnd [0m[32mI click on the home loan EMI calculator[0m          [90m# com.stepdefination.MagicBricksHomeLoans.i_click_on_the_home_loan_emi_calculator()[0m
+
+    Embedding Image [image/png 110358 bytes]
+
+  [32mAnd [0m[32mI calculate EMI for all rows in Excel[0m            [90m# com.stepdefination.MagicBricksHomeLoans.i_calculate_emi_for_all_rows_in_excel()[0m
+
+    Embedding Image [image/png 161455 bytes]
+
+  [32mThen [0m[32mI should see the recalculated EMI[0m               [90m# com.stepdefination.MagicBricksHomeLoans.i_should_see_the_recalculated_emi()[0m
+
+    Embedding Image [image/png 161675 bytes]
+
+
+@BalanceTransfer
+Scenario Outline: Navigate to Home Loans and perform balance transfer  [90m# src/test/resource/Features/HomeLoans.feature:72[0m
+  [33mGiven [0m[33muser is on the home page[0m
+      [31mjava.lang.NullPointerException: Cannot invoke "org.openqa.selenium.TakesScreenshot.getScreenshotAs(org.openqa.selenium.OutputType)" because "this.driver" is null
+      	at com.stepdefination.MagicBricksHomeLoans.tearDown(MagicBricksHomeLoans.java:509)[0m
+  [36mWhen [0m[36mthe user navigates to the Home Loans section[0m                    [90m# com.stepdefination.MagicBricksHomeLoans.the_user_navigates_to_the_home_loans_section()[0m
+  [36mAnd [0m[36mthe user clicks on the Balance Transfer option[0m                   [90m# com.stepdefination.MagicBricksHomeLoans.the_user_clicks_on_the_balance_transfer_option()[0m
+  [36mAnd [0m[36mthe user fills the old and new loan details with data from Excel[0m [90m# com.stepdefination.MagicBricksHomeLoans.the_user_fills_the_old_and_new_loan_details_with_data_from_excel()[0m
+  [36mThen [0m[36mthe user compares the old and new loan details[0m                  [90m# com.stepdefination.MagicBricksHomeLoans.the_user_compares_the_old_and_new_loan_details()[0m
