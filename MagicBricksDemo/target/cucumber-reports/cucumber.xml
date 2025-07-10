@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="Cucumber" time="0.254" tests="1" skipped="0" failures="1" errors="0" timestamp="2025-07-02T12:01:00.284102400Z">
+<testcase classname="MagicBricks Home Interiors Functionality" name="Submit form with blank fields" time="0.062">
+<failure type="java.lang.IllegalStateException" message="WebDriver not initialized!">
+<![CDATA[java.lang.IllegalStateException: WebDriver not initialized!
+	at com.stepdefinitions.HomeInteriorSteps.user_is_on_the_contact_form_page(HomeInteriorSteps.java:175)
+	at ✽.user is on the contact form page(file:///C:/Users/SHRDEOKA/eclipse-workspace/MagicBricksDemo/src/test/resource/Features/HomeInterior.feature:48)
+]]>
+</failure>
+<system-out><![CDATA[
+Given user is on the contact form page......................................failed
+When user submits form without entering required fields.....................skipped
+Then user should see validation error message...............................skipped
+]]></system-out>
+</testcase>
+</testsuite>

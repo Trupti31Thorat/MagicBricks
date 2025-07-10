@@ -1,0 +1,213 @@
+2025-07-08 10:12:57,651 [Worker-1: Loading available Gradle versions] INFO  o.e.b.c.i.u.g.PublishedGradleVersions - Gradle version information cache is not available. Remote download required.
+2025-07-08 10:16:24,233 [Worker-6: Importing Maven projects] ERROR o.e.m.c.i.p.ProjectConfigurationManager - Project RedBus already exists
+2025-07-08 10:16:24,396 [Worker-6: Importing Maven projects] ERROR o.e.m.c.i.p.ProjectConfigurationManager - Project testingSeleniumDemo1 already exists
+2025-07-08 10:16:25,550 [Worker-6: Importing Maven projects] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: com.testingApp:testingSeleniumDemo1:0.0.1-SNAPSHOT @ C:\Users\SHRDEOKA\eclipse-workspace\BataDemo\pom.xml.
+2025-07-08 10:16:32,757 [Worker-6: Importing Maven projects] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: com.Test:MagicBricks:0.0.1-SNAPSHOT @ C:\Users\SHRDEOKA\eclipse-workspace\MagicBricks\pom.xml.
+2025-07-08 10:16:34,479 [Worker-6: Importing Maven projects] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: com.cg:RedBus:0.0.1-SNAPSHOT @ C:\Users\SHRDEOKA\eclipse-workspace\RedBus\pom.xml.
+2025-07-08 10:16:35,969 [Worker-6: Importing Maven projects] INFO  o.e.m.c.i.p.WorkspaceClassifierResolverManager - Resolving P/testingSelenium: com.testingApp:testingSelenium:0.0.1-SNAPSHOT with classifier  to /testingSelenium/target/classes
+2025-07-08 10:16:36,384 [Worker-6: Importing Maven projects] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: com.test:SeleniumTestDemo:0.0.1-SNAPSHOT @ C:\Users\SHRDEOKA\eclipse-workspace\SeleniumTestDemo\pom.xml.
+2025-07-08 10:16:36,798 [Worker-6: Importing Maven projects] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: com.Test:MagicBricksDemo:0.0.1-SNAPSHOT @ C:\Users\SHRDEOKA\eclipse-workspace\Sprint\MagicBricksDemo\pom.xml.
+2025-07-08 10:16:38,095 [Worker-6: Importing Maven projects] INFO  o.e.m.c.i.p.WorkspaceClassifierResolverManager - Resolving P/RedBus: com.cg:RedBus:0.0.1-SNAPSHOT with classifier  to /RedBus/target/classes
+2025-07-08 10:16:38,101 [Worker-6: Importing Maven projects] INFO  o.e.m.c.i.p.WorkspaceClassifierResolverManager - Resolving P/testingSelenium: com.testingApp:testingSelenium:0.0.1-SNAPSHOT with classifier  to /testingSelenium/target/classes
+2025-07-08 10:16:38,344 [Worker-6: Importing Maven projects] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: com.testingApp:testingSelenium:0.0.1-SNAPSHOT @ C:\Users\SHRDEOKA\eclipse-workspace\testingSelenium\pom.xml.
+2025-07-08 10:16:39,268 [Worker-6: Importing Maven projects] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: com.testingApp:testingSeleniumDemo:0.0.1-SNAPSHOT @ C:\Users\SHRDEOKA\eclipse-workspace\testingSeleniumDemo\target\classes\META-INF\maven\com.testingApp\testingSeleniumDemo\pom.xml.
+2025-07-08 10:16:41,248 [Worker-6: Importing Maven projects] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: com.testingApp:testingSeleniumDemo2:0.0.1-SNAPSHOT @ C:\Users\SHRDEOKA\eclipse-workspace\testingSeleniumDemo2\pom.xml.
+2025-07-08 10:16:42,099 [Worker-6: Importing Maven projects] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: com.cg:RedBus:0.0.1-SNAPSHOT @ C:\Users\SHRDEOKA\eclipse-workspace\RedBus\pom.xml.
+2025-07-08 10:16:43,393 [Worker-6: Importing Maven projects] INFO  o.e.m.c.i.p.WorkspaceClassifierResolverManager - Resolving P/testingSelenium: com.testingApp:testingSelenium:0.0.1-SNAPSHOT with classifier  to /testingSelenium/target/classes
+2025-07-08 10:16:43,651 [Worker-6: Importing Maven projects] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: com.Test:MagicBricksDemo:0.0.1-SNAPSHOT @ C:\Users\SHRDEOKA\eclipse-workspace\Sprint\MagicBricksDemo\pom.xml.
+2025-07-08 10:16:44,635 [Worker-6: Importing Maven projects] INFO  o.e.m.c.i.p.WorkspaceClassifierResolverManager - Resolving P/RedBus: com.cg:RedBus:0.0.1-SNAPSHOT with classifier  to /RedBus/target/classes
+2025-07-08 10:16:44,642 [Worker-6: Importing Maven projects] INFO  o.e.m.c.i.p.WorkspaceClassifierResolverManager - Resolving P/testingSelenium: com.testingApp:testingSelenium:0.0.1-SNAPSHOT with classifier  to /testingSelenium/target/classes
+2025-07-08 10:16:59,414 [Worker-6: Importing Maven projects] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /SeleniumTestDemo/src/main/java
+2025-07-08 10:16:59,423 [Worker-6: Importing Maven projects] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /SeleniumTestDemo/src/main/resources
+2025-07-08 10:16:59,426 [Worker-6: Importing Maven projects] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /SeleniumTestDemo/src/test/java
+2025-07-08 10:16:59,432 [Worker-6: Importing Maven projects] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /SeleniumTestDemo/src/test/resources
+2025-07-08 10:16:59,889 [Worker-6: Importing Maven projects] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /testingSeleniumDemo/src/main/resources
+2025-07-08 10:16:59,896 [Worker-6: Importing Maven projects] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /testingSeleniumDemo/src/test/resources
+2025-07-08 10:17:02,506 [Worker-6: Importing Maven projects] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /testingSelenium/src/main/java
+2025-07-08 10:17:02,514 [Worker-6: Importing Maven projects] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /testingSelenium/src/main/resources
+2025-07-08 10:17:02,516 [Worker-6: Importing Maven projects] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /testingSelenium/src/test/java
+2025-07-08 10:17:02,522 [Worker-6: Importing Maven projects] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /testingSelenium/src/test/resources
+2025-07-08 10:17:05,930 [Worker-6: Importing Maven projects] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /RedBus/src/main/java
+2025-07-08 10:17:05,934 [Worker-6: Importing Maven projects] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /RedBus/src/main/resources
+2025-07-08 10:17:05,936 [Worker-6: Importing Maven projects] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /RedBus/src/test/java
+2025-07-08 10:17:05,945 [Worker-6: Importing Maven projects] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /RedBus/src/test/resources
+2025-07-08 10:17:09,119 [Worker-6: Importing Maven projects] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /MagicBricks/src/main/java
+2025-07-08 10:17:09,124 [Worker-6: Importing Maven projects] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /MagicBricks/src/main/resources
+2025-07-08 10:17:09,127 [Worker-6: Importing Maven projects] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /MagicBricks/src/test/java
+2025-07-08 10:17:09,133 [Worker-6: Importing Maven projects] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /MagicBricks/src/test/resources
+2025-07-08 10:17:13,006 [Worker-6: Importing Maven projects] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /MagicBricksDemo/src/main/java
+2025-07-08 10:17:13,012 [Worker-6: Importing Maven projects] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /MagicBricksDemo/src/main/resources
+2025-07-08 10:17:13,013 [Worker-6: Importing Maven projects] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /MagicBricksDemo/src/test/java
+2025-07-08 10:17:13,021 [Worker-6: Importing Maven projects] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /MagicBricksDemo/src/test/resources
+2025-07-08 10:17:16,257 [Worker-6: Importing Maven projects] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /testingSeleniumDemo2/src/main/java
+2025-07-08 10:17:16,265 [Worker-6: Importing Maven projects] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /testingSeleniumDemo2/src/main/resources
+2025-07-08 10:17:16,268 [Worker-6: Importing Maven projects] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /testingSeleniumDemo2/src/test/java
+2025-07-08 10:17:16,275 [Worker-6: Importing Maven projects] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /testingSeleniumDemo2/src/test/resources
+2025-07-08 10:17:18,487 [Worker-6: Importing Maven projects] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /testingSeleniumDemo1/src/main/java
+2025-07-08 10:17:18,492 [Worker-6: Importing Maven projects] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /testingSeleniumDemo1/src/main/resources
+2025-07-08 10:17:18,494 [Worker-6: Importing Maven projects] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /testingSeleniumDemo1/src/test/java
+2025-07-08 10:17:18,500 [Worker-6: Importing Maven projects] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /testingSeleniumDemo1/src/test/resources
+2025-07-08 10:17:22,293 [Worker-6: Importing Maven projects] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Imported and configured 10 project(s) in 58 sec
+2025-07-08 10:17:24,005 [Worker-25: Updating Maven Project] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Update started
+2025-07-08 10:18:07,140 [Worker-4: Loading available Gradle versions] INFO  o.e.b.c.i.u.g.PublishedGradleVersions - Gradle version information cache is up-to-date. Trying to read.
+2025-07-08 10:19:41,240 [Worker-12: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\SHRDEOKA\eclipse-workspace\MagicBricks\src\main\resources
+2025-07-08 10:19:41,257 [Worker-12: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\SHRDEOKA\eclipse-workspace\MagicBricks\src\test\resources
+2025-07-08 10:19:42,684 [Worker-12: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\SHRDEOKA\eclipse-workspace\SeleniumTestDemo\src\main\resources
+2025-07-08 10:19:42,691 [Worker-12: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\SHRDEOKA\eclipse-workspace\SeleniumTestDemo\src\test\resources
+2025-07-08 10:19:48,178 [Worker-12: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2025-07-08 10:19:48,188 [Worker-12: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\SHRDEOKA\eclipse-workspace\testingSelenium\src\test\resources
+2025-07-08 10:19:51,601 [Worker-12: Building] INFO  o.e.m.c.i.p.WorkspaceClassifierResolverManager - Resolving P/testingSelenium: com.testingApp:testingSelenium:0.0.1-SNAPSHOT with classifier  to /testingSelenium/target/classes
+2025-07-08 10:19:51,624 [Worker-12: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\SHRDEOKA\eclipse-workspace\RedBus\src\main\resources
+2025-07-08 10:19:51,628 [Worker-12: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\SHRDEOKA\eclipse-workspace\RedBus\src\test\resources
+2025-07-08 10:19:53,283 [main] INFO  o.e.m.jdt.internal.UnitTestSupport - Updating HomeInteriorTestRunner from maven configuration
+2025-07-08 10:19:55,616 [Worker-12: Building] INFO  o.e.m.c.i.p.WorkspaceClassifierResolverManager - Resolving P/RedBus: com.cg:RedBus:0.0.1-SNAPSHOT with classifier  to /RedBus/target/classes
+2025-07-08 10:19:55,619 [Worker-12: Building] INFO  o.e.m.c.i.p.WorkspaceClassifierResolverManager - Resolving P/testingSelenium: com.testingApp:testingSelenium:0.0.1-SNAPSHOT with classifier  to /testingSelenium/target/classes
+2025-07-08 10:19:55,659 [Worker-12: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\SHRDEOKA\eclipse-workspace\Sprint\MagicBricksDemo\src\main\resources
+2025-07-08 10:19:55,663 [Worker-12: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\SHRDEOKA\eclipse-workspace\Sprint\MagicBricksDemo\src\test\resources
+2025-07-08 10:19:58,812 [Worker-12: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\SHRDEOKA\eclipse-workspace\BataDemo\src\main\resources
+2025-07-08 10:19:58,815 [Worker-12: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\SHRDEOKA\eclipse-workspace\BataDemo\src\test\resources
+2025-07-08 10:20:00,838 [Worker-12: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\SHRDEOKA\eclipse-workspace\testingSeleniumDemo2\src\main\resources
+2025-07-08 10:20:00,846 [Worker-12: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\SHRDEOKA\eclipse-workspace\testingSeleniumDemo2\src\test\resources
+2025-07-08 10:20:10,079 [Worker-15: Launching HomeInteriorTestRunner] INFO  o.e.m.c.i.p.WorkspaceClassifierResolverManager - Resolving P/RedBus: com.cg:RedBus:0.0.1-SNAPSHOT with classifier null to /RedBus/target/classes
+2025-07-08 10:20:10,082 [Worker-15: Launching HomeInteriorTestRunner] INFO  o.e.m.c.i.p.WorkspaceClassifierResolverManager - Resolving P/testingSelenium: com.testingApp:testingSelenium:0.0.1-SNAPSHOT with classifier null to /testingSelenium/target/classes
+2025-07-08 10:20:10,481 [Worker-15: Launching HomeInteriorTestRunner] INFO  o.e.m.c.i.p.WorkspaceClassifierResolverManager - Resolving P/RedBus: com.cg:RedBus:0.0.1-SNAPSHOT with classifier null to /RedBus/target/classes
+2025-07-08 10:20:10,482 [Worker-15: Launching HomeInteriorTestRunner] INFO  o.e.m.c.i.p.WorkspaceClassifierResolverManager - Resolving P/testingSelenium: com.testingApp:testingSelenium:0.0.1-SNAPSHOT with classifier null to /testingSelenium/target/classes
+2025-07-08 10:20:33,505 [Worker-18: Launching HomeInteriorTestRunner] INFO  o.e.m.c.i.p.WorkspaceClassifierResolverManager - Resolving P/RedBus: com.cg:RedBus:0.0.1-SNAPSHOT with classifier null to /RedBus/target/classes
+2025-07-08 10:20:33,506 [Worker-18: Launching HomeInteriorTestRunner] INFO  o.e.m.c.i.p.WorkspaceClassifierResolverManager - Resolving P/testingSelenium: com.testingApp:testingSelenium:0.0.1-SNAPSHOT with classifier null to /testingSelenium/target/classes
+2025-07-08 10:20:34,268 [Worker-18: Launching HomeInteriorTestRunner] INFO  o.e.m.c.i.p.WorkspaceClassifierResolverManager - Resolving P/RedBus: com.cg:RedBus:0.0.1-SNAPSHOT with classifier null to /RedBus/target/classes
+2025-07-08 10:20:34,272 [Worker-18: Launching HomeInteriorTestRunner] INFO  o.e.m.c.i.p.WorkspaceClassifierResolverManager - Resolving P/testingSelenium: com.testingApp:testingSelenium:0.0.1-SNAPSHOT with classifier null to /testingSelenium/target/classes
+2025-07-08 10:21:27,510 [Worker-17: Launching HomeInteriorTestRunner] INFO  o.e.m.c.i.p.WorkspaceClassifierResolverManager - Resolving P/RedBus: com.cg:RedBus:0.0.1-SNAPSHOT with classifier null to /RedBus/target/classes
+2025-07-08 10:21:27,511 [Worker-17: Launching HomeInteriorTestRunner] INFO  o.e.m.c.i.p.WorkspaceClassifierResolverManager - Resolving P/testingSelenium: com.testingApp:testingSelenium:0.0.1-SNAPSHOT with classifier null to /testingSelenium/target/classes
+2025-07-08 10:21:27,850 [Worker-17: Launching HomeInteriorTestRunner] INFO  o.e.m.c.i.p.WorkspaceClassifierResolverManager - Resolving P/RedBus: com.cg:RedBus:0.0.1-SNAPSHOT with classifier null to /RedBus/target/classes
+2025-07-08 10:21:27,852 [Worker-17: Launching HomeInteriorTestRunner] INFO  o.e.m.c.i.p.WorkspaceClassifierResolverManager - Resolving P/testingSelenium: com.testingApp:testingSelenium:0.0.1-SNAPSHOT with classifier null to /testingSelenium/target/classes
+2025-07-08 10:22:26,914 [Worker-0: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\SHRDEOKA\eclipse-workspace\Sprint\MagicBricksDemo\src\main\resources
+2025-07-08 10:22:26,918 [Worker-0: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\SHRDEOKA\eclipse-workspace\Sprint\MagicBricksDemo\src\test\resources
+2025-07-08 10:22:47,303 [Worker-18: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\SHRDEOKA\eclipse-workspace\Sprint\MagicBricksDemo\src\main\resources
+2025-07-08 10:22:47,306 [Worker-18: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\SHRDEOKA\eclipse-workspace\Sprint\MagicBricksDemo\src\test\resources
+2025-07-08 10:22:59,379 [Worker-8: Launching HomeInteriorTestRunner] INFO  o.e.m.c.i.p.WorkspaceClassifierResolverManager - Resolving P/RedBus: com.cg:RedBus:0.0.1-SNAPSHOT with classifier null to /RedBus/target/classes
+2025-07-08 10:22:59,380 [Worker-8: Launching HomeInteriorTestRunner] INFO  o.e.m.c.i.p.WorkspaceClassifierResolverManager - Resolving P/testingSelenium: com.testingApp:testingSelenium:0.0.1-SNAPSHOT with classifier null to /testingSelenium/target/classes
+2025-07-08 10:22:59,721 [Worker-8: Launching HomeInteriorTestRunner] INFO  o.e.m.c.i.p.WorkspaceClassifierResolverManager - Resolving P/RedBus: com.cg:RedBus:0.0.1-SNAPSHOT with classifier null to /RedBus/target/classes
+2025-07-08 10:22:59,722 [Worker-8: Launching HomeInteriorTestRunner] INFO  o.e.m.c.i.p.WorkspaceClassifierResolverManager - Resolving P/testingSelenium: com.testingApp:testingSelenium:0.0.1-SNAPSHOT with classifier null to /testingSelenium/target/classes
+2025-07-08 10:23:51,458 [Worker-10: Launching HomeInteriorTestRunner] INFO  o.e.m.c.i.p.WorkspaceClassifierResolverManager - Resolving P/RedBus: com.cg:RedBus:0.0.1-SNAPSHOT with classifier null to /RedBus/target/classes
+2025-07-08 10:23:51,459 [Worker-10: Launching HomeInteriorTestRunner] INFO  o.e.m.c.i.p.WorkspaceClassifierResolverManager - Resolving P/testingSelenium: com.testingApp:testingSelenium:0.0.1-SNAPSHOT with classifier null to /testingSelenium/target/classes
+2025-07-08 10:23:51,801 [Worker-10: Launching HomeInteriorTestRunner] INFO  o.e.m.c.i.p.WorkspaceClassifierResolverManager - Resolving P/RedBus: com.cg:RedBus:0.0.1-SNAPSHOT with classifier null to /RedBus/target/classes
+2025-07-08 10:23:51,802 [Worker-10: Launching HomeInteriorTestRunner] INFO  o.e.m.c.i.p.WorkspaceClassifierResolverManager - Resolving P/testingSelenium: com.testingApp:testingSelenium:0.0.1-SNAPSHOT with classifier null to /testingSelenium/target/classes
+2025-07-08 10:25:03,444 [Worker-2: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\SHRDEOKA\eclipse-workspace\Sprint\MagicBricksDemo\src\main\resources
+2025-07-08 10:25:03,446 [Worker-2: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\SHRDEOKA\eclipse-workspace\Sprint\MagicBricksDemo\src\test\resources
+2025-07-08 10:25:11,148 [Worker-9: Launching HomeInteriorTestRunner] INFO  o.e.m.c.i.p.WorkspaceClassifierResolverManager - Resolving P/RedBus: com.cg:RedBus:0.0.1-SNAPSHOT with classifier null to /RedBus/target/classes
+2025-07-08 10:25:11,149 [Worker-9: Launching HomeInteriorTestRunner] INFO  o.e.m.c.i.p.WorkspaceClassifierResolverManager - Resolving P/testingSelenium: com.testingApp:testingSelenium:0.0.1-SNAPSHOT with classifier null to /testingSelenium/target/classes
+2025-07-08 10:25:11,608 [Worker-9: Launching HomeInteriorTestRunner] INFO  o.e.m.c.i.p.WorkspaceClassifierResolverManager - Resolving P/RedBus: com.cg:RedBus:0.0.1-SNAPSHOT with classifier null to /RedBus/target/classes
+2025-07-08 10:25:11,610 [Worker-9: Launching HomeInteriorTestRunner] INFO  o.e.m.c.i.p.WorkspaceClassifierResolverManager - Resolving P/testingSelenium: com.testingApp:testingSelenium:0.0.1-SNAPSHOT with classifier null to /testingSelenium/target/classes
+2025-07-08 10:27:26,104 [Worker-14: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\SHRDEOKA\eclipse-workspace\Sprint\MagicBricksDemo\src\main\resources
+2025-07-08 10:27:26,106 [Worker-14: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\SHRDEOKA\eclipse-workspace\Sprint\MagicBricksDemo\src\test\resources
+2025-07-08 10:28:47,615 [main] INFO  o.e.m.jdt.internal.UnitTestSupport - Updating LoginRunner from maven configuration
+2025-07-08 10:28:49,942 [Worker-25: Launching LoginRunner] INFO  o.e.m.c.i.p.WorkspaceClassifierResolverManager - Resolving P/RedBus: com.cg:RedBus:0.0.1-SNAPSHOT with classifier null to /RedBus/target/classes
+2025-07-08 10:28:49,944 [Worker-25: Launching LoginRunner] INFO  o.e.m.c.i.p.WorkspaceClassifierResolverManager - Resolving P/testingSelenium: com.testingApp:testingSelenium:0.0.1-SNAPSHOT with classifier null to /testingSelenium/target/classes
+2025-07-08 10:28:50,472 [Worker-25: Launching LoginRunner] INFO  o.e.m.c.i.p.WorkspaceClassifierResolverManager - Resolving P/RedBus: com.cg:RedBus:0.0.1-SNAPSHOT with classifier null to /RedBus/target/classes
+2025-07-08 10:28:50,474 [Worker-25: Launching LoginRunner] INFO  o.e.m.c.i.p.WorkspaceClassifierResolverManager - Resolving P/testingSelenium: com.testingApp:testingSelenium:0.0.1-SNAPSHOT with classifier null to /testingSelenium/target/classes
+2025-07-08 10:29:13,823 [Worker-10: Launching LoginRunner] INFO  o.e.m.c.i.p.WorkspaceClassifierResolverManager - Resolving P/RedBus: com.cg:RedBus:0.0.1-SNAPSHOT with classifier null to /RedBus/target/classes
+2025-07-08 10:29:13,824 [Worker-10: Launching LoginRunner] INFO  o.e.m.c.i.p.WorkspaceClassifierResolverManager - Resolving P/testingSelenium: com.testingApp:testingSelenium:0.0.1-SNAPSHOT with classifier null to /testingSelenium/target/classes
+2025-07-08 10:29:14,155 [Worker-10: Launching LoginRunner] INFO  o.e.m.c.i.p.WorkspaceClassifierResolverManager - Resolving P/RedBus: com.cg:RedBus:0.0.1-SNAPSHOT with classifier null to /RedBus/target/classes
+2025-07-08 10:29:14,156 [Worker-10: Launching LoginRunner] INFO  o.e.m.c.i.p.WorkspaceClassifierResolverManager - Resolving P/testingSelenium: com.testingApp:testingSelenium:0.0.1-SNAPSHOT with classifier null to /testingSelenium/target/classes
+2025-07-08 10:31:42,911 [Worker-13: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\SHRDEOKA\eclipse-workspace\Sprint\MagicBricksDemo\src\main\resources
+2025-07-08 10:31:42,913 [Worker-13: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\SHRDEOKA\eclipse-workspace\Sprint\MagicBricksDemo\src\test\resources
+2025-07-08 10:36:21,529 [Worker-26: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\SHRDEOKA\eclipse-workspace\Sprint\MagicBricksDemo\src\main\resources
+2025-07-08 10:36:21,531 [Worker-26: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\SHRDEOKA\eclipse-workspace\Sprint\MagicBricksDemo\src\test\resources
+2025-07-08 10:36:27,964 [Worker-26: Launching HomeInteriorTestRunner] INFO  o.e.m.c.i.p.WorkspaceClassifierResolverManager - Resolving P/RedBus: com.cg:RedBus:0.0.1-SNAPSHOT with classifier null to /RedBus/target/classes
+2025-07-08 10:36:27,965 [Worker-26: Launching HomeInteriorTestRunner] INFO  o.e.m.c.i.p.WorkspaceClassifierResolverManager - Resolving P/testingSelenium: com.testingApp:testingSelenium:0.0.1-SNAPSHOT with classifier null to /testingSelenium/target/classes
+2025-07-08 10:36:28,304 [Worker-26: Launching HomeInteriorTestRunner] INFO  o.e.m.c.i.p.WorkspaceClassifierResolverManager - Resolving P/RedBus: com.cg:RedBus:0.0.1-SNAPSHOT with classifier null to /RedBus/target/classes
+2025-07-08 10:36:28,305 [Worker-26: Launching HomeInteriorTestRunner] INFO  o.e.m.c.i.p.WorkspaceClassifierResolverManager - Resolving P/testingSelenium: com.testingApp:testingSelenium:0.0.1-SNAPSHOT with classifier null to /testingSelenium/target/classes
+2025-07-08 10:37:36,447 [Worker-6: Launching HomeInteriorTestRunner] INFO  o.e.m.c.i.p.WorkspaceClassifierResolverManager - Resolving P/RedBus: com.cg:RedBus:0.0.1-SNAPSHOT with classifier null to /RedBus/target/classes
+2025-07-08 10:37:36,448 [Worker-6: Launching HomeInteriorTestRunner] INFO  o.e.m.c.i.p.WorkspaceClassifierResolverManager - Resolving P/testingSelenium: com.testingApp:testingSelenium:0.0.1-SNAPSHOT with classifier null to /testingSelenium/target/classes
+2025-07-08 10:37:36,778 [Worker-6: Launching HomeInteriorTestRunner] INFO  o.e.m.c.i.p.WorkspaceClassifierResolverManager - Resolving P/RedBus: com.cg:RedBus:0.0.1-SNAPSHOT with classifier null to /RedBus/target/classes
+2025-07-08 10:37:36,779 [Worker-6: Launching HomeInteriorTestRunner] INFO  o.e.m.c.i.p.WorkspaceClassifierResolverManager - Resolving P/testingSelenium: com.testingApp:testingSelenium:0.0.1-SNAPSHOT with classifier null to /testingSelenium/target/classes
+2025-07-08 10:38:01,746 [Worker-27: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\SHRDEOKA\eclipse-workspace\Sprint\MagicBricksDemo\src\main\resources
+2025-07-08 10:38:01,747 [Worker-27: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\SHRDEOKA\eclipse-workspace\Sprint\MagicBricksDemo\src\test\resources
+2025-07-08 10:38:17,394 [Worker-10: Launching HomeInteriorTestRunner] INFO  o.e.m.c.i.p.WorkspaceClassifierResolverManager - Resolving P/RedBus: com.cg:RedBus:0.0.1-SNAPSHOT with classifier null to /RedBus/target/classes
+2025-07-08 10:38:17,397 [Worker-10: Launching HomeInteriorTestRunner] INFO  o.e.m.c.i.p.WorkspaceClassifierResolverManager - Resolving P/testingSelenium: com.testingApp:testingSelenium:0.0.1-SNAPSHOT with classifier null to /testingSelenium/target/classes
+2025-07-08 10:38:18,085 [Worker-10: Launching HomeInteriorTestRunner] INFO  o.e.m.c.i.p.WorkspaceClassifierResolverManager - Resolving P/RedBus: com.cg:RedBus:0.0.1-SNAPSHOT with classifier null to /RedBus/target/classes
+2025-07-08 10:38:18,088 [Worker-10: Launching HomeInteriorTestRunner] INFO  o.e.m.c.i.p.WorkspaceClassifierResolverManager - Resolving P/testingSelenium: com.testingApp:testingSelenium:0.0.1-SNAPSHOT with classifier null to /testingSelenium/target/classes
+2025-07-08 10:39:34,727 [Worker-27: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\SHRDEOKA\eclipse-workspace\Sprint\MagicBricksDemo\src\main\resources
+2025-07-08 10:39:34,730 [Worker-27: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\SHRDEOKA\eclipse-workspace\Sprint\MagicBricksDemo\src\test\resources
+2025-07-08 10:39:51,689 [Worker-12: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\SHRDEOKA\eclipse-workspace\Sprint\MagicBricksDemo\src\main\resources
+2025-07-08 10:39:51,693 [Worker-12: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\SHRDEOKA\eclipse-workspace\Sprint\MagicBricksDemo\src\test\resources
+2025-07-08 10:39:57,692 [Worker-27: Launching HomeInteriorTestRunner] INFO  o.e.m.c.i.p.WorkspaceClassifierResolverManager - Resolving P/RedBus: com.cg:RedBus:0.0.1-SNAPSHOT with classifier null to /RedBus/target/classes
+2025-07-08 10:39:57,694 [Worker-27: Launching HomeInteriorTestRunner] INFO  o.e.m.c.i.p.WorkspaceClassifierResolverManager - Resolving P/testingSelenium: com.testingApp:testingSelenium:0.0.1-SNAPSHOT with classifier null to /testingSelenium/target/classes
+2025-07-08 10:39:58,374 [Worker-27: Launching HomeInteriorTestRunner] INFO  o.e.m.c.i.p.WorkspaceClassifierResolverManager - Resolving P/RedBus: com.cg:RedBus:0.0.1-SNAPSHOT with classifier null to /RedBus/target/classes
+2025-07-08 10:39:58,377 [Worker-27: Launching HomeInteriorTestRunner] INFO  o.e.m.c.i.p.WorkspaceClassifierResolverManager - Resolving P/testingSelenium: com.testingApp:testingSelenium:0.0.1-SNAPSHOT with classifier null to /testingSelenium/target/classes
+2025-07-08 10:46:57,268 [Worker-6: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\SHRDEOKA\eclipse-workspace\Sprint\MagicBricksDemo\src\main\resources
+2025-07-08 10:46:57,270 [Worker-6: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\SHRDEOKA\eclipse-workspace\Sprint\MagicBricksDemo\src\test\resources
+2025-07-08 10:47:15,682 [Worker-26: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\SHRDEOKA\eclipse-workspace\Sprint\MagicBricksDemo\src\main\resources
+2025-07-08 10:47:15,685 [Worker-26: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\SHRDEOKA\eclipse-workspace\Sprint\MagicBricksDemo\src\test\resources
+2025-07-08 10:47:20,667 [Worker-10: Launching HomeInteriorTestRunner] INFO  o.e.m.c.i.p.WorkspaceClassifierResolverManager - Resolving P/RedBus: com.cg:RedBus:0.0.1-SNAPSHOT with classifier null to /RedBus/target/classes
+2025-07-08 10:47:20,668 [Worker-10: Launching HomeInteriorTestRunner] INFO  o.e.m.c.i.p.WorkspaceClassifierResolverManager - Resolving P/testingSelenium: com.testingApp:testingSelenium:0.0.1-SNAPSHOT with classifier null to /testingSelenium/target/classes
+2025-07-08 10:47:21,011 [Worker-10: Launching HomeInteriorTestRunner] INFO  o.e.m.c.i.p.WorkspaceClassifierResolverManager - Resolving P/RedBus: com.cg:RedBus:0.0.1-SNAPSHOT with classifier null to /RedBus/target/classes
+2025-07-08 10:47:21,011 [Worker-10: Launching HomeInteriorTestRunner] INFO  o.e.m.c.i.p.WorkspaceClassifierResolverManager - Resolving P/testingSelenium: com.testingApp:testingSelenium:0.0.1-SNAPSHOT with classifier null to /testingSelenium/target/classes
+2025-07-08 10:50:16,470 [Worker-26: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\SHRDEOKA\eclipse-workspace\Sprint\MagicBricksDemo\src\main\resources
+2025-07-08 10:50:16,472 [Worker-26: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\SHRDEOKA\eclipse-workspace\Sprint\MagicBricksDemo\src\test\resources
+2025-07-08 10:53:33,680 [Worker-29: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\SHRDEOKA\eclipse-workspace\Sprint\MagicBricksDemo\src\main\resources
+2025-07-08 10:53:33,682 [Worker-29: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\SHRDEOKA\eclipse-workspace\Sprint\MagicBricksDemo\src\test\resources
+2025-07-08 11:01:43,538 [Worker-10: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\SHRDEOKA\eclipse-workspace\Sprint\MagicBricksDemo\src\main\resources
+2025-07-08 11:01:43,541 [Worker-10: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\SHRDEOKA\eclipse-workspace\Sprint\MagicBricksDemo\src\test\resources
+2025-07-08 11:03:58,798 [Worker-31: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\SHRDEOKA\eclipse-workspace\Sprint\MagicBricksDemo\src\main\resources
+2025-07-08 11:03:58,800 [Worker-31: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\SHRDEOKA\eclipse-workspace\Sprint\MagicBricksDemo\src\test\resources
+2025-07-08 11:04:48,070 [Worker-26: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\SHRDEOKA\eclipse-workspace\Sprint\MagicBricksDemo\src\main\resources
+2025-07-08 11:04:48,072 [Worker-26: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\SHRDEOKA\eclipse-workspace\Sprint\MagicBricksDemo\src\test\resources
+2025-07-08 11:09:44,277 [Worker-33: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\SHRDEOKA\eclipse-workspace\Sprint\MagicBricksDemo\src\main\resources
+2025-07-08 11:09:44,279 [Worker-33: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\SHRDEOKA\eclipse-workspace\Sprint\MagicBricksDemo\src\test\resources
+2025-07-08 11:11:50,634 [Worker-12: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\SHRDEOKA\eclipse-workspace\Sprint\MagicBricksDemo\src\main\resources
+2025-07-08 11:11:50,636 [Worker-12: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\SHRDEOKA\eclipse-workspace\Sprint\MagicBricksDemo\src\test\resources
+2025-07-08 11:20:31,544 [Worker-12: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\SHRDEOKA\eclipse-workspace\Sprint\MagicBricksDemo\src\main\resources
+2025-07-08 11:20:31,547 [Worker-12: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\SHRDEOKA\eclipse-workspace\Sprint\MagicBricksDemo\src\test\resources
+2025-07-08 11:21:18,297 [Worker-12: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\SHRDEOKA\eclipse-workspace\Sprint\MagicBricksDemo\src\main\resources
+2025-07-08 11:21:18,299 [Worker-12: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\SHRDEOKA\eclipse-workspace\Sprint\MagicBricksDemo\src\test\resources
+2025-07-08 11:21:28,040 [Worker-12: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\SHRDEOKA\eclipse-workspace\Sprint\MagicBricksDemo\src\main\resources
+2025-07-08 11:21:28,042 [Worker-12: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\SHRDEOKA\eclipse-workspace\Sprint\MagicBricksDemo\src\test\resources
+2025-07-08 11:24:17,874 [Worker-33: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\SHRDEOKA\eclipse-workspace\Sprint\MagicBricksDemo\src\main\resources
+2025-07-08 11:24:17,876 [Worker-33: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\SHRDEOKA\eclipse-workspace\Sprint\MagicBricksDemo\src\test\resources
+2025-07-08 11:26:08,586 [Worker-33: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\SHRDEOKA\eclipse-workspace\Sprint\MagicBricksDemo\src\main\resources
+2025-07-08 11:26:08,588 [Worker-33: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\SHRDEOKA\eclipse-workspace\Sprint\MagicBricksDemo\src\test\resources
+2025-07-08 11:29:10,421 [Worker-12: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\SHRDEOKA\eclipse-workspace\Sprint\MagicBricksDemo\src\main\resources
+2025-07-08 11:29:10,422 [Worker-12: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\SHRDEOKA\eclipse-workspace\Sprint\MagicBricksDemo\src\test\resources
+2025-07-08 11:41:54,305 [Worker-36: Building] ERROR o.e.m.c.i.p.r.ProjectRegistryManager - File not found: C:\Users\SHRDEOKA\eclipse-workspace\Sprint\MagicBricksDemo\pom.xml.
+org.eclipse.core.internal.resources.ResourceException: File not found: C:\Users\SHRDEOKA\eclipse-workspace\Sprint\MagicBricksDemo\pom.xml.
+	at org.eclipse.core.internal.localstore.FileSystemResourceManager.read(FileSystemResourceManager.java:887)
+	at org.eclipse.core.internal.resources.File.getContents(File.java:352)
+	at org.eclipse.core.internal.resources.File.getContents(File.java:342)
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryManager.refreshPhase2(ProjectRegistryManager.java:589)
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryManager.refresh(ProjectRegistryManager.java:491)
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryManager.refresh(ProjectRegistryManager.java:370)
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryManager.refresh(ProjectRegistryManager.java:322)
+	at org.eclipse.m2e.core.internal.builder.MavenBuilder$BuildMethod.getProjectFacade(MavenBuilder.java:146)
+	at org.eclipse.m2e.core.internal.builder.MavenBuilder$BuildMethod.lambda$0(MavenBuilder.java:84)
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.executeBare(MavenExecutionContext.java:458)
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.execute(MavenExecutionContext.java:339)
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.execute(MavenExecutionContext.java:278)
+	at org.eclipse.m2e.core.internal.builder.MavenBuilder$BuildMethod.execute(MavenBuilder.java:83)
+	at org.eclipse.m2e.core.internal.builder.MavenBuilder.build(MavenBuilder.java:192)
+	at org.eclipse.core.internal.events.BuildManager$2.run(BuildManager.java:1077)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:47)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:296)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:352)
+	at org.eclipse.core.internal.events.BuildManager$1.run(BuildManager.java:441)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:47)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:444)
+	at org.eclipse.core.internal.events.BuildManager.basicBuildLoop(BuildManager.java:555)
+	at org.eclipse.core.internal.events.BuildManager.basicBuildLoop(BuildManager.java:503)
+	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:585)
+	at org.eclipse.core.internal.events.AutoBuildJob.doBuild(AutoBuildJob.java:207)
+	at org.eclipse.core.internal.events.AutoBuildJob.run(AutoBuildJob.java:300)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+Caused by: org.eclipse.core.runtime.CoreException: File not found: C:\Users\SHRDEOKA\eclipse-workspace\Sprint\MagicBricksDemo\pom.xml.
+	at org.eclipse.core.internal.filesystem.Policy.error(Policy.java:32)
+	at org.eclipse.core.internal.filesystem.local.LocalFile.handleReadIOException(LocalFile.java:542)
+	at org.eclipse.core.internal.filesystem.local.LocalFile.openInputStream(LocalFile.java:523)
+	at org.eclipse.core.internal.localstore.FileSystemResourceManager.read(FileSystemResourceManager.java:882)
+	... 26 common frames omitted
+Caused by: java.io.FileNotFoundException: C:\Users\SHRDEOKA\eclipse-workspace\Sprint\MagicBricksDemo\pom.xml (The system cannot find the path specified)
+	at java.base/java.io.FileInputStream.open0(Native Method)
+	at java.base/java.io.FileInputStream.open(FileInputStream.java:213)
+	at java.base/java.io.FileInputStream.<init>(FileInputStream.java:152)
+	at org.eclipse.core.internal.filesystem.local.LocalFile.openInputStream(LocalFile.java:521)
+	... 27 common frames omitted
+2025-07-08 11:54:59,471 [Worker-6: Loading available Gradle versions] INFO  o.e.b.c.i.u.g.PublishedGradleVersions - Gradle version information cache is up-to-date. Trying to read.

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="Cucumber" time="46.959" tests="1" skipped="0" failures="0" errors="0" timestamp="2025-07-08T09:04:34.645755500Z">
+<testcase classname="Home Interiors Functionality" name="Submit interior estimator without personal details using Excel" time="46.743">
+<system-out><![CDATA[
+Given user is on MagicBricks homepage.......................................passed
+When user navigates to Home Interiors and hovers on Home Interior Design Services page.passed
+And user clicks on Home Interior Design Services............................passed
+And user scrolls down and clicks on the Kitchen & Wardrobe calculate section.passed
+And user fills full estimator form from Excel row 1.........................passed
+And user fills contact details from Excel row 1.............................passed
+Then user should see the estimated quote....................................passed
+]]></system-out>
+</testcase>
+</testsuite>
