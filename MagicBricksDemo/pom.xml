@@ -125,11 +125,6 @@
     <artifactId>extentreports</artifactId>
     <version>5.1.1</version>
 </dependency>
-  	<dependency>
-  		<groupId>com.cg</groupId>
-  		<artifactId>RedBus</artifactId>
-  		<version>0.0.1-SNAPSHOT</version>
-  	</dependency>
   </dependencies>
 
   <build>
