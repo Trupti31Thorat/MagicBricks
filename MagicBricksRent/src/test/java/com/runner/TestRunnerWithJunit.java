@@ -6,7 +6,7 @@ import io.cucumber.junit.*;
 @RunWith(Cucumber.class)
 @CucumberOptions(features = "C:\\Users\\SHANKARE\\eclipse-workspace\\MagicBricksRent\\src\\test\\resource\\Features\\Rent.feature", glue = {
 		"com.stepDefination", "com.setup" },
-		// tags="@ownerPhoto",
+		 tags="@ownerPhoto",
 		// tags="@contactOwnerPositive",
 		// tags="@contactOwnerPositiveOutline",
 		// tags="@contactOwnerDataProvider",

@@ -18,19 +18,6 @@ public class FurnishedHomesPage extends BasePage {
 	@FindBy(xpath = "//*[@id=\"rentheading\"]")
 	public WebElement rentTag;
 
-	// @FindBy(xpath = "//a[contains(text(),'Furnished Homes')]")
-	// @FindBy(xpath="//*[@id=\"commercialIndex\"]/header/section[2]/div/ul/li[2]/div/div/div[1]/ul/li[3]/a")
-	// @FindBy(xpath="/html/body/header/section[2]/div/ul/li[2]/div/div/div[1]/ul/li[3]/a")
-	// @FindBy(css =
-	// "a[onclick*='openRentUrlInNewTab'][href='javascript:void(0);'][data-category='furnishedHomes']")
-	// @FindBy(css = "a[onclick*='openRentUrlInNewTab'][href*='furnished-homes']")
-	// @FindBy(xpath =
-	// "//*[@id='commercialIndex']/header/section[2]/div/ul/li[2]/div/div/div[1]/ul/li[3]/a")
-	// @FindBy(css =
-	// "a[onclick*='openRentUrlInNewTab'][data-target*='furnished-homes']")
-	// @FindBy(css = "a[href*='/furnished-homes']")
-	// @FindBy(xpath =
-	// "//*[@id=\"propertysrp\"]/div[1]/div/div/div[1]/div[3]/div/div/div[1]/ul/li[3]/a")
 	@FindBy(xpath = "//a[text()=\"Furnished Homes\"]")
 
 	public WebElement furnishedHomesOption;

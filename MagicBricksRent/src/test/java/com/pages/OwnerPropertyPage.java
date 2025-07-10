@@ -40,7 +40,9 @@ public class OwnerPropertyPage extends BasePage {
    //Scenario 1 
     
   //@FindBy(xpath = "//img[@src='https://img.staticmb.com/mbphoto/property/cropped_images/2024/Dec/07/Photo_h300_w450/76392859_9_PropertyImage369-6091984673031_300_450.jpg' and @alt='3BHK Penthouse for Rent in Bella Vista Empress at Wakad']\r\n")
-    @FindBy(xpath = "//img[@src='https://img.staticmb.com/mbphoto/property/cropped_images/2025/May/02/Photo_h300_w450/79213625_12_1000420275_300_450.jpg' and @alt='The construction site has rocks and a building']\r\n")
+   // @FindBy(xpath = "//img[@src='https://img.staticmb.com/mbphoto/property/cropped_images/2025/May/02/Photo_h300_w450/79213625_12_1000420275_300_450.jpg' and @alt='The construction site has rocks and a building']\r\n")
+   // @FindBy(xpath="//img[@src='https://img.staticmb.com/mbphoto/property/cropped_images/2025/Jan/21/Photo_h300_w450/76967633_10_hatsAppImage20250121at13.18.47_300_450.jpeg' and @alt='Commercial Office Space for Rent in Rama Equator at Pimpri']\r\n")
+    @FindBy(xpath="//*[@id=\"cardid76967633\"]/div/div[1]/div[1]/div[1]/img")
     public WebElement PropertyPhoto;
 
     public void clickPropertyPhoto() {
