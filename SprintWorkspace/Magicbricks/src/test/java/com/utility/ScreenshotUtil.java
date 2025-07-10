@@ -14,7 +14,7 @@ public class ScreenshotUtil {
 
     public static String captureScreenshot(WebDriver driver, String scenarioName) throws IOException {
         TakesScreenshot ts = (TakesScreenshot) driver;
-        File src = ts.getScreenshotAs(OutputType.FILE);
+        File src = ts.getScreenshotAs(OutputType.FILE); //temporary file 
 
         String timestamp = new SimpleDateFormat("dd-MM-yy_HH-mm-ss").format(new Date());
         String folderPath = ExtentManager.getReportFolderPath();

@@ -78,7 +78,6 @@ public class BasePage {
 				break;
 			}
 		}
-
 	}
 
 	// switching the context to the latest window opened

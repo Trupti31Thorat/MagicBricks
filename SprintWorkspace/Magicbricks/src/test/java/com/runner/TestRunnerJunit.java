@@ -1,8 +1,6 @@
 package com.runner;
 
 import org.junit.runner.RunWith;
-
-
 import io.cucumber.junit.Cucumber;
 import io.cucumber.junit.CucumberOptions;
 
@@ -11,7 +9,7 @@ import io.cucumber.junit.CucumberOptions;
     features = "src/test/resources/Features/",
     glue = {"com.stepDefinition"
     , "com.hooks"},
-    tags = "@BuyVsRent",
+    tags = "@MagicBricks",
     plugin = { "pretty" ,
     //"html:target/CucumberReport.html",
 //    "json:target/CucumberReport.json",

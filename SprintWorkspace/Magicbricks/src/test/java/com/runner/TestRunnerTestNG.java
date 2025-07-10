@@ -5,8 +5,8 @@ import io.cucumber.testng.CucumberOptions;
 import org.testng.annotations.DataProvider;
 
 @CucumberOptions(
-    features = "src/test/resources/Features",          // Path to your feature file(s)
-    glue = {"com.StepDefinitions" },
+    features = "src/test/resources/Features",       
+    glue = {"com.stepDefinition" },
     		//, "com.hooks"},  
     tags="@MagicBricks",
 
@@ -15,18 +15,13 @@ import org.testng.annotations.DataProvider;
         "pretty",
         //"html:target/CucumberReport.html",
         //"json:target/cucumber.json",
-        // Extent Report plugin will be added later
-        //"testng:target/testng-cucumber.xml"
+
     },
     monochrome = true
-                                 // Run only this scenario
+                               
 )
 public class TestRunnerTestNG extends AbstractTestNGCucumberTests {
 	
-//	@Override
-//	@DataProvider(parallel=false)
-//	public Object[][] scenarios(){
-//		return super.scenarios();	
-//		}
+
 	
 }
