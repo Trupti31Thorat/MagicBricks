@@ -5,10 +5,21 @@ import java.io.FileInputStream;
 import java.io.IOException;
 import java.time.Duration;
 import java.util.Properties;
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> origin/MbAdvice
 import java.util.Set;
 
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.JavascriptExecutor;
+<<<<<<< HEAD
+=======
+=======
+
+import org.apache.commons.io.FileUtils;
+>>>>>>> 6f304837b531716b8c9fa5d00444a260dc41f325
+>>>>>>> origin/MbAdvice
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
@@ -17,13 +28,28 @@ import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
+<<<<<<< HEAD
 public class LocalityPage extends BasePage
+=======
+<<<<<<< HEAD
+public class LocalityPage extends BasePage
+=======
+public class LocalityPage
+>>>>>>> 6f304837b531716b8c9fa5d00444a260dc41f325
+>>>>>>> origin/MbAdvice
 {
 
 	WebDriver driver;
 	Properties prop;
 	public LocalityPage(WebDriver driver) {
+<<<<<<< HEAD
 		super(driver);
+=======
+<<<<<<< HEAD
+		super(driver);
+=======
+>>>>>>> 6f304837b531716b8c9fa5d00444a260dc41f325
+>>>>>>> origin/MbAdvice
 		this.driver = driver;
 		PageFactory.initElements(driver, this);
 
@@ -41,18 +67,34 @@ public class LocalityPage extends BasePage
 	@FindBy(xpath = "/html/body/header/section[2]/div/ul/li[6]/a")
 	WebElement mbAdviceMenu;           
 	
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> origin/MbAdvice
 	@FindBy(xpath = "//*[@id=\"commercialIndex\"]/header/section[2]/div/ul/li[6]/div/div/div[1]/ul/li[1]/a")
 	WebElement ReserchIn;	
 	
 	
 	@FindBy(xpath = "//*[@id=\"root\"]/div/section[3]/div/div[1]/div[1]/div/div/div/div[2]/div[2]/button[1]")
 	WebElement Report;	
+<<<<<<< HEAD
+=======
+=======
+
+	@FindBy(xpath = "//*[@id=\"newprojects\"]/div[1]/div[2]/div/ul/li[6]/div/div/div[3]/ul/li[4]/span")
+	WebElement NewProject;	
+>>>>>>> 6f304837b531716b8c9fa5d00444a260dc41f325
+>>>>>>> origin/MbAdvice
 	
 	public void launchMagicBricks() {
 		driver.get(prop.getProperty("url"));
 	}
 
 
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> origin/MbAdvice
 public void navigateInsights() {
     Actions actions = new Actions(driver);
     actions.moveToElement(mbAdviceMenu)
@@ -91,6 +133,19 @@ public void ClickOnViewReport()
 	
 }
 
+<<<<<<< HEAD
+=======
+=======
+public void navigateToNewProject() {
+    Actions actions = new Actions(driver);
+    actions.moveToElement(mbAdviceMenu)
+           .pause(Duration.ofSeconds(1))
+           .moveToElement(NewProject)
+           .click().build().perform();
+}
+	
+>>>>>>> 6f304837b531716b8c9fa5d00444a260dc41f325
+>>>>>>> origin/MbAdvice
 
 
 public void takesScreen() throws IOException

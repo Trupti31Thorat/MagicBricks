@@ -1,5 +1,6 @@
 package com.pages;
 
+<<<<<<< HEAD
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
@@ -9,11 +10,31 @@ import java.util.Properties;
 import java.util.Random;
 import java.util.Set;
 
+=======
+<<<<<<< HEAD
+import java.io.File;
+=======
+>>>>>>> 6f304837b531716b8c9fa5d00444a260dc41f325
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.time.Duration;
+import java.util.Properties;
+import java.util.Set;
+
+<<<<<<< HEAD
+>>>>>>> origin/MbAdvice
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
+<<<<<<< HEAD
+=======
+=======
+import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
+>>>>>>> 6f304837b531716b8c9fa5d00444a260dc41f325
+>>>>>>> origin/MbAdvice
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
@@ -22,6 +43,7 @@ import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+<<<<<<< HEAD
 public class ResearchInsightsPage extends BasePage {
 	
 	//WebDriver driver;
@@ -33,6 +55,44 @@ public class ResearchInsightsPage extends BasePage {
 	
 
 
+=======
+<<<<<<< HEAD
+public class ResearchInsightsPage extends BasePage {
+=======
+public class ResearchInsightsPage {
+>>>>>>> 6f304837b531716b8c9fa5d00444a260dc41f325
+	
+	WebDriver driver;
+	Properties prop;
+	public ResearchInsightsPage(WebDriver driver) {
+<<<<<<< HEAD
+		super(driver);
+		this.driver = driver;
+		PageFactory.initElements(driver, this);
+
+		
+		
+	    prop = new Properties();
+=======
+		this.driver = driver;
+		PageFactory.initElements(driver, this);
+
+		prop = new Properties();
+>>>>>>> 6f304837b531716b8c9fa5d00444a260dc41f325
+		try {
+			FileInputStream fis = new FileInputStream(
+					"C:\\Users\\TRTHORAT\\OneDrive - Capgemini\\Desktop\\Sprint\\MagicBricsMbAdviceTesting\\src\\test\\resource\\PropertyFiles\\config.properties");
+			prop.load(fis);
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+<<<<<<< HEAD
+		
+=======
+>>>>>>> 6f304837b531716b8c9fa5d00444a260dc41f325
+	}
+	
+>>>>>>> origin/MbAdvice
 	@FindBy(xpath = "/html/body/header/section[2]/div/ul/li[6]/a")
 	WebElement mbAdviceMenu;           
 	
@@ -42,6 +102,7 @@ public class ResearchInsightsPage extends BasePage {
 	
 	
 	public void launchMagicBricks() {
+<<<<<<< HEAD
 		prop = new Properties();
 		try {
 			FileInputStream fis = new FileInputStream(
@@ -50,6 +111,8 @@ public class ResearchInsightsPage extends BasePage {
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
+=======
+>>>>>>> origin/MbAdvice
 		driver.get(prop.getProperty("url"));
 	}
 
@@ -95,6 +158,7 @@ public class ResearchInsightsPage extends BasePage {
 	    cityDropdown.click();
 
 	    Thread.sleep(3000);
+<<<<<<< HEAD
 	 //   driver.findElement(By.id("dropdownItem_3")).click();
 	    try {
 	        Thread.sleep(2000); // Wait for rating options to be visible
@@ -119,6 +183,9 @@ public class ResearchInsightsPage extends BasePage {
 	    } catch (Exception e) {
 	        System.out.println("Failed to select dropdown option: " + e.getMessage());
 	    }
+=======
+	    driver.findElement(By.id("dropdownItem_3")).click();
+>>>>>>> origin/MbAdvice
 	   
 	}
 	
@@ -132,6 +199,7 @@ public class ResearchInsightsPage extends BasePage {
 	    QuartersDropdown.click();
 
 	    Thread.sleep(3000);
+<<<<<<< HEAD
 	   // driver.findElement(By.id("dropdownItem_0")).click();
 	    
 	    try {
@@ -157,13 +225,53 @@ public class ResearchInsightsPage extends BasePage {
 	    } catch (Exception e) {
 	        System.out.println("Failed to select dropdown option: " + e.getMessage());
 	    }
+=======
+	    driver.findElement(By.id("dropdownItem_0")).click();
+>>>>>>> origin/MbAdvice
 	   
 	}
 
 	
+<<<<<<< HEAD
 	
 	
 	
+=======
+	public void selectRandomYearFromDropdown() throws InterruptedException {
+	    WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+
+	    // Click the dropdown to reveal options
+	    WebElement YearDropdown = wait.until(ExpectedConditions.elementToBeClickable(
+	        By.xpath("//span[contains(@class, 'p-dropdown-label') and contains(text(), 'Years')]")
+	    ));
+	    YearDropdown.click();
+
+	    Thread.sleep(3000);
+	    driver.findElement(By.id("dropdownItem_0")).click();
+	  
+	}
+	
+<<<<<<< HEAD
+	
+	public void takesScreen() throws IOException
+	{
+		TakesScreenshot screen1=(TakesScreenshot)driver;
+		File src1= screen1.getScreenshotAs(OutputType.FILE);
+		String filename = "latest_blogs"+System.currentTimeMillis()+".png";
+		String destination ="C:\\Users\\TRTHORAT\\OneDrive - Capgemini\\Desktop\\Sprint\\MagicBricsMbAdviceTesting\\Screenshots\\"
+		+filename;
+		
+		File dest = new File(destination);
+	   FileUtils.copyFile(src1, dest);
+	   
+	 
+		
+		
+	}
+	
+=======
+>>>>>>> 6f304837b531716b8c9fa5d00444a260dc41f325
+>>>>>>> origin/MbAdvice
 
 
 }

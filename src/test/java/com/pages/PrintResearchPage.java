@@ -20,11 +20,16 @@ import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> origin/MbAdvice
 import com.aventstack.extentreports.gherkin.model.Scenario;
 
 import io.cucumber.java.After;
 
 public class PrintResearchPage extends BasePage {
+<<<<<<< HEAD
 
 	Properties prop;
 
@@ -42,6 +47,23 @@ public class PrintResearchPage extends BasePage {
 	public void launchMagicBricks() {
 		
 		
+=======
+=======
+public class PrintResearchPage {
+>>>>>>> 6f304837b531716b8c9fa5d00444a260dc41f325
+
+	
+	WebDriver driver;
+	Properties prop;
+	public PrintResearchPage(WebDriver driver) {
+<<<<<<< HEAD
+		super(driver);
+=======
+>>>>>>> 6f304837b531716b8c9fa5d00444a260dc41f325
+		this.driver = driver;
+		PageFactory.initElements(driver, this);
+
+>>>>>>> origin/MbAdvice
 		prop = new Properties();
 		try {
 			FileInputStream fis = new FileInputStream(
@@ -50,12 +72,33 @@ public class PrintResearchPage extends BasePage {
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
+<<<<<<< HEAD
 		
+=======
+	}
+	
+
+	@FindBy(xpath = "/html/body/header/section[2]/div/ul/li[6]/a")
+	WebElement mbAdviceMenu;           
+	
+
+	@FindBy(xpath = "//*[@id=\"commercialIndex\"]/header/section[2]/div/ul/li[6]/div/div/div[1]/ul/li[1]/a")
+	WebElement ReserchIn;	
+	
+	
+
+	public void launchMagicBricks() {
+>>>>>>> origin/MbAdvice
 		driver.get(prop.getProperty("url"));
 	}
 
 	
 
+<<<<<<< HEAD
+=======
+	
+
+>>>>>>> origin/MbAdvice
 public void navigateToReserchInsights() {
     Actions actions = new Actions(driver);
     actions.moveToElement(mbAdviceMenu)
@@ -80,5 +123,30 @@ public void pressPrintWithRobot() throws AWTException {
     
 }    
 
+<<<<<<< HEAD
+=======
+public void takesScreen() throws IOException
+{
+	TakesScreenshot screen1=(TakesScreenshot)driver;
+	File src1= screen1.getScreenshotAs(OutputType.FILE);
+<<<<<<< HEAD
+	String filename = "Print_Report"+System.currentTimeMillis()+".png";
+=======
+	String filename = "ReaserchInsights"+System.currentTimeMillis()+".png";
+>>>>>>> 6f304837b531716b8c9fa5d00444a260dc41f325
+	String destination ="C:\\Users\\TRTHORAT\\OneDrive - Capgemini\\Desktop\\Sprint\\MagicBricsMbAdviceTesting\\Screenshots\\"
+	+filename;
+	
+	File dest = new File(destination);
+   FileUtils.copyFile(src1, dest);
+   
+ 
+	
+	
+}
+
+	
+	
+>>>>>>> origin/MbAdvice
 
 }

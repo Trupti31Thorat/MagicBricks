@@ -16,17 +16,38 @@ import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
+<<<<<<< HEAD
 public class MultipleWindowHandlePage extends BasePage{
+=======
+public class MultipleWindowHandlePage {
+>>>>>>> origin/MbAdvice
 
 	
 	
 
+<<<<<<< HEAD
 	
 	Properties prop;
 	public MultipleWindowHandlePage(WebDriver driver) {
 		super(driver);
 
 		
+=======
+	WebDriver driver;
+	Properties prop;
+	public MultipleWindowHandlePage(WebDriver driver) {
+		this.driver = driver;
+		PageFactory.initElements(driver, this);
+
+		prop = new Properties();
+		try {
+			FileInputStream fis = new FileInputStream(
+					"C:\\Users\\TRTHORAT\\OneDrive - Capgemini\\Desktop\\Sprint\\MagicBricsMbAdviceTesting\\src\\test\\resource\\PropertyFiles\\config.properties");
+			prop.load(fis);
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+>>>>>>> origin/MbAdvice
 	}
 	
 	
@@ -44,6 +65,7 @@ public class MultipleWindowHandlePage extends BasePage{
 	
 
 	public void launchMagicBricks() {
+<<<<<<< HEAD
 		prop = new Properties();
 		try {
 			FileInputStream fis = new FileInputStream(
@@ -52,6 +74,8 @@ public class MultipleWindowHandlePage extends BasePage{
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
+=======
+>>>>>>> origin/MbAdvice
 		driver.get(prop.getProperty("url"));
 	}
 
@@ -90,7 +114,29 @@ public void handleAllWindows() {
 }
 
 
+<<<<<<< HEAD
 
 
+=======
+public void takesScreen() throws IOException
+{
+	TakesScreenshot screen1=(TakesScreenshot)driver;
+	File src1= screen1.getScreenshotAs(OutputType.FILE);
+<<<<<<< HEAD
+	String filename = "Multiple_Window"+System.currentTimeMillis()+".png";
+=======
+	String filename = "MultipleWindow"+System.currentTimeMillis()+".png";
+>>>>>>> 6f304837b531716b8c9fa5d00444a260dc41f325
+	String destination ="C:\\Users\\TRTHORAT\\OneDrive - Capgemini\\Desktop\\Sprint\\MagicBricsMbAdviceTesting\\Screenshots\\"
+	+filename;
+	
+	File dest = new File(destination);
+   FileUtils.copyFile(src1, dest);
+   
+ 
+	
+	
+}
+>>>>>>> origin/MbAdvice
 	
 }
