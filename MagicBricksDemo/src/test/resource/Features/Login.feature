@@ -1,5 +1,7 @@
 
 Feature: Login functionality for MagicBricks
+#---------------------------------------------------Scenario 5-------------------------------------------------------------------------#
+
 @Login
   Scenario: Login to MagicBricks as buyer using Excel data
     Given user is on MagicBricks homepage

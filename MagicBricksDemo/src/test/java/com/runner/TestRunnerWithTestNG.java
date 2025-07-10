@@ -6,13 +6,9 @@ import io.cucumber.testng.CucumberOptions;
 @CucumberOptions(
     features = "src/test/resource/features",
     glue = {"com.stepdefinitions", "com.setup"},
-    plugin = {
-        "pretty",
-        "json:target/cucumber.json",
-        "junit:target/cucumberReport/HtmlReport4.xml",
-        "com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:"
-    },
-    tags = "@NegativeTest",
+		plugin = { "pretty", "json:target/cucumber.json", "junit:target/cucumberReport/HtmlReport4.xml",
+				"com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:" },
+    tags = " @Estimation ",
     monochrome = true
 )
 

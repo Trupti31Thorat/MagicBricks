@@ -1,8 +1,12 @@
 package com.stepdefinitions;
 
+
 import com.pages.HomeInteriorPageFactory;
 import com.parameters.ExcelReader;
 import com.setup.HomeInteriorBaseSteps;
+
+import io.cucumber.java.AfterStep;
+import io.cucumber.java.Scenario;
 import io.cucumber.java.en.*;
 import java.io.IOException;
 import java.time.Duration;
@@ -11,6 +15,9 @@ import java.util.Map;
 import com.parameters.ConfigReader;
 import org.junit.Assert;
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
@@ -26,6 +33,11 @@ public class HomeInteriorSteps  {
     @Given("user is on MagicBricks homepage")
     public void on_homepage() {
         page.openHomeInteriorsFromConfigUrl();
+    }
+    
+    @When("user navigates to Home Interiors and hovers on Home Interior Design Services page")
+    public void hover_home_interiors() {
+        new Actions(driver).moveToElement(page.homeInteriorsMenu).perform();
     }
 
 
@@ -70,6 +82,7 @@ public class HomeInteriorSteps  {
      @Then("clicks on Start now button")
      public void click_start_now_btn() {
          page.clickStartNow();
+         
          String screenshotPath = new HomeInteriorBaseSteps().takeScreenshot("Post_Property_Scenario1");
          System.out.println("Screenshot captured at: " + screenshotPath);
      }
@@ -91,11 +104,6 @@ public class HomeInteriorSteps  {
          page.clickEngineeredWoods();  // no need to initialize a new page
      }
 
-//     @Then("Engineered Woods page should open")
-//     public void engineered_woods_page_should_open() throws InterruptedException {
-//    for (String handle : driver.getWindowHandles()) {
-//             driver.switchTo().window(handle);
-//         }
      @Then("Engineered Woods page should open")
      public void engineered_woods_page_should_open() throws InterruptedException {
          for (String handle : driver.getWindowHandles()) {
@@ -104,8 +112,9 @@ public class HomeInteriorSteps  {
 
          String currentUrl = driver.getCurrentUrl();
          Thread.sleep(1000);
-         Assert.assertTrue("❌ Engineered Woods page did not open!", currentUrl.contains("https://www.magicbricks.com/blog/engineered-wood/132343.html"));
-         System.out.println("✅ Engineered Woods page opened successfully.");
+         Assert.assertTrue(" Engineered Woods page did not open!", currentUrl.contains("https://www.magicbricks.com/blog/engineered-wood/132343.html"));
+         System.out.println(" Engineered Woods page opened successfully.");
+        
          String screenshotPath = new HomeInteriorBaseSteps().takeScreenshot("Engineered_Price_Guide_Scenario2");
          System.out.println("Screenshot captured at: " + screenshotPath);
      }
@@ -117,11 +126,7 @@ public class HomeInteriorSteps  {
  	 * Reviewed By:
  	 * Motive:
  	 */
-     
-    @When("user navigates to Home Interiors and hovers on Home Interior Design Services page")
-    public void hover_home_interiors() {
-        new Actions(driver).moveToElement(page.homeInteriorsMenu).perform();
-    }
+ 
 
     @When("user clicks on Home Interior Design Services")
         public void click_design_services() {
@@ -163,8 +168,8 @@ public class HomeInteriorSteps  {
     
     @Then("user should see the estimated quote")
     public void verify_quote() {
-    	  String screenshotPath = new HomeInteriorBaseSteps().takeScreenshot("HomeInterior_EstimateSubmitted_Scenario3");
-          System.out.println("Screenshot captured at: " + screenshotPath);
+    String screenshotPath = new HomeInteriorBaseSteps().takeScreenshot("Estimation_Scenario3");
+     System.out.println("Screenshot captured at: " + screenshotPath);
     
     }  
     
@@ -180,34 +185,44 @@ public class HomeInteriorSteps  {
     	Map<String, String> data = ExcelReader.getRowData("EstimatorForm", rowNum);
         page.fillContactDetails(data.get("Name"), data.get("Mobile"), data.get("Email"));
         
-        String screenshotPath = new HomeInteriorBaseSteps().takeScreenshot("HomeInterior_EstimationError_Scenario4");
-        System.out.println("Screenshot captured at: " + screenshotPath);
-
+        String screenshotPath = new HomeInteriorBaseSteps().takeScreenshot("NegativeTest_Scenario4");
+        System.out.println("Screenshot captured at: " + screenshotPath);        
        
     }
-    
- //--------------------------------------------------------Scenario 6 @Language-------------------------------------------------------------------//
+    @AfterStep
+	public void tearDown(Scenario scenario) // wil take screenshots for each and every scenario
+	{
+		final byte[] screenshot = ((TakesScreenshot)driver).getScreenshotAs(OutputType.BYTES);
+		scenario.attach(screenshot, "image/png", "Image");
+		
+	}
+ //--------------------------------------------------------Scenario 6 @DesignGallery-------------------------------------------------------------------//
     /*created By:
   	 * Reviewed By:
   	 * Motive:
   	 */
 
-    	@Then("scrolls down and clicks on View All")
-        public void scrolls_down_and_clicks_on_view_all() {
-            page.clickViewAll();
-        }
+    @Then("user scrolls down and clicks on Interiors Designs")
+	public void user_clicks_on_interiors_designs() {
+	    page.clickInteriorsDesigns();
+	}
 
-        @And("on next page clicks on the language dropdown")
-        public void on_next_page_clicks_on_language_dropdown() {
-            page.openLanguageDropdown();
-        }
+	@And("on next page user cancels a pop up")
+	public void user_cancels_popup_on_next_page() {
+	    page.cancelPopupIfPresent();
+	}
 
-        @And("selects the language {string}")
-        public void selects_the_language(String language) {
-            page.selectLanguage(language);
-        }
-
-    
-
-    
+	@And("user again scrolls down and clicks on design Gallery")
+	public void user_clicks_on_design_gallery() {
+	    page.clickDesignGallerySafely();
+	    
+	    String screenshotPath = new HomeInteriorBaseSteps().takeScreenshot("DesignGallery__Scenario6");
+        System.out.println("Screenshot captured at: " + screenshotPath);
+	}
+   
 }
+
+
+    
+
+    
