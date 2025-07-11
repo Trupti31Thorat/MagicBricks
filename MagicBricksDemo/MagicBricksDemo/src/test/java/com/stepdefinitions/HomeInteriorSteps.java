@@ -1,8 +1,11 @@
 package com.stepdefinitions;
 
+
 import com.pages.HomeInteriorPageFactory;
 import com.parameters.ExcelReader;
 import com.setup.HomeInteriorBaseSteps;
+import io.cucumber.java.AfterStep;
+import io.cucumber.java.Scenario;
 import io.cucumber.java.en.*;
 import java.io.IOException;
 import java.time.Duration;
@@ -11,6 +14,9 @@ import java.util.Map;
 import com.parameters.ConfigReader;
 import org.junit.Assert;
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
@@ -18,119 +24,201 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class HomeInteriorSteps {
-    WebDriver driver = HomeInteriorBaseSteps.getDriver();
-    HomeInteriorPageFactory page = new HomeInteriorPageFactory(driver);
+	WebDriver driver = HomeInteriorBaseSteps.getDriver();
+	HomeInteriorPageFactory page = new HomeInteriorPageFactory(driver);
 
-    
-//-------------------------------------------------------Scenario 2----------------------------------------------------------------------//
-   
-    @Given("user is on MagicBricks homepage")
-    public void on_homepage() {
-        page.openHomeInteriorsFromConfigUrl();
-    }
-
-    @When("user navigates to Home Interiors and hovers on Home Interior Design Services page")
-    public void hover_home_interiors() {
-        new Actions(driver).moveToElement(page.homeInteriorsMenu).perform();
-    }
-
-    @When("user clicks on Home Interior Design Services")
-        public void click_design_services() {
-            page.clickDesignServices();
-            page.switchToNewWindow();
-            page.waitForPopupsToSettle();
-            
-        }
-
-    @When("user scrolls down and clicks on the Kitchen & Wardrobe calculate section")
-    public void click_estimator_section() {
-        page.clickKitchenWardrobeEstimator();
-    }
-
-    @When("user fills full estimator form from Excel row {int}")
-    public void fill_full_form_excel(int rowNum) throws IOException {
-        Map<String, String> data = ExcelReader.getRowData("EstimatorForm", rowNum);
-
-        
-        // Kitchen
-        page.selectKitchen(data.get("KitchenLayout"), data.get("KitchenSize"));
-
-        // Wardrobe — validate & convert to int
-        String countRaw = data.get("WardrobeCount");
-        if (countRaw == null || countRaw.trim().isEmpty()) {
-            throw new IllegalArgumentException("❌ 'WardrobeCount' column is missing or empty in Excel row " + rowNum);
-        }
-
-        int count = Integer.parseInt(countRaw.trim());
-        page.selectWardrobe(count, data.get("WardrobeSize"));
-    }
-
-
-    @When("user fills contact details from Excel row {int}")
-    public void fill_contact_details_from_excel(int rowNum) throws IOException {
-        Map<String, String> data = ExcelReader.getRowData("EstimatorForm", rowNum);
-        page.fillContactDetails(data.get("Name"), data.get("Mobile"), data.get("Email"));
-    }
-    
-    @Then("user should see the estimated quote")
-    public void verify_quote() {
-    }
-
-    
-//-------------------------------------------------Scenario 3(Negative Scenario)----------------------------------------------------------------//
-   
-    
-    @When("user fills contact details with invalid {int}-digit mobile number from Excel row {int}")
-    public void user_fills_contact_details_with_invalid_digit_mobile_number_from_excel_row(Integer digitCount, Integer rowNum) {
-    	Map<String, String> data = ExcelReader.getRowData("EstimatorForm", rowNum);
-        page.fillContactDetails(data.get("Name"), data.get("Mobile"), data.get("Email"));
-        
-        String screenshotPath = new HomeInteriorBaseSteps().takeScreenshot("HomeInterior_EstimateSubmitted");
-        System.out.println("📸 Screenshot captured at: " + screenshotPath);
-
-       
-    }
-
-
-    
-// ---------------------------------------------------Scenario 1----------------------------------------------------------------------------//
-	
-	@Then("clicks on post Property button")
-	public void clicks_on_post_property_button() {
-	    page.clickPostProperty();
+//-----------------------------------------------------------Background-----------------------------------------------------------------//
+	@Given("user is on MagicBricks homepage")
+	public void on_homepage() {
+		page.openHomeInteriorsFromConfigUrl();
 	}
 
-    @And("on next page one popup appears which is closed by clicking")
-    public void close_popup_if_visible() {
-        page.closePopupIfPresent();
-    }
+	@When("user navigates to Home Interiors and hovers on Home Interior Design Services page")
+	public void hover_home_interiors() {
+		new Actions(driver).moveToElement(page.homeInteriorsMenu).perform();
+	}
 
-    @Then("user clicks on owner")
-    public void user_clicks_owner_option() {
-        page. selectRadioByLabel("Owner");
-    }
+// ---------------------------------------------------Scenario 1 @HomeInteriors----------------------------------------------------------------------------//
+	/*
+	 * created By: Shreya Deokar
+	 *  Reviewed By: Preeti Mam
+	 *  Motive: Navigate to Home Interiors Post Property
+	 */
 
-    @Then("clicks on Sell")
-    public void clicks_on_sell() {
-       page. selectRadioByLabel("sell");
-    }
-    
-    @Then("owner fills contact details:")
-    public void owner_fills_contact_details(io.cucumber.datatable.DataTable dataTable) {
-		List<Map<String, String>> contactList = dataTable.asMaps(String.class, String.class);
-		String mobile = contactList.get(0).get("Mobile");
-		
-		   if (mobile == null || mobile.trim().isEmpty()) {
-		    throw new IllegalArgumentException("❌ Mobile number is missing in DataTable");
-		 }
-		
-		System.out.println("📱 Mobile from DataTable: " + mobile);
-		    page.enterContactNumber(mobile);
+	@Then("clicks on post Property button")
+	public void clicks_on_post_property_button() {
+		page.clickPostProperty();
+	}
+
+	@And("on next page one popup appears which is closed by clicking")
+	public void close_popup_if_visible() {
+		page.closePopupIfPresent();
+	}
+
+	@Then("user clicks on owner")
+	public void user_clicks_owner_option() {
+		page.selectRadioByLabel("Owner");
+	}
+
+	@Then("clicks on Sell")
+	public void clicks_on_sell() {
+		page.selectRadioByLabel("sell");
+	}
+
+	@Then("owner fills contact details with {string}")
+	public void owner_fills_contact_details_with_mobile(String mobile) {
+		if (mobile == null || mobile.trim().isEmpty()) {
+			throw new IllegalArgumentException("Mobile number is missing in Scenario Outline");
+		}
+
+		System.out.println("Mobile from Scenario Outline: " + mobile);
+		page.enterContactNumber(mobile);
+	}
+
+	@Then("clicks on Start now button")
+	public void click_start_now_btn() {
+		page.clickStartNow();
+
+		String screenshotPath = new HomeInteriorBaseSteps().takeScreenshot("Post_Property_Scenario1");
+		System.out.println("Screenshot captured at: " + screenshotPath);
+	}
+
+//---------------------------------------------------Scenario 2 @EngineeredWoods-------------------------------------------------------//
+	/*
+	 * created By: Shreya Deokar
+	 *  Reviewed By: Preeti Mam
+	 *  Motive: Scroll and open Engineered Woods guide
+	 */
+
+	@When("user scrolls down to \"Your Home Interiors Price Guide\" section")
+	public void user_scrolls_down_to_price_guide_section() throws InterruptedException {
+		page.scrollToPriceGuideSection(); // using existing page reference
+	}
+
+	@When("user clicks on \"Engineered Woods\"")
+	public void user_clicks_on_engineered_woods() throws InterruptedException {
+		Thread.sleep(1000);
+		page.clickEngineeredWoods(); // no need to initialize a new page
+	}
+
+	@Then("Engineered Woods page should open")
+	public void engineered_woods_page_should_open() throws InterruptedException {
+		for (String handle : driver.getWindowHandles()) {
+			driver.switchTo().window(handle);
+		}
+
+		String currentUrl = driver.getCurrentUrl();
+		Thread.sleep(1000);
+		Assert.assertTrue(" Engineered Woods page did not open!",
+				currentUrl.contains("https://www.magicbricks.com/blog/engineered-wood/132343.html"));
+		System.out.println(" Engineered Woods page opened successfully.");
+
+		String screenshotPath = new HomeInteriorBaseSteps().takeScreenshot("Engineered_Price_Guide_Scenario2");
+		System.out.println("Screenshot captured at: " + screenshotPath);
+	}
+
+//-------------------------------------------------------Scenario 3 @Estimation----------------------------------------------------------------------//
+	/*
+	 * created By: Shreya Deokar
+	 *  Reviewed By: Preeti Mam
+	 *  Motive: Submit interior estimator with personal details using Excel
+	 */
+
+	@When("user clicks on Home Interior Design Services")
+	public void click_design_services() {
+		page.clickDesignServices();
+		page.switchToNewWindow();
+		page.waitForPopupsToSettle();
+
+	}
+
+	@When("user scrolls down and clicks on the Kitchen & Wardrobe calculate section")
+	public void click_estimator_section() {
+		page.clickKitchenWardrobeEstimator();
+	}
+
+	@When("user fills full estimator form from Excel row {int}")
+	public void fill_full_form_excel(int rowNum) throws IOException {
+		Map<String, String> data = ExcelReader.getRowData("EstimatorForm", rowNum);
+
+		// Kitchen
+		page.selectKitchen(data.get("KitchenLayout"), data.get("KitchenSize"));
+
+		// Wardrobe — validate & convert to int
+		String countRaw = data.get("WardrobeCount");
+		if (countRaw == null || countRaw.trim().isEmpty()) {
+			throw new IllegalArgumentException("❌ 'WardrobeCount' column is missing or empty in Excel row " + rowNum);
+		}
+
+		int count = Integer.parseInt(countRaw.trim());
+		page.selectWardrobe(count, data.get("WardrobeSize"));
+	}
+
+	@When("user fills contact details from Excel row {int}")
+	public void fill_contact_details_from_excel(int rowNum) throws IOException {
+		Map<String, String> data = ExcelReader.getRowData("EstimatorForm", rowNum);
+		page.fillContactDetails(data.get("Name"), data.get("Mobile"), data.get("Email"));
+	}
+
+	@Then("user should see the estimated quote")
+	public void verify_quote() {
+		String screenshotPath = new HomeInteriorBaseSteps().takeScreenshot("Estimation_Scenario3");
+		System.out.println("Screenshot captured at: " + screenshotPath);
+
+	}
+
+//-------------------------------------------------Scenario 4 @NegativeTest Scenario----------------------------------------------------------------//
+	/*
+	 * created By: Shreya Deokar
+	 *  Reviewed By: Preeti Mam
+	 *  Motive: Submit form with invalid 9-digit mobile number
+	 */
+
+	@When("user fills contact details with invalid {int}-digit mobile number from Excel row {int}")
+	public void user_fills_contact_details_with_invalid_digit_mobile_number_from_excel_row(Integer digitCount,
+			Integer rowNum) {
+		Map<String, String> data = ExcelReader.getRowData("EstimatorForm", rowNum);
+		page.fillContactDetails(data.get("Name"), data.get("Mobile"), data.get("Email"));
+
+		String screenshotPath = new HomeInteriorBaseSteps().takeScreenshot("NegativeTest_Scenario4");
+		System.out.println("Screenshot captured at: " + screenshotPath);
+
+	}
+
+	@AfterStep
+	public void tearDown(Scenario scenario) // wil take screenshots for each and every scenario
+	{
+		final byte[] screenshot = ((TakesScreenshot) driver).getScreenshotAs(OutputType.BYTES);
+		scenario.attach(screenshot, "image/png", "Image");
+
+	}
+	// --------------------------------------------------------Scenario 6 @DesignGallery-------------------------------------------------------------------//
+	/*
+	 * created By: Shreya Deokar
+	 *  Reviewed By: Preeti Mam
+	 *  Motive:  Scroll photo from Design gallery
+	 */
+
+	@Then("user scrolls down and clicks on Interiors Designs")
+	public void user_clicks_on_interiors_designs() {
+		page.clickInteriorsDesigns();
+	}
+
+	@And("on next page user cancels a pop up")
+	public void user_cancels_popup_on_next_page() {
+		page.cancelPopupIfPresent();
+	}
+
+	@And("user again scrolls down and clicks on design Gallery")
+	public void user_clicks_on_design_gallery() {
+		page.clickDesignGallerySafely();
+
+		String screenshotPath = new HomeInteriorBaseSteps().takeScreenshot("DesignGallery__Scenario6");
+		System.out.println("Screenshot captured at: " + screenshotPath);
+	}
+
 }
 
-    @Then("clicks on Start now button")
-    public void click_start_now_btn() {
-        page.clickStartNow();
-    }
     
-}
+
+    

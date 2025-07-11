@@ -1,31 +1,86 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="0" passed="0" failed="0" skipped="0">
+<testng-results ignored="0" total="1" passed="0" failed="1" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2025-07-06T15:47:43 IST" name="Default suite" finished-at="2025-07-06T15:47:43 IST" duration-ms="472">
+  <suite started-at="2025-07-11T14:08:47 IST" name="Default suite" finished-at="2025-07-11T14:11:32 IST" duration-ms="165675">
     <groups>
       <group name="cucumber">
-        <method signature="AbstractTestNGCucumberTests.runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:com.runner.HomeInteriorTestRunner@5609159b]" name="runScenario" class="io.cucumber.testng.AbstractTestNGCucumberTests"/>
+        <method signature="AbstractTestNGCucumberTests.runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:com.runner.TestRunnerWithTestNG@5f8edcc5]" name="runScenario" class="io.cucumber.testng.AbstractTestNGCucumberTests"/>
       </group> <!-- cucumber -->
     </groups>
-    <test started-at="2025-07-06T15:47:43 IST" name="Default test" finished-at="2025-07-06T15:47:43 IST" duration-ms="472">
-      <class name="com.runner.HomeInteriorTestRunner">
-        <test-method is-config="true" signature="setUpClass(org.testng.ITestContext)[pri:0, instance:com.runner.HomeInteriorTestRunner@5609159b]" started-at="2025-07-06T15:47:43 IST" name="setUpClass" finished-at="2025-07-06T15:47:43 IST" duration-ms="375" status="PASS">
+    <test started-at="2025-07-11T14:08:47 IST" name="Default test" finished-at="2025-07-11T14:11:32 IST" duration-ms="165675">
+      <class name="com.runner.TestRunnerWithTestNG">
+        <test-method is-config="true" signature="setUpClass(org.testng.ITestContext)[pri:0, instance:com.runner.TestRunnerWithTestNG@5f8edcc5]" started-at="2025-07-11T14:08:47 IST" name="setUpClass" finished-at="2025-07-11T14:08:48 IST" duration-ms="1373" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[org.testng.TestRunner@6337c201]]>
+                <![CDATA[org.testng.TestRunner@131ba005]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUpClass -->
-        <test-method is-config="true" signature="tearDownClass()[pri:0, instance:com.runner.HomeInteriorTestRunner@5609159b]" started-at="2025-07-06T15:47:43 IST" name="tearDownClass" finished-at="2025-07-06T15:47:43 IST" duration-ms="10" status="PASS">
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:com.runner.TestRunnerWithTestNG@5f8edcc5]" started-at="2025-07-11T14:08:48 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2025-07-11T14:11:31 IST" duration-ms="163203" status="FAIL">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Submit interior estimator with personal details using Excel"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Home Interiors Functionality"]]>
+              </value>
+            </param>
+          </params>
+          <exception class="org.openqa.selenium.NoSuchWindowException">
+            <message>
+              <![CDATA[no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=137.0.7151.122)
+Build info: version: '4.33.0', revision: '2c6aaad03a'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.7'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [d69c22ffb2566c54df3f6b1cf4b7cf0c, screenshot {}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 137.0.7151.122, chrome: {chromedriverVersion: 137.0.7151.119 (e0ac9d12dff..., userDataDir: C:\Users\SHRDEOKA\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:63490}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:63490/devtoo..., se:cdpVersion: 137.0.7151.122, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: d69c22ffb2566c54df3f6b1cf4b7cf0c]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.openqa.selenium.NoSuchWindowException: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=137.0.7151.122)
+Build info: version: '4.33.0', revision: '2c6aaad03a'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.7'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [d69c22ffb2566c54df3f6b1cf4b7cf0c, screenshot {}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 137.0.7151.122, chrome: {chromedriverVersion: 137.0.7151.119 (e0ac9d12dff..., userDataDir: C:\Users\SHRDEOKA\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:63490}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:63490/devtoo..., se:cdpVersion: 137.0.7151.122, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: d69c22ffb2566c54df3f6b1cf4b7cf0c
+at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
+at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:502)
+at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:486)
+at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
+at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
+at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
+at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:215)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:544)
+at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:617)
+at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:621)
+at org.openqa.selenium.remote.RemoteWebDriver.getScreenshotAs(RemoteWebDriver.java:333)
+at com.stepdefinitions.HomeInteriorSteps.tearDown(HomeInteriorSteps.java:191)
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.openqa.selenium.NoSuchWindowException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method is-config="true" signature="tearDownClass()[pri:0, instance:com.runner.TestRunnerWithTestNG@5f8edcc5]" started-at="2025-07-11T14:11:31 IST" name="tearDownClass" finished-at="2025-07-11T14:11:32 IST" duration-ms="1007" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDownClass -->
-      </class> <!-- com.runner.HomeInteriorTestRunner -->
+      </class> <!-- com.runner.TestRunnerWithTestNG -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>
