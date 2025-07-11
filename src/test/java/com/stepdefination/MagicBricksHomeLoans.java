@@ -7,7 +7,7 @@ import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 
-//import com.aventstack.extentreports.gherkin.model.Scenario;
+
 import io.cucumber.java.Scenario;
 import com.pages.BalanceTransferPageFactory;
 import com.pages.CityPageFactory;
@@ -32,6 +32,11 @@ public class MagicBricksHomeLoans {
 	
 	//------------------------------------Scenario 1---------------------------------------------------
 
+	/*
+	 * Created by: Tejas Shahane 
+	 * Reviewed by: Preeti Mam
+	 * Motive: Automation Testing of SBI eligibility form
+	 */
 	
 SBIPageFactory SBIpage;
 
@@ -166,6 +171,11 @@ public void the_user_should_be_redirected_to_the_mobile_number_verification_page
 
 
 //---------------------------------------Scenario navigate to city----------------------------------------------------------
+/*
+ * Created by: Tejas Shahane 
+ * Reviewed by: Preeti Mam
+ * Motive: Navigating to City Select page
+ */
 
 	CityPageFactory cityPage;
 	@Given("user is on Magic Bricks homepage")
@@ -234,7 +244,11 @@ public void the_user_should_be_redirected_to_the_mobile_number_verification_page
 
 
 //---------------------------------------EMI Calculator using Excel---------------------------------------------------
-
+	/*
+	 * Created by: Tejas Shahane 
+	 * Reviewed by: Preeti Mam
+	 * Motive: Automation Testing of EMI Calculator
+	 */
 
     EMIPageFactory emiPage;
 
@@ -294,7 +308,12 @@ public void the_user_should_be_redirected_to_the_mobile_number_verification_page
 	
 	//--------------------------------Balance Transfer using excel------------------------------------
 
-
+    /*
+	 * Created by: Tejas Shahane 
+	 * Reviewed by: Preeti Mam
+	 * Motive: Automation Testing of Balance Transfer Calculator
+	 */
+    
 	BalanceTransferPageFactory btPage;
 	
 	

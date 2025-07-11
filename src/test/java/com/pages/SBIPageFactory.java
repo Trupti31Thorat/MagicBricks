@@ -16,12 +16,11 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 public class SBIPageFactory extends BasePage{
-  //  private WebDriver driver;
+  
 
     // Constructor
     public SBIPageFactory(WebDriver driver) {
-       // this.driver = driver;
-       // PageFactory.initElements(driver, this);
+      
     	super(driver);
     }
 
@@ -30,7 +29,7 @@ public class SBIPageFactory extends BasePage{
     public WebElement homeLoansMenu;
     
     @FindBy(xpath = "//a[text()=\"SBI Home Loan\"]")
-   // @FindBy(css = "a[href*='https://www.magicbricks.com/homeloan/home?inc=desktop_homeloan_menu_linkage']")
+  
     public WebElement SBILoansbtn;
 
     @FindBy(id = "loanAmount")

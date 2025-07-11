@@ -18,8 +18,6 @@ public class CityPageFactory extends BasePage {
 	 JavascriptExecutor js = (JavascriptExecutor) driver;
 	  // Constructor
     public CityPageFactory(WebDriver driver) {
-       // this.driver = driver;
-       // PageFactory.initElements(driver, this);
     	super(driver);
     }
     
@@ -108,25 +106,10 @@ public void clickCheckOffer() {
    checkOfferButton.click();
 }
 
-  /*public void switchToLatestWindowII()
-{
-	String currentWindow = driver.getWindowHandle();
-	for(String windowHandle: driver.getWindowHandles())
-
-{
-		if(!windowHandle.equals(currentWindow))
-		{
-			driver.switchTo().window(windowHandle);
-				break;
-		}
-}	
-}
-
-
-*/
+ 
     
 public void scrollDownII() {
-  //  JavascriptExecutor jsII = (JavascriptExecutor) driver;
+  
    js.executeScript("window.scrollBy(0,1500)"); // Adjust the scroll value as needed
 }
     

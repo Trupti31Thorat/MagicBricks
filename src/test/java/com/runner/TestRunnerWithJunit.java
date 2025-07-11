@@ -5,7 +5,7 @@ import io.cucumber.junit.CucumberOptions;
 import org.junit.runner.RunWith;
 
 @RunWith(Cucumber.class)
-@CucumberOptions(features={"src/test/resource/Features/HomeLoans.feature"}, tags = "@CityNavigation or @EMICalc or @SBIforminput1",
+@CucumberOptions(features={"src/test/resource/Features/HomeLoans.feature"}, tags = "@CityNavigation or @EMICalc or @SBIforminput1 or @BalanceTransfer",
                  glue={"com.stepdefination", "com.setup"}, plugin= {"pretty:target/pretty.txt",
                 			"json:target/jsonreport.json", 
                 			"junit:target/junitReport.xml",

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="Cucumber" time="96.936" tests="5" skipped="0" failures="1" errors="0" timestamp="2025-07-09T10:39:49.073081200Z">
-<testcase classname="Magic Bricks Home Loans Functionality" name="Verify selection of SBI Home Loan - #1.1" time="20.837">
+<testsuite name="Cucumber" time="115.429" tests="5" skipped="0" failures="0" errors="0" timestamp="2025-07-11T03:20:53.113405Z">
+<testcase classname="Magic Bricks Home Loans Functionality" name="Verify selection of SBI Home Loan - #1.1" time="24.478">
 <system-out><![CDATA[
 Given the user is on the Magic Bricks homepage..............................passed
 When the user clicks on the "SBI Home Loans" link in the Home Loans Menu bar.passed
@@ -14,7 +14,7 @@ And the user clicks on the "Check Eligibility" button.......................pass
 Then the user should be redirected to the Mobile Number Verification page...passed
 ]]></system-out>
 </testcase>
-<testcase classname="Magic Bricks Home Loans Functionality" name="Verify selection of SBI Home Loan - #1.2" time="18.19">
+<testcase classname="Magic Bricks Home Loans Functionality" name="Verify selection of SBI Home Loan - #1.2" time="20.162">
 <system-out><![CDATA[
 Given the user is on the Magic Bricks homepage..............................passed
 When the user clicks on the "SBI Home Loans" link in the Home Loans Menu bar.passed
@@ -28,7 +28,7 @@ And the user clicks on the "Check Eligibility" button.......................pass
 Then the user should be redirected to the Mobile Number Verification page...passed
 ]]></system-out>
 </testcase>
-<testcase classname="Magic Bricks Home Loans Functionality" name="Verify navigation to City Selection Page" time="24.002">
+<testcase classname="Magic Bricks Home Loans Functionality" name="Verify navigation to City Selection Page" time="21.431">
 <system-out><![CDATA[
 Given user is on Magic Bricks homepage......................................passed
 When the user clicks on the "Home Loans" link in the navigation bar.........passed
@@ -42,7 +42,7 @@ Then the user clicks on one of the cities...................................pass
 Then the user clicks on "Next" button to generate signup form...............passed
 ]]></system-out>
 </testcase>
-<testcase classname="Magic Bricks Home Loans Functionality" name="Calculate Home Loan EMI with data from Excel" time="26.732">
+<testcase classname="Magic Bricks Home Loans Functionality" name="Calculate Home Loan EMI with data from Excel" time="30.502">
 <system-out><![CDATA[
 Given I am on the home page.................................................passed
 When I navigate to the home loans menu......................................passed
@@ -51,18 +51,13 @@ And I calculate EMI for all rows in Excel...................................pass
 Then I should see the recalculated EMI......................................passed
 ]]></system-out>
 </testcase>
-<testcase classname="Magic Bricks Home Loans Functionality" name="Navigate to Home Loans and perform balance transfer" time="6.889">
-<failure type="java.lang.NullPointerException" message="Cannot invoke &quot;org.openqa.selenium.TakesScreenshot.getScreenshotAs(org.openqa.selenium.OutputType)&quot; because &quot;this.driver&quot; is null">
-<![CDATA[java.lang.NullPointerException: Cannot invoke "org.openqa.selenium.TakesScreenshot.getScreenshotAs(org.openqa.selenium.OutputType)" because "this.driver" is null
-	at com.stepdefination.MagicBricksHomeLoans.tearDown(MagicBricksHomeLoans.java:509)
-]]>
-</failure>
+<testcase classname="Magic Bricks Home Loans Functionality" name="Navigate to Home Loans and perform balance transfer" time="18.54">
 <system-out><![CDATA[
-Given user is on the home page..............................................undefined
-When the user navigates to the Home Loans section...........................skipped
-And the user clicks on the Balance Transfer option..........................skipped
-And the user fills the old and new loan details with data from Excel........skipped
-Then the user compares the old and new loan details.........................skipped
+Given the user is on the home page..........................................passed
+When the user navigates to the Home Loans section...........................passed
+And the user clicks on the Balance Transfer option..........................passed
+And the user fills the old and new loan details with data from Excel........passed
+Then the user compares the old and new loan details.........................passed
 ]]></system-out>
 </testcase>
 </testsuite>
