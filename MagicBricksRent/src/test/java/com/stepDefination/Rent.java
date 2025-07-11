@@ -33,9 +33,9 @@ public class Rent {
 	
 	// ---------------------------------Seanario 1------------------------------------------------------------
 			/*
-			 * Created by:
-			 * Reviewed by:
-			 * Motive: /
+			 * Created by: Sejal Hankare
+			 * Reviewed by: Priti Mam
+			 * Motive: Automation testing of Magicbricks website of Rent Module
 			 */
 
 	
@@ -71,9 +71,9 @@ public class Rent {
 	
 	// ---------------------------------Seanario 2------------------------------------------------------------
 				/*
-				 * Created by:
-				 * Reviewed by:
-				 * Motive: /
+				 * Created by: Sejal Hankare
+				 * Reviewed by: Priti Mam
+				 * Motive: Automation testing of Magicbricks website of Rent Module
 				 */
 
 	//For Excel
@@ -141,9 +141,9 @@ public class Rent {
 	
 	// ---------------------------------Seanario 3------------------------------------------------------------
 				/*
-				 * Created by:
-				 * Reviewed by:
-				 * Motive: /
+				 * Created by: Sejal Hankare
+				 * Reviewed by: Priti Mam
+				 * Motive: Automation testing of Magicbricks website of Rent Module
 				 */
 	
 	@When("user fills the contact form with invalid WhatsApp number from Excel")
@@ -160,9 +160,9 @@ public class Rent {
 	
 	// ---------------------------------Seanario 4------------------------------------------------------------
 				/*
-				 * Created by:
-				 * Reviewed by:
-				 * Motive: /
+				 * Created by: Sejal Hankare
+				 * Reviewed by: Priti Mam
+				 * Motive: Automation testing of Magicbricks website of Rent Module
 				 */
 	
 
@@ -180,9 +180,9 @@ public class Rent {
 	
 	// ---------------------------------Seanario 5------------------------------------------------------------
 				/*
-				 * Created by:
-				 * Reviewed by:
-				 * Motive: /
+				 * Created by: Sejal Hankare
+				 * Reviewed by: Priti Mam 
+				 * Motive: Automation testing of Magicbricks website of Rent Module
 				 */
 	
 

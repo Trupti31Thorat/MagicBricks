@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="Cucumber" time="127.705" tests="7" skipped="0" failures="0" errors="0" timestamp="2025-07-11T03:57:12.185734400Z">
+<testcase classname="MagicBricks Rent Section Functionalities" name="Open Rent Owner Properties Click Photo and Scroll" time="20.504">
+<system-out><![CDATA[
+Given user launches the MagicBricks website.................................passed
+When user hovers on Rent and clicks on Owner Properties under Popular Choices.passed
+And user clicks on first property photo.....................................passed
+Then user scrolls down the photo view page..................................passed
+]]></system-out>
+</testcase>
+<testcase classname="MagicBricks Rent Section Functionalities" name="Contact Owner from Rent in that Owner Properties with valid data" time="17.765">
+<system-out><![CDATA[
+Given user launches the MagicBricks website.................................passed
+When user hovers on Rent and clicks on Owner Properties under Popular Choices.passed
+And user clicks on Contact Owner button.....................................passed
+And user fills the contact form with valid data from Excel..................passed
+And user clicks on Continue button..........................................passed
+Then contact form should proceed next.......................................passed
+]]></system-out>
+</testcase>
+<testcase classname="MagicBricks Rent Section Functionalities" name="Contact Owner from Rent using sheet name and row - #1.1" time="16.845">
+<system-out><![CDATA[
+Given user launches the MagicBricks website.................................passed
+When user hovers on Rent and clicks on Owner Properties under Popular Choices.passed
+And user clicks on Contact Owner button.....................................passed
+And user fills the contact form using sheet "Sheet1" and row 1..............passed
+And user clicks on Continue button..........................................passed
+Then contact form should proceed next.......................................passed
+]]></system-out>
+</testcase>
+<testcase classname="MagicBricks Rent Section Functionalities" name="Contact Owner form with data from Excel" time="16.614">
+<system-out><![CDATA[
+Given user launches the MagicBricks website.................................passed
+When user hovers on Rent and clicks on Owner Properties under Popular Choices.passed
+And user clicks on Contact Owner button.....................................passed
+And user fills the contact form using data from.............................passed
+And user clicks on Continue button..........................................passed
+Then contact form should proceed next.......................................passed
+]]></system-out>
+</testcase>
+<testcase classname="MagicBricks Rent Section Functionalities" name="Contact Owner from Rent in Owner Properties with invalid WhatsApp number" time="20.037">
+<system-out><![CDATA[
+Given user launches the MagicBricks website.................................passed
+When user hovers on Rent and clicks on Owner Properties under Popular Choices.passed
+And user clicks on Contact Owner button.....................................passed
+And user fills the contact form with invalid WhatsApp number from Excel.....passed
+And user clicks on Continue button..........................................passed
+Then phone number validation error message should appear....................passed
+]]></system-out>
+</testcase>
+<testcase classname="MagicBricks Rent Section Functionalities" name="Sort Owner Properties by Price High to Low" time="18.378">
+<system-out><![CDATA[
+Given user launches the MagicBricks website.................................passed
+When user hovers on Rent and clicks on Owner Properties under Popular Choices.passed
+And user selects Sort By as "Price: High to Low"............................passed
+Then sorting should be applied..............................................passed
+]]></system-out>
+</testcase>
+<testcase classname="MagicBricks Rent Section Functionalities" name="Furnished Homes BHK Selection and Window Handling" time="17.141">
+<system-out><![CDATA[
+Given user launches the MagicBricks website.................................passed
+When user hovers on Rent and clicks on Furnished Homes under Popular Choices.passed
+And user scrolls to the bedroom selection section...........................passed
+And user clicks on 1BHK option..............................................passed
+Then the page should display only 1BHK furnished properties.................passed
+]]></system-out>
+</testcase>
+</testsuite>

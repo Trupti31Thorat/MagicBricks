@@ -6,7 +6,7 @@ import io.cucumber.junit.*;
 @RunWith(Cucumber.class)
 @CucumberOptions(features = "C:\\Users\\SHANKARE\\eclipse-workspace\\MagicBricksRent\\src\\test\\resource\\Features\\Rent.feature", glue = {
 		"com.stepDefination", "com.setup" },
-		 tags="@ownerPhoto",
+		// tags="@ownerPhoto",
 		// tags="@contactOwnerPositive",
 		// tags="@contactOwnerPositiveOutline",
 		// tags="@contactOwnerDataProvider",
@@ -15,6 +15,6 @@ import io.cucumber.junit.*;
 		// tags="@furnishedHomesBHK",
 		// tags="@findAgent",
 		// tags="@exploreLocalities",
-		plugin = { "pretty", "html:target/cucumber-html.html" }, monochrome = true)
+		plugin = { "pretty", "html:target/cucumber-html1.html" }, monochrome = true)
 public class TestRunnerWithJunit {
 }
