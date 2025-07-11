@@ -11,9 +11,9 @@ import io.cucumber.junit.CucumberOptions;
     , "com.hooks"},
     tags = "@MagicBricks",
     plugin = { "pretty" ,
-    //"html:target/CucumberReport.html",
-//    "json:target/CucumberReport.json",
-//    "junit:target/CucumberReport.xml"
+    "html:target/CucumberReport.html",
+    "json:target/CucumberReport.json",
+    "junit:target/CucumberReport.xml"
     },
     monochrome = true
 

@@ -1,18 +1,14 @@
 package com.stepDefinition;
 
 import java.util.List;
-
 import java.util.Map;
-
 import org.junit.Assert;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.PageFactory;
-
 import com.pages.*;
 import com.parameters.ConfigReader;
 import com.parameters.ExcelReader;
 import com.setup.BaseSteps;
-
 import io.cucumber.datatable.DataTable;
 import io.cucumber.java.en.*;
 
@@ -27,6 +23,14 @@ public class BuyModuleSteps extends BaseSteps {
     TipsAndGuidesPage tipsPage;
 
     // ----------------- COMMON SETUP -----------------
+    
+   /*
+	 * Created by:Raj Singh
+	 * Reviewed by:Priti Wadpalli
+	 * Motive: Automation testing for Buy Module of MagicBricks Website
+	 *  
+	 */
+    
     @Given("the user launches the Magicbricks website")
     public void the_user_launches_the_magicbricks_website() throws InterruptedException {
         String browser = ConfigReader.getProperty("browser");
@@ -47,6 +51,16 @@ public class BuyModuleSteps extends BaseSteps {
     }
 
     // ----------------- READY TO MOVE -----------------
+    
+    
+    
+    /*
+   	 * Created by:Raj Singh
+   	 * Reviewed by:Priti Wadpalli
+   	 * Motive: Automation testing for Buy Module of MagicBricks Website
+   	 *  
+   	 */
+    
     @When("the user clicks on {string} option")
     public void the_user_clicks_on_option(String option) {
         if (option.equalsIgnoreCase("Ready To Move")) {
@@ -62,6 +76,13 @@ public class BuyModuleSteps extends BaseSteps {
     
     
     //------------------ FILTER AND SORT---------------------
+    
+    /*
+	 * Created by:Raj Singh
+	 * Reviewed by:Priti Wadpalli
+	 * Motive: Automation testing for Buy Module of MagicBricks Website
+	 *  
+	 */
 
     @When("the user click on {string}")
     public void the_user_click_on(String option) {
@@ -84,6 +105,13 @@ public class BuyModuleSteps extends BaseSteps {
     }
 
     // ----------------- INVESTMENT HOTSPOT - VALID -----------------
+    /*
+	 * Created by:Raj Singh
+	 * Reviewed by:Priti Wadpalli
+	 * Motive: Automation testing for Buy Module of MagicBricks Website
+	 *  
+	 */
+    
     @When("the user clicks on {string}")
     public void the_user_clicks_on(String option) {
         if (option.equalsIgnoreCase("Investment Hotspot")) {
@@ -113,19 +141,14 @@ public class BuyModuleSteps extends BaseSteps {
     }
 
     // ----------------- INVESTMENT HOTSPOT - INVALID -----------------
-//    @When("the user clicks on the {string}")
-//    public void the_user_clicks_on_the(String option) {
-//        if (option.equalsIgnoreCase("Investment Hotspot")) {
-//            PageFactory.initElements(driver, hotspotPage);
-//            hotspotPage.clickInvestmentHotspot();
-//        }
-//    }
-//
-//    @When("the user scrolls down to the request the callback form")
-//    public void the_user_scrolls_down_to_the_request_the_callback_form() {
-//        hotspotPage.waitUntilVisible(hotspotPage.nameInput);
-//        hotspotPage.scrollToElement(hotspotPage.nameInput);
-//    }
+    
+    /*
+	 * Created by:Raj Singh
+	 * Reviewed by:Priti Wadpalli
+	 * Motive: Automation testing for Buy Module of MagicBricks Website
+	 *  
+	 */
+
 
     @When("the user fills the form with invalid details from sheet {int} and row {int}")
     public void the_user_fills_the_form_with_invalid_details_from_sheet_and_row(Integer sheetIndex, Integer rowIndex) {
@@ -142,6 +165,13 @@ public class BuyModuleSteps extends BaseSteps {
     }
 
     // ----------------- BUY VS RENT -----------------
+    
+    /*
+	 * Created by:Raj Singh
+	 * Reviewed by:Priti Wadpalli
+	 * Motive: Automation testing for Buy Module of MagicBricks Website
+	 *  
+	 */
     @When("the user clicks on the link {string}")
     public void the_user_clicks_on_the_link(String linkName) {
         if (linkName.equalsIgnoreCase("Buy vs Rent")) {
@@ -164,6 +194,13 @@ public class BuyModuleSteps extends BaseSteps {
     }
 
     // ----------------- TIPS AND GUIDES -----------------
+    /*
+	 * Created by:Raj Singh
+	 * Reviewed by:Priti Wadpalli
+	 * Motive: Automation testing for Buy Module of MagicBricks Website
+	 *  
+	 */
+    
     @When("the user clicks on the {string} section")
     public void the_user_clicks_on_the_section(String sectionName) {
         if (sectionName.equalsIgnoreCase("Tips and Guides")) {

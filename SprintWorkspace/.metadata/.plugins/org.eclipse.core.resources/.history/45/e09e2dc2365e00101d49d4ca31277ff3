@@ -1,0 +1,109 @@
+package com.pages;
+
+import java.awt.Robot;
+
+import java.awt.event.InputEvent;
+import java.io.File;
+
+import java.io.IOException;
+import java.time.Duration;
+import java.util.Date;
+
+import org.apache.commons.io.FileUtils;
+import org.openqa.selenium.*;
+import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.*;
+import org.testng.Assert;
+
+import com.aventstack.extentreports.MediaEntityBuilder;
+import com.aventstack.extentreports.Status;
+import com.parameters.ConfigReader;
+
+public class BasePage {
+	protected WebDriver driver;
+	protected WebDriverWait wait;
+
+	public BasePage(WebDriver driver) {
+		this.driver = driver;
+		PageFactory.initElements(driver, this);
+		wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+	}
+
+	// Wait for visibility
+	public void waitUntilVisible(WebElement element) {
+		wait.until(ExpectedConditions.visibilityOf(element));
+	}
+
+	// Wait until clickable
+	public void waitUntilClickable(WebElement element) {
+		wait.until(ExpectedConditions.elementToBeClickable(element));
+	}
+
+	// Click element with wait
+	public void click(WebElement element) {
+		waitUntilClickable(element);
+		element.click();
+	}
+
+	// Send keys with clear
+	public void type(WebElement element, String text) {
+		waitUntilVisible(element);
+		element.clear();
+		element.sendKeys(text);
+	}
+
+	// Hover on element
+	public void hover(WebElement element) {
+		Actions actions = new Actions(driver);
+		actions.moveToElement(element).perform();
+	}
+
+	// Scroll to element
+	public void scrollToElement(WebElement element) {
+
+		((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", element);
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("window.scrollBy(0, -200)");
+
+	}
+
+	// switching the context to the new window
+	public void switchToNewTab() {
+		String parentWindow = driver.getWindowHandle();
+
+		for (String handle : driver.getWindowHandles()) {
+			if (!handle.equals(parentWindow)) {
+				driver.switchTo().window(handle);
+				break;
+			}
+		}
+	}
+
+	// switching the context to the latest window opened
+	public void switchToLatestWindow() {
+		for (String windowHanlde : driver.getWindowHandles()) {
+
+			driver.switchTo().window(windowHanlde);
+		}
+	}
+
+	// Reusable Robot click method based on screen coordinates
+	public void clickUsingRobot(int x, int y) throws Exception {
+		Robot robot = new Robot();
+		robot.mouseMove(x, y);
+		Thread.sleep(1000);
+		robot.mousePress(InputEvent.BUTTON1_DOWN_MASK);
+		robot.mouseRelease(InputEvent.BUTTON1_DOWN_MASK);
+	}
+
+//method for assertions using URLs
+	public void verifyCurrentURL(String expectedKey) {
+		String expectedPart = ConfigReader.getProperty("home.properties", expectedKey);
+		String actualURL = driver.getCurrentUrl();
+		
+		if(!actualURL.contains(expectedPart)) {
+			throw new AssertionError("URL does not contain expected part. \n Expected to contain : "+ expectedPart);
+		}
+	}
+}
