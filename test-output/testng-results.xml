@@ -1,73 +1,127 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="1" passed="0" failed="1" skipped="0">
+<testng-results ignored="0" total="6" passed="6" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2025-07-04T11:59:15 IST" name="Default suite" finished-at="2025-07-04T11:59:23 IST" duration-ms="7623">
+  <suite started-at="2025-07-11T09:38:01 IST" name="Default suite" finished-at="2025-07-11T09:40:54 IST" duration-ms="173309">
     <groups>
       <group name="cucumber">
-        <method signature="AbstractTestNGCucumberTests.runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:com.runner.TestRunner@4e50c791]" name="runScenario" class="io.cucumber.testng.AbstractTestNGCucumberTests"/>
+        <method signature="AbstractTestNGCucumberTests.runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:com.runner.TestRunnerTestNG@4e50c791]" name="runScenario" class="io.cucumber.testng.AbstractTestNGCucumberTests"/>
       </group> <!-- cucumber -->
     </groups>
-    <test started-at="2025-07-04T11:59:15 IST" name="Default test" finished-at="2025-07-04T11:59:23 IST" duration-ms="7623">
-      <class name="com.runner.TestRunner">
-        <test-method is-config="true" signature="setUpClass(org.testng.ITestContext)[pri:0, instance:com.runner.TestRunner@4e50c791]" started-at="2025-07-04T11:59:15 IST" name="setUpClass" finished-at="2025-07-04T11:59:17 IST" duration-ms="1537" status="PASS">
+    <test started-at="2025-07-11T09:38:01 IST" name="Default test" finished-at="2025-07-11T09:40:54 IST" duration-ms="173309">
+      <class name="com.runner.TestRunnerTestNG">
+        <test-method is-config="true" signature="setUpClass(org.testng.ITestContext)[pri:0, instance:com.runner.TestRunnerTestNG@4e50c791]" started-at="2025-07-11T09:38:01 IST" name="setUpClass" finished-at="2025-07-11T09:38:03 IST" duration-ms="1641" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[org.testng.TestRunner@39651a82]]>
+                <![CDATA[org.testng.TestRunner@523abba9]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUpClass -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:com.runner.TestRunner@4e50c791]" started-at="2025-07-04T11:59:17 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2025-07-04T11:59:23 IST" duration-ms="5793" status="FAIL">
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:com.runner.TestRunnerTestNG@4e50c791]" started-at="2025-07-11T09:38:03 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2025-07-11T09:38:34 IST" duration-ms="30833" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA["User searches for a pincode using dropdown selections"]]>
+                <![CDATA["Navigate to research and insights from MB Advise"]]>
               </value>
             </param>
             <param index="1">
               <value>
-                <![CDATA["Find Pincode functionality for MagicBricks MB Advice module"]]>
+                <![CDATA["Automation Testing For MagicBrics Application"]]>
               </value>
             </param>
           </params>
-          <exception class="io.cucumber.testng.UndefinedStepException">
-            <message>
-              <![CDATA[The step 'user verifies that the Find Pincode link is visible on the MB Advice section' is undefined.
-You can implement this step using the snippet(s) below:
-
-@When("user verifies that the Find Pincode link is visible on the MB Advice section")
-public void user_verifies_that_the_find_pincode_link_is_visible_on_the_mb_advice_section() {
-    // Write code here that turns the phrase above into concrete actions
-    throw new io.cucumber.java.PendingException();
-}
-]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[io.cucumber.testng.UndefinedStepException: The step 'user verifies that the Find Pincode link is visible on the MB Advice section' is undefined.
-You can implement this step using the snippet(s) below:
-
-@When("user verifies that the Find Pincode link is visible on the MB Advice section")
-public void user_verifies_that_the_find_pincode_link_is_visible_on_the_mb_advice_section() {
-    // Write code here that turns the phrase above into concrete actions
-    throw new io.cucumber.java.PendingException();
-}
-
-at ✽.user verifies that the Find Pincode link is visible on the MB Advice section(file:///C:/Users/TRTHORAT/OneDrive%20-%20Capgemini/Desktop/Sprint/MagicBricsMbAdviceTesting/src/test/resource/Features/MbAdviceScenario.feature:5)
-]]>
-            </full-stacktrace>
-          </exception> <!-- io.cucumber.testng.UndefinedStepException -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- runScenario -->
-        <test-method is-config="true" signature="tearDownClass()[pri:0, instance:com.runner.TestRunner@4e50c791]" started-at="2025-07-04T11:59:23 IST" name="tearDownClass" finished-at="2025-07-04T11:59:23 IST" duration-ms="160" status="PASS">
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:com.runner.TestRunnerTestNG@4e50c791]" started-at="2025-07-11T09:38:34 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2025-07-11T09:38:54 IST" duration-ms="20700" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Print research data using Robot"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Automation Testing For MagicBrics Application"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:com.runner.TestRunnerTestNG@4e50c791]" started-at="2025-07-11T09:38:54 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2025-07-11T09:39:10 IST" duration-ms="16029" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Scroll Trending Web Stories using Robot PageDown"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Automation Testing For MagicBrics Application"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:com.runner.TestRunnerTestNG@4e50c791]" started-at="2025-07-11T09:39:10 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2025-07-11T09:39:35 IST" duration-ms="24717" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Open and handle multiple windows in MB Advice"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Automation Testing For MagicBrics Application"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:com.runner.TestRunnerTestNG@4e50c791]" started-at="2025-07-11T09:39:35 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2025-07-11T09:40:16 IST" duration-ms="40514" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["View Report form filled with valid data"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Automation Testing For MagicBrics Application"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:com.runner.TestRunnerTestNG@4e50c791]" started-at="2025-07-11T09:40:16 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2025-07-11T09:40:52 IST" duration-ms="36902" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["View Report form filled with Invalid data"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Automation Testing For MagicBrics Application"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method is-config="true" signature="tearDownClass()[pri:0, instance:com.runner.TestRunnerTestNG@4e50c791]" started-at="2025-07-11T09:40:52 IST" name="tearDownClass" finished-at="2025-07-11T09:40:54 IST" duration-ms="1806" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDownClass -->
-      </class> <!-- com.runner.TestRunner -->
+      </class> <!-- com.runner.TestRunnerTestNG -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>
