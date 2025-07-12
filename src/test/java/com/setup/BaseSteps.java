@@ -13,12 +13,29 @@ public class BaseSteps {
  
 public static WebDriver driver;
 
+<<<<<<< HEAD
 public static WebDriver initializeBrowser() {
+=======
+<<<<<<< HEAD
+public static WebDriver initializeBrowser() {
+=======
+public static void initializeBrowser() {
+>>>>>>> origin/MbAdvice
+>>>>>>> origin/MbAdvice
 
     WebDriverManager.chromedriver().setup();
     driver = new ChromeDriver();
     driver.manage().window().maximize();
+<<<<<<< HEAD
 	return driver;
+=======
+<<<<<<< HEAD
+	return driver;
+=======
+	
+
+>>>>>>> origin/MbAdvice
+>>>>>>> origin/MbAdvice
 }
  
 public static void closeBrowser() {

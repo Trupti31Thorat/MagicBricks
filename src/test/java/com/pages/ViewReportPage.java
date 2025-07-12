@@ -1,7 +1,15 @@
 
 
 	package com.pages;
+<<<<<<< HEAD
 	import static org.junit.Assert.*;
+=======
+<<<<<<< HEAD
+	import static org.junit.Assert.*;
+=======
+
+>>>>>>> origin/MbAdvice
+>>>>>>> origin/MbAdvice
 	import java.awt.AWTException;
 import java.awt.Robot;
 import java.awt.event.KeyEvent;
@@ -24,14 +32,42 @@ import org.openqa.selenium.support.FindBy;
 
 	public class ViewReportPage extends BasePage{
 
+<<<<<<< HEAD
 	
+=======
+<<<<<<< HEAD
+	
+=======
+		WebDriver driver;
+>>>>>>> origin/MbAdvice
+>>>>>>> origin/MbAdvice
 		Properties prop;
 		Robot robot;
 		public ViewReportPage(WebDriver driver) {
 			super(driver);
+<<<<<<< HEAD
 			
 
 			
+=======
+<<<<<<< HEAD
+			
+
+			
+=======
+			this.driver = driver;
+			PageFactory.initElements(driver, this);
+
+			prop = new Properties();
+			try {
+				FileInputStream fis = new FileInputStream(
+						"C:\\Users\\TRTHORAT\\OneDrive - Capgemini\\Desktop\\Sprint\\MagicBricsMbAdviceTesting\\src\\test\\resource\\PropertyFiles\\config.properties");
+				prop.load(fis);
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
+>>>>>>> origin/MbAdvice
+>>>>>>> origin/MbAdvice
 		}
 
 		
@@ -48,6 +84,10 @@ import org.openqa.selenium.support.FindBy;
 		
 	    
 	    public void launchMagicBricks() {
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> origin/MbAdvice
 	    	
 	    	prop = new Properties();
 			try {
@@ -57,6 +97,11 @@ import org.openqa.selenium.support.FindBy;
 			} catch (IOException e) {
 				e.printStackTrace();
 			}
+<<<<<<< HEAD
+=======
+=======
+>>>>>>> origin/MbAdvice
+>>>>>>> origin/MbAdvice
 			driver.get(prop.getProperty("url"));
 		}
 
@@ -140,10 +185,16 @@ import org.openqa.selenium.support.FindBy;
 	            System.out.println("Unsupported character: " + c);
 	        }
 	    }
+<<<<<<< HEAD
 	    
 
 	    public void fillContactFormViaMouse(String name, String email, String phone, String company, String city) throws InterruptedException {
 	      
+=======
+
+	    public void fillContactFormViaMouse(String name, String email, String phone, String company, String city) throws InterruptedException {
+	        // Example coordinates — you must adjust these based on your screen and form field locations
+>>>>>>> origin/MbAdvice
 	        moveAndClick(250, 300);  // Name field
 	        typeText(name);
 
@@ -178,10 +229,19 @@ import org.openqa.selenium.support.FindBy;
 					
 		}
 	
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> origin/MbAdvice
 	   
 
 	    
 	    
+<<<<<<< HEAD
+=======
+=======
+>>>>>>> origin/MbAdvice
+>>>>>>> origin/MbAdvice
 	}
 
 	

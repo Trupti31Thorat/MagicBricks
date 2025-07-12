@@ -1,7 +1,15 @@
 package com.pages;
 
+<<<<<<< HEAD
 
 import static org.junit.Assert.*;
+=======
+<<<<<<< HEAD
+
+import static org.junit.Assert.*;
+=======
+>>>>>>> origin/MbAdvice
+>>>>>>> origin/MbAdvice
 import java.awt.AWTException;
 import java.awt.Robot;
 import java.awt.event.KeyEvent;
@@ -10,11 +18,22 @@ import java.io.FileInputStream;
 import java.io.IOException;
 import java.time.Duration;
 import java.util.Properties;
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> origin/MbAdvice
 import java.util.Set;
 
 import org.apache.commons.io.FileUtils;
 import org.junit.Assert;
 import org.openqa.selenium.JavascriptExecutor;
+<<<<<<< HEAD
+=======
+=======
+
+import org.apache.commons.io.FileUtils;
+>>>>>>> origin/MbAdvice
+>>>>>>> origin/MbAdvice
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
@@ -23,6 +42,10 @@ import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> origin/MbAdvice
 public class WebStoriesPage extends BasePage{
 
 
@@ -31,6 +54,29 @@ public class WebStoriesPage extends BasePage{
 		super(driver);
 		
 	
+<<<<<<< HEAD
+=======
+=======
+public class WebStoriesPage {
+
+	
+	
+	WebDriver driver;
+	Properties prop;
+	public WebStoriesPage(WebDriver driver) {
+		this.driver = driver;
+		PageFactory.initElements(driver, this);
+
+		prop = new Properties();
+		try {
+			FileInputStream fis = new FileInputStream(
+					"C:\\Users\\TRTHORAT\\OneDrive - Capgemini\\Desktop\\Sprint\\MagicBricsMbAdviceTesting\\src\\test\\resource\\PropertyFiles\\config.properties");
+			prop.load(fis);
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+>>>>>>> origin/MbAdvice
+>>>>>>> origin/MbAdvice
 	}
 	
 
@@ -43,6 +89,10 @@ public class WebStoriesPage extends BasePage{
 	WebElement mbAdviceMenu;  
 	
 	public void launchMagicBricks() {
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> origin/MbAdvice
 		
 		prop = new Properties();
 		try {
@@ -77,6 +127,13 @@ public class WebStoriesPage extends BasePage{
 
 	
 	}
+<<<<<<< HEAD
+=======
+=======
+		driver.get(prop.getProperty("url"));
+	}
+>>>>>>> origin/MbAdvice
+>>>>>>> origin/MbAdvice
 
 
 
@@ -105,7 +162,19 @@ public void takesScreen() throws IOException
 {
 	TakesScreenshot screen1=(TakesScreenshot)driver;
 	File src1= screen1.getScreenshotAs(OutputType.FILE);
+<<<<<<< HEAD
 	String filename = "Web_Stories"+System.currentTimeMillis()+".png";
+=======
+<<<<<<< HEAD
+	String filename = "Web_Stories"+System.currentTimeMillis()+".png";
+=======
+<<<<<<< HEAD
+	String filename = "Web_Stories"+System.currentTimeMillis()+".png";
+=======
+	String filename = "WebStories"+System.currentTimeMillis()+".png";
+>>>>>>> 6f304837b531716b8c9fa5d00444a260dc41f325
+>>>>>>> origin/MbAdvice
+>>>>>>> origin/MbAdvice
 	String destination ="C:\\Users\\TRTHORAT\\OneDrive - Capgemini\\Desktop\\Sprint\\MagicBricsMbAdviceTesting\\Screenshots\\"
 	+filename;
 	
@@ -115,6 +184,10 @@ public void takesScreen() throws IOException
 
 	
 }
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> origin/MbAdvice
 
 
 //Add at the end of your class
@@ -125,4 +198,13 @@ public void verifyWebStoriesPageOpened() {
 assertTrue("Web Stories page title mismatch. Actual: " + title,title.contains("web-stories"));
 }
 
+<<<<<<< HEAD
+=======
+=======
+<<<<<<< HEAD
+
+=======
+>>>>>>> 6f304837b531716b8c9fa5d00444a260dc41f325
+>>>>>>> origin/MbAdvice
+>>>>>>> origin/MbAdvice
 }
